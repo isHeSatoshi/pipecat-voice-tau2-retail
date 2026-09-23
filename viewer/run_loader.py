@@ -16,6 +16,7 @@ File layout expected (created by ``tau2.runner.Tau2EvalRunner``):
 Anything missing is treated as empty / None; the viewer should still
 render for the fields that are present.
 """
+
 from __future__ import annotations
 
 import json
@@ -23,7 +24,6 @@ import os
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any, Optional
-
 
 # Default runs root, used when the Streamlit sidebar input is empty.
 DEFAULT_RUNS_ROOT = Path(
@@ -63,6 +63,8 @@ class SimView:
     path: Path
     trajectory: Optional[dict[str, Any]] = None
     trace_events: list[dict[str, Any]] = field(default_factory=list)
+    audio_manifest: dict[str, Any] = field(default_factory=dict)
+    conversation_audio: Optional[Path] = None
 
 
 # ---------------------------------------------------------------------------
@@ -163,6 +165,27 @@ def load_sim(sim: SimView) -> SimView:
             except json.JSONDecodeError:
                 continue
         sim.trace_events = events
+    manifest_path = sim.path / "audio_segments.json"
+    if manifest_path.exists():
+        try:
+            sim.audio_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            sim.audio_manifest = {}
+    conversation_name = sim.audio_manifest.get("conversation")
+    if conversation_name:
+        conversation_path = sim.path / conversation_name
+        if conversation_path.exists():
+            sim.conversation_audio = conversation_path
+    trajectory_messages = (sim.trajectory or {}).get("messages") or []
+    for segment in sim.audio_manifest.get("segments") or []:
+        message_index = segment.get("message_index")
+        segment_path = sim.path / str(segment.get("path", ""))
+        if (
+            isinstance(message_index, int)
+            and 0 <= message_index < len(trajectory_messages)
+            and segment_path.exists()
+        ):
+            trajectory_messages[message_index]["audio_path"] = str(segment_path)
     return sim
 
 
@@ -195,8 +218,17 @@ def reward_summary(sim: SimView) -> dict[str, Any]:
     total = len(actions)
     env_asserts = ri.get("env_assertions") or []
     env_pass = sum(1 for a in env_asserts if a.get("met"))
+    info = ri.get("info") or {}
+    strict_available = info.get("strict_reward_available")
+    if strict_available is None:
+        strict_available = "NL_ASSERTION" not in (ri.get("reward_basis") or [])
+    partial_reward = info.get("partial_reward")
+    if partial_reward is None and strict_available:
+        partial_reward = ri.get("reward")
     return {
         "reward": ri.get("reward"),
+        "partial_reward": partial_reward,
+        "strict_reward_available": strict_available,
         "db_match": db.get("db_match"),
         "actions_total": total,
         "actions_matched": matched,
@@ -222,6 +254,10 @@ def reward_table_row(sim: SimView, run_name: str) -> dict[str, Any]:
         "task_id": sim.task_id,
         "sim_id": sim.sim_id,
         "reward": r["reward"],
+        "local_reward": r["partial_reward"]
+        if not r["strict_reward_available"]
+        else r["reward"],
+        "strict_reward_available": r["strict_reward_available"],
         "termination": traj.get("termination_reason"),
         "duration": traj.get("duration"),
         "actions_matched": r["actions_matched"],

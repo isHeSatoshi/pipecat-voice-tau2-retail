@@ -5,22 +5,20 @@ by constructing dummy/recording implementations and exercising the runner
 build path with them. They DO NOT touch Pipecat pipelines; they focus on
 the data contracts so they run fast and deterministically.
 """
+
 from __future__ import annotations
 
 import asyncio
-import json
 from typing import Any
 
-import pytest
-
 from pipecat_voice.interfaces import (
+    LLMProtocol,
     LLMResponse,
     LLMToolCall,
     STTProtocol,
-    TTSProtocol,
-    LLMProtocol,
     STTResult,
     TTSChunk,
+    TTSProtocol,
 )
 
 
@@ -56,8 +54,18 @@ class RecordingLLM:
         self.next_response = LLMResponse(content="hi")
 
     async def complete(self, *, system, messages, tools=None) -> LLMResponse:
-        self.calls.append({"system": system, "messages": list(messages), "tools": tools})
+        self.calls.append(
+            {"system": system, "messages": list(messages), "tools": tools}
+        )
         return self.next_response
+
+
+def test_default_vad_is_initialized() -> None:
+    from pipecat_voice.transport.virtual_transport import make_default_vad
+
+    vad = make_default_vad(16000)
+    assert vad.sample_rate == 16000
+    assert vad._vad_frames_num_bytes == 1024
 
 
 def test_stt_protocol_runtime_check() -> None:
@@ -85,6 +93,7 @@ def test_stt_transcribe_returns_text() -> None:
         assert r.text == "hi"
         assert r.confidence == 0.9
         assert (b"\x00" * 16, 16000) in stt.calls
+
     asyncio.run(_go())
 
 
@@ -97,6 +106,7 @@ def test_tts_yields_chunks() -> None:
         assert len(out) == 1
         assert out[0].pcm == b"\x00" * 32
         assert "hello" in tts.calls
+
     asyncio.run(_go())
 
 
@@ -106,16 +116,21 @@ def test_llm_complete_returns_response() -> None:
         llm.next_response = LLMResponse(
             tool_calls=[LLMToolCall(id="x", name="t", arguments={"a": 1})]
         )
-        resp = await llm.complete(system="sys", messages=[{"role": "user", "content": "hi"}])
+        resp = await llm.complete(
+            system="sys", messages=[{"role": "user", "content": "hi"}]
+        )
         assert resp.tool_calls[0].name == "t"
         assert resp.tool_calls[0].arguments == {"a": 1}
         assert len(llm.calls) == 1
         assert llm.calls[0]["messages"][0]["content"] == "hi"
+
     asyncio.run(_go())
 
 
 def test_dummy_stt_echoes_primed_text() -> None:
-    from pipecat_voice.services.dummy_stt_tts_llm import DummySTT, DummyTTS, DummyLLM, scripted_tool_call
+    from pipecat_voice.services.dummy_stt_tts_llm import (
+        DummySTT,
+    )
 
     async def _go():
         stt = DummySTT()
@@ -124,6 +139,7 @@ def test_dummy_stt_echoes_primed_text() -> None:
         assert r.text == "hi there"
         r2 = await stt.transcribe(b"\x00", 16000)
         assert r2.text == ""
+
     asyncio.run(_go())
 
 
@@ -138,6 +154,7 @@ def test_dummy_tts_yields_silence() -> None:
         # 200 ms / 100 ms = 2 chunks total
         assert all(c.sample_rate == 16000 for c in chunks)
         assert all(len(c.pcm) > 0 for c in chunks)
+
     asyncio.run(_go())
 
 
@@ -149,19 +166,31 @@ def test_dummy_llm_default_emits_transfer_tool_call() -> None:
         resp = await llm.complete(system="s", messages=[])
         assert resp.content is None
         assert resp.tool_calls[0].name == "transfer_to_human_agents"
+
     asyncio.run(_go())
 
 
 def test_dummy_llm_scripted_responses() -> None:
-    from pipecat_voice.services.dummy_stt_tts_llm import DummyLLM, scripted_text, scripted_tool_call
+    from pipecat_voice.services.dummy_stt_tts_llm import (
+        DummyLLM,
+        scripted_text,
+        scripted_tool_call,
+    )
 
     async def _go():
         llm = DummyLLM()
-        llm.script([scripted_text("first"), scripted_tool_call("foo", {"x": 1}, "tc1"), scripted_text("last")])
+        llm.script(
+            [
+                scripted_text("first"),
+                scripted_tool_call("foo", {"x": 1}, "tc1"),
+                scripted_text("last"),
+            ]
+        )
         r1 = await llm.complete(system="s", messages=[])
         r2 = await llm.complete(system="s", messages=[])
         r3 = await llm.complete(system="s", messages=[])
         assert r1.content == "first"
         assert r2.tool_calls[0].name == "foo"
         assert r3.content == "last"
+
     asyncio.run(_go())

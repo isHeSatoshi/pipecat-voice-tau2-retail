@@ -1,22 +1,37 @@
-"""Concrete failure-mode checks.
-
-Three checks live here. Each is a small function that walks
-``SimulationRun.messages`` looking for a specific pattern. The names
-and signatures are stable; add new failure modes by writing a new file
-in this package and registering it in ``pipecat_voice.eval.__init__``.
-
-All checks are pure (no I/O, no LLM, no global state) so they can be
-called from the runner, from a CLI subcommand, or from the viewer.
-"""
 from __future__ import annotations
 
+import re
 from collections import Counter
 from dataclasses import dataclass
-from typing import Iterable
 
 from tau2.data_model.message import AssistantMessage, ToolMessage
 from tau2.data_model.simulation import SimulationRun
 from tau2.data_model.tasks import Task
+
+AUTH_TOOL_PREFIXES = ("find_user_id",)
+WRITE_TOOL_NAMES = {
+    "cancel_pending_order",
+    "exchange_delivered_order_items",
+    "modify_pending_order_address",
+    "modify_pending_order_items",
+    "modify_pending_order_payment",
+    "modify_user_address",
+    "return_delivered_order_items",
+}
+AFFIRMATIVE = re.compile(
+    r"\b(yes|yeah|yep|go ahead|please proceed|proceed|confirm|do it|sounds good)\b",
+    re.IGNORECASE,
+)
+NO_ARG_TOOL_NAMES = {"list_all_product_types"}
+TOOL_ERROR_MARKERS = (
+    "missing 1 required",
+    "missing required",
+    "unexpected keyword argument",
+    "unexpected_arguments",
+    "invalid_tool_arguments",
+    "not found",
+    "error:",
+)
 
 
 @dataclass
@@ -26,161 +41,143 @@ class CheckResult:
     message: str
 
 
-# ---------------------------------------------------------------------------
-# Helpers
-# ---------------------------------------------------------------------------
-
-
 def _assistant_messages(sim_run: SimulationRun) -> list[AssistantMessage]:
     return [m for m in (sim_run.messages or []) if isinstance(m, AssistantMessage)]
 
 
-def _tool_call_signatures(sim_run: SimulationRun) -> list[tuple[str, tuple]]:
-    """Return ``[(tool_name, frozenset(args.items())), ...]`` for assistant
-    tool calls, in chronological order.
-    """
-    out: list[tuple[str, tuple]] = []
-    for m in _assistant_messages(sim_run):
-        if not m.tool_calls:
-            continue
-        for tc in m.tool_calls:
-            args = tuple(sorted((tc.arguments or {}).items()))
-            out.append((tc.name, args))
+def _tool_call_signatures(sim_run: SimulationRun) -> list[tuple[str, str]]:
+    out: list[tuple[str, str]] = []
+    for message in _assistant_messages(sim_run):
+        for call in message.tool_calls or []:
+            args = call.arguments or {}
+            out.append((call.name, repr(sorted(args.items()))))
     return out
 
 
-def _tool_results(sim_run: SimulationRun) -> list[ToolMessage]:
-    return [m for m in (sim_run.messages or []) if isinstance(m, ToolMessage)]
-
-
-# ---------------------------------------------------------------------------
-# auth_loop
-# ---------------------------------------------------------------------------
-
-
 def check_auth_loop(sim_run: SimulationRun, task: Task) -> CheckResult:
-    """Fail when the agent re-calls the same authentication tool with
-    identical arguments within the first N turns.
-
-    Concretely: if the same ``(tool_name, args)`` signature appears
-    >= 3 times in the agent's tool-call sequence, the agent is stuck
-    asking the same authentication question instead of advancing.
-    """
-    sigs = _tool_call_signatures(sim_run)
-    if not sigs:
+    auth_calls = [
+        signature
+        for signature in _tool_call_signatures(sim_run)
+        if signature[0].startswith(AUTH_TOOL_PREFIXES)
+    ]
+    repeated = [
+        (name, count) for name, count in Counter(auth_calls).items() if count >= 2
+    ]
+    if repeated:
+        name, count = repeated[0]
         return CheckResult(
             "auth_loop",
-            passed=True,
-            message="no tool calls",
+            False,
+            f"authentication tool `{name}` repeated the same call {count} times",
         )
-    counts = Counter(sigs)
-    most_common, hits = counts.most_common(1)[0]
-    if hits >= 3:
-        name, args = most_common
+    auth_prompts = sum(
+        1
+        for message in _assistant_messages(sim_run)
+        if not message.tool_calls
+        and re.search(
+            r"\b(authenticate|verification|verify your|zip code|email address|first name|last name)\b",
+            message.content or "",
+            re.IGNORECASE,
+        )
+    )
+    if auth_prompts >= 3:
         return CheckResult(
             "auth_loop",
-            passed=False,
-            message=(
-                f"tool `{name}` called {hits}x with the same arguments "
-                f"({dict(args)}) — agent is looping on auth"
-            ),
+            False,
+            f"agent asked for authentication details {auth_prompts} times",
         )
-    # Also flag: any repeated (>=2) auth-style call within the first 5
-    # tool calls.
-    if len(sigs) >= 2:
-        first_window = sigs[:5]
-        first_counts = Counter(first_window)
-        sig2, hits2 = first_counts.most_common(1)[0]
-        if hits2 >= 2 and sig2[0].startswith("find_user_id_"):
-            name, args = sig2
-            return CheckResult(
-                "auth_loop",
-                passed=False,
-                message=(
-                    f"auth tool `{name}` called {hits2}x in first 5 turns "
-                    f"with the same args ({dict(args)}) — agent looping on auth"
-                ),
-            )
     return CheckResult(
         "auth_loop",
-        passed=True,
-        message=f"no auth loop ({len(sigs)} unique tool-call signatures)",
+        True,
+        f"no repeated authentication call; auth prompts={auth_prompts}",
     )
 
 
-# ---------------------------------------------------------------------------
-# no_tool_calls
-# ---------------------------------------------------------------------------
-
-
-def check_no_tool_calls(sim_run: SimulationRun, task: Task) -> CheckResult:
-    """Fail when the agent never made a tool call.
-
-    Pure text replies without ever inspecting state usually mean the
-    agent gave up (or hallucinated an answer).
-    """
-    sigs = _tool_call_signatures(sim_run)
-    if not sigs:
+def check_tool_argument_integrity(sim_run: SimulationRun, task: Task) -> CheckResult:
+    failures: list[str] = []
+    for message in sim_run.messages or []:
+        if isinstance(message, AssistantMessage):
+            for call in message.tool_calls or []:
+                if not call.arguments and call.name not in NO_ARG_TOOL_NAMES:
+                    failures.append(f"{call.name} called with empty arguments")
+        elif isinstance(message, ToolMessage):
+            text = message.content or ""
+            if message.error or any(
+                marker in text.lower() for marker in TOOL_ERROR_MARKERS
+            ):
+                failures.append(f"{message.id}: {text[:180]}")
+    if failures:
         return CheckResult(
-            "no_tool_calls",
-            passed=False,
-            message="agent never invoked a tau2 tool",
+            "tool_argument_integrity",
+            False,
+            "; ".join(failures[:5]),
         )
+    calls = _tool_call_signatures(sim_run)
     return CheckResult(
-        "no_tool_calls",
-        passed=True,
-        message=f"{len(sigs)} tool calls",
+        "tool_argument_integrity",
+        True,
+        f"{len(calls)} calls passed recorded argument/error checks",
     )
 
 
-# ---------------------------------------------------------------------------
-# premature_stop
-# ---------------------------------------------------------------------------
+def _confirmed_before(messages, index: int) -> bool:
+    previous = [messages[cursor] for cursor in range(index - 1, -1, -1)]
+    previous = [
+        message for message in previous if getattr(message, "role", "") != "tool"
+    ]
+    if len(previous) < 2:
+        return False
+    confirmation, proposal = previous[0], previous[1]
+    return bool(
+        getattr(proposal, "role", "") == "assistant"
+        and not getattr(proposal, "tool_calls", None)
+        and getattr(proposal, "content", None)
+        and getattr(confirmation, "role", "") == "user"
+        and AFFIRMATIVE.search(confirmation.content or "")
+    )
 
 
-def check_premature_stop(sim_run: SimulationRun, task: Task) -> CheckResult:
-    """Fail when the conversation ended with ``###STOP###`` / transfer
-    while a gold action still needs to be taken.
-
-    Concretely: if ``termination_reason`` is ``user_stop`` AND the gold
-    trajectory has any write-tool action (``cancel_pending_order``,
-    ``modify_pending_order_address``, ``modify_pending_order_items``,
-    ``modify_pending_order_payment``, ``return_delivered_order_items``,
-    ``exchange_delivered_order_items``), the conversation ended too
-    early. We don't penalise user_stop for pure read-only tasks.
-    """
-    reason = sim_run.termination_reason
-    if reason != "user_stop":
-        return CheckResult(
-            "premature_stop",
-            passed=True,
-            message=f"termination={reason!r} (not user_stop)",
-        )
-
-    write_actions = {"transfer_to_human_agents"}  # transfer is the user's escape; not a failure
-    if task.evaluation_criteria is None or task.evaluation_criteria.actions is None:
-        return CheckResult(
-            "premature_stop",
-            passed=True,
-            message="no gold actions to compare",
-        )
-    for a in task.evaluation_criteria.actions:
-        if a.name in write_actions:
+def check_write_protocol(sim_run: SimulationRun, task: Task) -> CheckResult:
+    messages = sim_run.messages or []
+    called_names: list[str] = []
+    tool_results = {
+        message.id: message for message in messages if isinstance(message, ToolMessage)
+    }
+    failures: list[str] = []
+    for index, message in enumerate(messages):
+        if not isinstance(message, AssistantMessage):
             continue
-        if a.requestor == "user":
-            continue  # user-side actions are not the agent's job
-        # Anything else that the gold trajectory calls, the agent
-        # should have called or got close to. Flag if nothing was
-        # attempted at all.
-    sigs = _tool_call_signatures(sim_run)
-    if not sigs:
-        return CheckResult(
-            "premature_stop",
-            passed=False,
-            message="user stopped with zero agent tool calls — bailed before any work",
+        calls = message.tool_calls or []
+        called_names.extend(call.name for call in calls)
+        if len(calls) > 1:
+            failures.append(f"batch contained {len(calls)} tool calls")
+        for call in calls:
+            if call.name in WRITE_TOOL_NAMES:
+                if not _confirmed_before(messages, index):
+                    failures.append(
+                        f"{call.name} lacked immediate explicit confirmation"
+                    )
+                result = tool_results.get(call.id)
+                if result is None:
+                    failures.append(f"{call.name} has no recorded result")
+                elif result.error:
+                    failures.append(f"{call.name} failed: {result.content}")
+    expected_writes = {
+        action.name
+        for action in (
+            task.evaluation_criteria.actions if task.evaluation_criteria else []
         )
+        or []
+        if getattr(action, "requestor", "assistant") == "assistant"
+        and action.name in WRITE_TOOL_NAMES
+    }
+    actual_writes = {name for name in called_names if name in WRITE_TOOL_NAMES}
+    if expected_writes and not actual_writes:
+        failures.append("no expected write action was attempted")
+    if failures:
+        return CheckResult("write_protocol", False, "; ".join(failures))
     return CheckResult(
-        "premature_stop",
-        passed=True,
-        message=f"user_stop after {len(sigs)} tool calls",
+        "write_protocol",
+        True,
+        f"write calls={len(actual_writes)}, expected write categories={len(expected_writes)}",
     )

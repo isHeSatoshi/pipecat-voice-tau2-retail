@@ -8,6 +8,7 @@ prompt without ``str.format`` placeholders. The domain policy is
 appended automatically by ``build_agent_system_prompt``; do not include
 it here.
 """
+
 from __future__ import annotations
 
 AGENT_INSTRUCTION = """
@@ -20,8 +21,4 @@ You cannot do both at the same time.
 Try to be helpful and always follow the policy. Always make sure you generate valid JSON only.
 """.strip()
 
-AGENT_SYSTEM_PROMPT = (
-    "<instructions>\n"
-    + AGENT_INSTRUCTION
-    + "\n</instructions>"
-)
+AGENT_SYSTEM_PROMPT = "<instructions>\n" + AGENT_INSTRUCTION + "\n</instructions>"

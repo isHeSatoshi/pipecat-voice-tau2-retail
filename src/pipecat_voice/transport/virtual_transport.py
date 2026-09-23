@@ -39,18 +39,19 @@ but going through Pipecat's standard transport abstraction gives us:
 - A clean separation that lets us swap in a real transport (Daily,
   WebRTC, ...) later by replacing only this module
 """
+
 from __future__ import annotations
 
 import asyncio
+import wave
 from dataclasses import dataclass, field
-from typing import Any, Optional
+from pathlib import Path
+from typing import Optional
 
 from loguru import logger
-from pydantic import ConfigDict
-from pipecat.audio.vad.vad_analyzer import VADAnalyzer, VADState
 from pipecat.audio.vad.silero import SileroVADAnalyzer
+from pipecat.audio.vad.vad_analyzer import VADAnalyzer, VADState
 from pipecat.frames.frames import (
-    AudioRawFrame,
     CancelFrame,
     EndFrame,
     Frame,
@@ -63,6 +64,7 @@ from pipecat.frames.frames import (
 )
 from pipecat.processors.frame_processor import FrameDirection, FrameProcessor
 from pipecat.transports.base_transport import BaseTransport, TransportParams
+from pydantic import ConfigDict
 
 # 20 ms frames at 16 kHz, 16-bit mono = 640 bytes. Pipecat's transport defaults
 # match this; we mirror them so the in-memory pipeline behaves like a real one.
@@ -160,6 +162,11 @@ class VirtualInputProcessor(FrameProcessor):
         self._chunk_buffer = bytearray()
         self._sample_buffer = bytearray()  # for VAD analysis (concatenated PCM)
         self._pump_task = None
+        self._last_error: str | None = None
+
+    @property
+    def last_error(self) -> str | None:
+        return self._last_error
 
     async def setup(self, setup) -> None:
         await super().setup(setup)
@@ -167,6 +174,7 @@ class VirtualInputProcessor(FrameProcessor):
         self._chunk_buffer = bytearray()
         self._sample_buffer = bytearray()
         self._vad_state = False
+        self._last_error = None
 
     async def process_frame(self, frame: Frame, direction: FrameDirection):
         await super().process_frame(frame, direction)
@@ -193,6 +201,11 @@ class VirtualInputProcessor(FrameProcessor):
             except Exception:
                 pass
             self._pump_task = None
+        if self._vad is not None:
+            try:
+                await self._vad.cleanup()
+            except Exception:
+                pass
         await super().cleanup()
 
     async def _pump(self) -> None:
@@ -262,7 +275,8 @@ class VirtualInputProcessor(FrameProcessor):
             try:
                 state = await self._vad.analyze_audio(audio_window)
             except Exception as e:
-                logger.debug(f"{self.name}: VAD failed: {e}")
+                self._last_error = str(e)
+                logger.warning(f"{self.name}: VAD failed: {e}")
                 return
             # Only SPEAKING/QUIET are stable; STARTING/STOPPING are transitional.
             if state == VADState.SPEAKING and not self._vad_state:
@@ -292,12 +306,36 @@ class VirtualOutputProcessor(FrameProcessor):
         *,
         bus: AudioBus,
         direction: str,
+        sample_rate: int = DEFAULT_SAMPLE_RATE,
+        channels: int = DEFAULT_CHANNELS,
+        audio_path: Path | None = None,
         name: str | None = None,
     ):
         super().__init__(name=name or f"VirtualOutput[{direction}]")
         self._bus = bus
         self._direction = direction
         self._buffer = bytearray()
+        self._audio_path = audio_path
+        self._wave = None
+        self._audio_sample_rate = sample_rate
+        self._audio_channels = 1
+
+    def _write_audio(self, frame: OutputAudioRawFrame) -> None:
+        if self._audio_path is None:
+            return
+        if self._wave is None:
+            self._audio_path.parent.mkdir(parents=True, exist_ok=True)
+            self._wave = wave.open(str(self._audio_path), "wb")
+            self._wave.setnchannels(frame.num_channels or self._audio_channels)
+            self._wave.setsampwidth(2)
+            self._wave.setframerate(frame.sample_rate or self._audio_sample_rate)
+        self._wave.writeframes(frame.audio)
+
+    async def cleanup(self) -> None:
+        if self._wave is not None:
+            self._wave.close()
+            self._wave = None
+        await super().cleanup()
 
     async def process_frame(self, frame: Frame, direction: FrameDirection):
         await super().process_frame(frame, direction)
@@ -306,6 +344,7 @@ class VirtualOutputProcessor(FrameProcessor):
             and not isinstance(frame, InputAudioRawFrame)
             and direction == FrameDirection.DOWNSTREAM
         ):
+            self._write_audio(frame)
             self._buffer.extend(frame.audio)
             # Flush in ~20 ms slices so the bus does not see megabyte chunks.
             slice_bytes = frame.sample_rate * frame.num_channels * 2 * 20 // 1000
@@ -343,6 +382,7 @@ class VirtualTransportParams(TransportParams):
     audio_out_sample_rate: int = DEFAULT_SAMPLE_RATE
     channels: int = DEFAULT_CHANNELS
     frame_ms: int = DEFAULT_FRAME_MS
+    audio_path: Path | None = None
 
 
 class VirtualTransport(BaseTransport):
@@ -383,6 +423,9 @@ class VirtualTransport(BaseTransport):
             self._output = VirtualOutputProcessor(
                 bus=self._params.bus,
                 direction=opposite,
+                sample_rate=self._params.sample_rate,
+                channels=self._params.channels,
+                audio_path=self._params.audio_path,
                 name=self._output_name,
             )
         return self._output
@@ -394,4 +437,6 @@ def make_default_vad(sample_rate: int = DEFAULT_SAMPLE_RATE) -> SileroVADAnalyze
     ``SileroVADAnalyzer`` is the standard Pipecat VAD, used by every official
     transport. Defaults are tuned for 16 kHz mono.
     """
-    return SileroVADAnalyzer(sample_rate=sample_rate)
+    analyzer = SileroVADAnalyzer(sample_rate=sample_rate)
+    analyzer.set_sample_rate(sample_rate)
+    return analyzer

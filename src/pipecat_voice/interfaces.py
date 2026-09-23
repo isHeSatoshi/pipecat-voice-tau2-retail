@@ -8,11 +8,11 @@ of constructing different concrete objects at runner setup time.
 This module is intentionally small and free of heavy imports so it can be
 used in tests and the CLI without pulling in Pipecat or audio backends.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field
 from typing import Any, AsyncIterator, Callable, Protocol, runtime_checkable
-
 
 # =============================================================================
 # STT

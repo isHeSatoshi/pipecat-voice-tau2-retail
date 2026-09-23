@@ -5,10 +5,11 @@ did not connect "I have the user id" to "move on". v2 makes the advance
 explicit and unconditional: the moment a lookup returns a user id, the
 next action MUST be an order/product tool, never another lookup.
 """
+
 from __future__ import annotations
 
-from pipecat_voice.prompts.v1 import TOOL_DISCIPLINE, VOICE_TURN_RULES
 from pipecat_voice.prompts.baseline import AGENT_INSTRUCTION
+from pipecat_voice.prompts.v1 import TOOL_DISCIPLINE, VOICE_TURN_RULES
 
 ADVANCE_RULE = """
 Advancing past authentication (read carefully — this fixes the most

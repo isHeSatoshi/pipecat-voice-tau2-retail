@@ -12,17 +12,21 @@ This module is the only place that translates between tau2 data classes and
 Pipecat data classes for the LLM context. Keeping it isolated means the rest
 of the harness does not need to know about tau2 internals.
 """
+
 from __future__ import annotations
 
+import json
 from typing import Any, Optional
 
 from loguru import logger
-
 from tau2.data_model.tasks import Task
 from tau2.environment.environment import Environment
 
-from pipecat_voice.tau2.tool_bridge import build_function_schemas, bind_handlers
-
+from pipecat_voice.tau2.tool_bridge import (
+    ToolExecutionPolicy,
+    bind_handlers,
+    build_function_schemas,
+)
 
 AGENT_INSTRUCTION = """
 You are a customer service agent that helps the user according to the <policy> provided below.
@@ -44,7 +48,9 @@ SYSTEM_PROMPT_TEMPLATE = """
 """.strip()
 
 
-def build_agent_system_prompt(domain_policy: str, override: Optional[str] = None) -> str:
+def build_agent_system_prompt(
+    domain_policy: str, override: Optional[str] = None
+) -> str:
     """Construct the system prompt tau2's ``LLMAgent`` would use.
 
     If ``override`` is given (from ``--prompt-variant``), use it verbatim
@@ -72,18 +78,18 @@ def build_user_system_prompt(persona_text: str, scenario_text: str) -> str:
     applied at the integration boundary so the streaming LLM knows when to
     emit ``###STOP###``.
     """
+    from tau2.user.user_simulator import get_global_user_sim_guidelines_voice
+
+    guidelines = get_global_user_sim_guidelines_voice(use_tools=False)
+    persona = persona_text.strip() or "No additional persona was provided."
     return (
-        "You are simulating a customer in a phone conversation with a customer "
-        "service agent. Stay in character. Speak in short, natural sentences "
-        "as if you were on a phone call. Do not narrate or describe the agent.\n\n"
-        f"<persona>\n{persona_text}\n</persona>\n\n"
+        f"{guidelines}\n\n"
+        f"<persona>\n{persona}\n</persona>\n\n"
         f"<scenario>\n{scenario_text}\n</scenario>\n\n"
-        "When you have completed the scenario (the agent has resolved your "
-        "request, or the conversation has reached a natural end), reply with "
-        "the single token ###STOP### and nothing else. If the agent says it "
-        "is transferring you to a human, you may reply with ###TRANSFER###. "
-        "If the agent cannot help with something outside the scenario, you "
-        "may reply with ###OUT-OF-SCOPE###."
+        "VOICE EFFICIENCY: Keep every response under 40 spoken words. "
+        "Reveal only the detail the agent just requested. Do not recap the "
+        "scenario, repeat the agent's wording, or ask multiple confirmation "
+        "questions in one turn."
     ).strip()
 
 
@@ -128,9 +134,6 @@ def _to_openai_message(msg) -> dict[str, Any]:
     return out
 
 
-import json
-
-
 def build_tools_and_context(env: Environment, task: Task) -> dict[str, Any]:
     """Build everything needed to construct a Pipecat ``LLMContext``.
 
@@ -149,9 +152,15 @@ def build_tools_and_context(env: Environment, task: Task) -> dict[str, Any]:
     system = build_agent_system_prompt(env.get_policy(), override=override)
     messages = build_initial_messages(task)
     schemas = build_function_schemas(env.get_tools())
-    bind_handlers(schemas, env)
+    tool_policy = ToolExecutionPolicy()
+    bind_handlers(schemas, env, policy=tool_policy)
     logger.debug(f"Built {len(schemas)} tau2 tool schemas for task {task.id}")
-    return {"system": system, "messages": messages, "tools": schemas}
+    return {
+        "system": system,
+        "messages": messages,
+        "tools": schemas,
+        "tool_policy": tool_policy,
+    }
 
 
 def set_agent_system_prompt_override(text: Optional[str]) -> None:

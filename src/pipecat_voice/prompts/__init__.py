@@ -8,18 +8,19 @@ that becomes the agent's system message. The CLI flag
 Variants are *prompt-only* — no pipeline or tool changes. Adding a new
 variant is as simple as dropping a new file in this directory.
 """
+
 from __future__ import annotations
 
-from typing import Callable, Dict
+from typing import Dict
 
-from pipecat_voice.prompts import baseline, v1, v2, v3
-
+from pipecat_voice.prompts import baseline, v1, v2, v3, v4
 
 _REGISTRY: Dict[str, object] = {
     "baseline": baseline,
     "v1": v1,
     "v2": v2,
     "v3": v3,
+    "v4": v4,
 }
 
 

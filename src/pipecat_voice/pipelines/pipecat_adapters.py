@@ -9,29 +9,30 @@ These adapters wrap them so they plug into Pipecat's ``Pipeline`` graph
 unchanged. They do NOT override any deep behaviour; they only translate
 between Pipecat's frame types and our protocol method signatures.
 """
+
 from __future__ import annotations
 
 import asyncio
-import json
 import time
-from typing import Any, AsyncIterator, Optional
+from typing import AsyncIterator
 
 from loguru import logger
-
 from pipecat.frames.frames import (
     CancelFrame,
     EndFrame,
-    ErrorFrame,
     Frame,
     InputAudioRawFrame,
     InterimTranscriptionFrame,
     LLMFullResponseEndFrame,
     LLMFullResponseStartFrame,
     LLMMessagesAppendFrame,
+    LLMTextFrame,
     StartFrame,
     TextFrame,
     TranscriptionFrame,
     TTSAudioRawFrame,
+    TTSStartedFrame,
+    TTSStoppedFrame,
     UserStartedSpeakingFrame,
     UserStoppedSpeakingFrame,
 )
@@ -42,7 +43,6 @@ from pipecat.services.stt_service import STTService
 from pipecat.services.tts_service import TTSService
 
 from pipecat_voice.interfaces import LLMResponse
-
 
 # =============================================================================
 # STT adapter
@@ -72,7 +72,7 @@ class ProtocolSTTService(STTService):
         stt_impl,  # pipecat_voice.interfaces.STTProtocol
         sample_rate: int = 16000,
         name: str | None = None,
-        utterance_window_secs: float = 12.0,
+        utterance_window_secs: float = 30.0,
         **kwargs,
     ):
         # audio_passthrough=False is LOAD-BEARING: forwarding input audio
@@ -105,16 +105,21 @@ class ProtocolSTTService(STTService):
         self._audio_in_bytes = 0
         self._audio_in_frames = 0
         self._flush_count = 0
+        self._last_error: str | None = None
+
+    @property
+    def last_error(self) -> str | None:
+        return self._last_error
 
     async def process_frame(self, frame: Frame, direction: FrameDirection):
         if isinstance(frame, StartFrame):
+            self._last_error = None
             await super().process_frame(frame, direction)
             if self._gap_task is None:
                 try:
                     self._gap_task = self.create_task(self._gap_flush_loop())
                 except Exception:
                     self._gap_task = asyncio.create_task(self._gap_flush_loop())
-            await self.push_frame(frame, direction)
             return
         if isinstance(frame, (CancelFrame, EndFrame)):
             await super().process_frame(frame, direction)
@@ -124,7 +129,6 @@ class ProtocolSTTService(STTService):
                 except Exception:
                     pass
                 self._gap_task = None
-            await self.push_frame(frame, direction)
             return
         if isinstance(frame, UserStartedSpeakingFrame):
             self._speaking = True
@@ -165,6 +169,7 @@ class ProtocolSTTService(STTService):
                 await asyncio.sleep(0.4)
                 if (
                     self._buf
+                    and not self._speaking
                     and self._last_append
                     and (_time.monotonic() - self._last_append) > 1.2
                 ):
@@ -188,6 +193,7 @@ class ProtocolSTTService(STTService):
         try:
             result = await self._impl.transcribe(pcm, self._sample_rate)
         except Exception as e:
+            self._last_error = str(e)
             logger.warning(f"{self.name}: transcribe failed: {e}")
             return
         if not result.text:
@@ -281,8 +287,51 @@ class ProtocolTTSService(TTSService):
         super().__init__(sample_rate=sample_rate, name=name or "ProtocolTTS", **kwargs)
         self._impl = tts_impl
         self._sample_rate = sample_rate
+        self._turn_text: dict[str | None, str] = {}
+        self._last_error: str | None = None
 
-    async def run_tts(self, text: str, context_id: str | None = None) -> AsyncIterator[Frame]:
+    @property
+    def last_error(self) -> str | None:
+        return self._last_error
+
+    @staticmethod
+    def _context_id(frame: Frame) -> str | None:
+        return getattr(frame, "context_id", None)
+
+    async def process_frame(self, frame: Frame, direction: FrameDirection):
+        if isinstance(frame, LLMFullResponseStartFrame):
+            self._last_error = None
+            self._turn_text[self._context_id(frame)] = ""
+            await self.push_frame(frame, direction)
+        elif isinstance(frame, (LLMTextFrame, TextFrame)) and getattr(
+            frame, "text", ""
+        ):
+            context_id = self._context_id(frame)
+            self._turn_text[context_id] = self._turn_text.get(context_id, "") + (
+                frame.text or ""
+            )
+        elif isinstance(frame, LLMFullResponseEndFrame):
+            context_id = self._context_id(frame)
+            text = self._turn_text.pop(context_id, "").strip()
+            if text:
+                await self.push_frame(TTSStartedFrame(), direction)
+                try:
+                    await self.process_generator(
+                        self.run_tts(text, context_id=context_id)
+                    )
+                except Exception as e:
+                    self._last_error = str(e)
+                    logger.warning(f"{self.name}: synthesis failed: {e}")
+                finally:
+                    await self.push_frame(TTSStoppedFrame(), direction)
+                await self.push_frame(TextFrame(text=text), direction)
+            await self.push_frame(frame, direction)
+        else:
+            await super().process_frame(frame, direction)
+
+    async def run_tts(
+        self, text: str, context_id: str | None = None
+    ) -> AsyncIterator[Frame]:
         async for chunk in self._impl.synthesize(text):
             if not chunk.pcm:
                 continue
@@ -354,8 +403,10 @@ class ProtocolLLMService(LLMService):
 
         if response.tool_calls:
             # Surface tool calls via FunctionCallInProgressFrame + the context.
-            from pipecat.adapters.schemas.function_schema import FunctionSchema
-            from pipecat.frames.frames import FunctionCallInProgressFrame, FunctionCallResultFrame
+            from pipecat.frames.frames import (
+                FunctionCallInProgressFrame,
+                FunctionCallResultFrame,
+            )
 
             for tc in response.tool_calls:
                 yield FunctionCallInProgressFrame(

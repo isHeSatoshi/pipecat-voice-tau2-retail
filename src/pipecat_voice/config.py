@@ -20,6 +20,7 @@ goes through the standard ``x-api-key`` header (the Anthropic SDK handles
 this). No data leaves the Anthropic SDK beyond what the MiniMax endpoint
 exposes.
 """
+
 from __future__ import annotations
 
 import os
@@ -80,6 +81,7 @@ class VoiceConfig:
 
     # --- Prompt overrides (set by CLI --prompt-variant) ---
     agent_system_prompt_override: Optional[str] = None
+    prompt_variant: str = "baseline"
 
     def __post_init__(self) -> None:
         # Normalise paths.
@@ -130,13 +132,12 @@ class VoiceConfig:
         # MiniMax is reached via the Anthropic-compatible endpoint. The key
         # the user pasted into tau2-bench/.env is ANTHROPIC_API_KEY; we
         # accept MINIMAX_API_KEY as an override if both are present.
-        minimax_api_key = (
-            _env("MINIMAX_API_KEY", "")
-            or _env("ANTHROPIC_API_KEY", "")
+        minimax_api_key = _env("MINIMAX_API_KEY", "") or _env("ANTHROPIC_API_KEY", "")
+        minimax_api_base = (
+            _env("MINIMAX_API_BASE", "")
+            or _env("ANTHROPIC_API_BASE", "")
+            or "https://api.minimax.io/anthropic"
         )
-        minimax_api_base = _env("MINIMAX_API_BASE", "") or _env(
-            "ANTHROPIC_API_BASE", ""
-        ) or "https://api.minimax.io/anthropic"
 
         cfg = cls(
             domain=_env("TAU2_DOMAIN", "retail"),
@@ -149,16 +150,28 @@ class VoiceConfig:
             minimax_api_base=minimax_api_base,
             stt_impl=_env("PIPECAT_VOICE_STT", "parakeet"),
             tts_impl=_env("PIPECAT_VOICE_TTS", "chatterbox"),
-            parakeet_model=_env("PIPECAT_PARAKEET_MODEL", "nvidia/parakeet-tdt-0.6b-v3"),
+            parakeet_model=_env(
+                "PIPECAT_PARAKEET_MODEL", "nvidia/parakeet-tdt-0.6b-v3"
+            ),
             chatterbox_voice=_env("PIPECAT_CHATTERBOX_VOICE", "default"),
             sample_rate=_env_int("PIPECAT_VOICE_SAMPLE_RATE", 16000),
             max_conversation_seconds=_env_int("PIPECAT_VOICE_MAX_SECONDS", 240),
             seed=_env_int("PIPECAT_VOICE_SEED", 42),
-            out_dir=Path(_env("PIPECAT_VOICE_OUT_DIR", str(PROJECT_ROOT / "data" / "runs"))),
+            out_dir=Path(
+                _env("PIPECAT_VOICE_OUT_DIR", str(PROJECT_ROOT / "data" / "runs"))
+            ),
             run_name=_env("PIPECAT_VOICE_RUN_NAME", "default"),
             enable_vad=_env_bool("PIPECAT_VOICE_VAD", True),
             enable_metrics=_env_bool("PIPECAT_VOICE_METRICS", True),
+            prompt_variant=_env("PIPECAT_AGENT_PROMPT", "baseline"),
         )
+        if (
+            cfg.prompt_variant != "baseline"
+            and cfg.agent_system_prompt_override is None
+        ):
+            from pipecat_voice.prompts import load_agent_prompt
+
+            cfg.agent_system_prompt_override = load_agent_prompt(cfg.prompt_variant)
         return cfg
 
     def merge_cli(self, **overrides) -> "VoiceConfig":

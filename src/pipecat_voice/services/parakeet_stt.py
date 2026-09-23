@@ -9,17 +9,21 @@ the audio bus delivers small chunks.
 This module imports ``nemo.collections.asr`` lazily so the harness still
 imports cleanly when Parakeet is not installed (use ``--stt dummy``).
 """
+
 from __future__ import annotations
 
 import asyncio
-import io
-import wave
+from concurrent.futures import ThreadPoolExecutor
 from dataclasses import dataclass, field
 from typing import Any
 
 from loguru import logger
 
 from pipecat_voice.interfaces import STTResult
+
+_PARAKEET_EXECUTOR = ThreadPoolExecutor(
+    max_workers=1, thread_name_prefix="parakeet-gpu"
+)
 
 
 @dataclass
@@ -73,12 +77,15 @@ class ParakeetSTT:
 
         self._ensure_model()
 
-        loop = asyncio.get_event_loop()
-        text = await loop.run_in_executor(None, self._infer, pcm_bytes, sample_rate)
+        loop = asyncio.get_running_loop()
+        text = await loop.run_in_executor(
+            _PARAKEET_EXECUTOR, self._infer, pcm_bytes, sample_rate
+        )
         return STTResult(text=text.strip(), confidence=1.0, is_final=True)
 
     def _infer(self, pcm_bytes: bytes, sample_rate: int) -> str:
         import numpy as np
+
         # Decode 16-bit PCM mono bytes to float32 in [-1, 1].
         audio = np.frombuffer(pcm_bytes, dtype=np.int16).astype(np.float32) / 32768.0
         if audio.size == 0:

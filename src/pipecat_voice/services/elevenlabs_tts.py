@@ -4,6 +4,7 @@ Thin stub so the harness can be invoked with ``--tts elevenlabs`` without
 forcing a hard dependency on the ElevenLabs SDK at import time. Real
 implementations should subclass Pipecat's ``ElevenLabsTTSService``.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass

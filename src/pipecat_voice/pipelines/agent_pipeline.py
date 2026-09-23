@@ -28,16 +28,13 @@ We let Pipecat drive everything; the only custom logic is the
 ``Tau2ToolExecutor`` registered as the ``handler`` on each tool schema and
 the ``TraceObserver`` that records events to JSONL.
 """
+
 from __future__ import annotations
 
-import asyncio
 from dataclasses import dataclass
-from typing import Any, Optional
+from typing import Any
 
 from loguru import logger
-
-from pipecat.frames.frames import EndFrame, Frame, LLMRunFrame, StartFrame, StopTaskFrame
-from pipecat.observers.base_observer import BaseObserver
 from pipecat.pipeline.base_pipeline import BasePipeline
 from pipecat.pipeline.pipeline import Pipeline
 from pipecat.processors.aggregators.llm_context import LLMContext
@@ -52,13 +49,13 @@ from pipecat_voice.config import VoiceConfig
 from pipecat_voice.observability.trace_writer import TraceWriter
 from pipecat_voice.transport.virtual_transport import (
     VirtualTransport,
-    VirtualTransportParams,
 )
 
 
 def _build_tools_and_context_lazy(env, task):
     """Lazy import to avoid a circular dep with pipecat_voice.tau2.__init__."""
     from pipecat_voice.tau2.context import build_tools_and_context
+
     return build_tools_and_context(env, task)
 
 
@@ -121,6 +118,7 @@ def build_agent_pipeline(
     if system:
         messages = [{"role": "system", "content": system}, *messages]
     context = LLMContext(messages=messages, tools=tools)
+    ctx_dict["tool_policy"].attach_context(context)
 
     # User aggregator: collects user transcript frames, appends to context,
     # triggers the LLM. Assistant aggregator: streams LLM output into TTS

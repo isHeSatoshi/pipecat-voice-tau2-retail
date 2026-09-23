@@ -25,16 +25,14 @@ The real implementations (Parakeet, Chatterbox, MiniMax) are imported lazily
 only when the corresponding CLI flag is set, so ``--stt dummy`` works even if
 ``nemo_toolkit`` is not installed.
 """
+
 from __future__ import annotations
 
 import asyncio
-import json
-import struct
 from dataclasses import dataclass, field
 from typing import Any, AsyncIterator
 
 from pipecat_voice.interfaces import LLMResponse, LLMToolCall, STTResult, TTSChunk
-
 
 # =============================================================================
 # STT
@@ -86,8 +84,16 @@ class DummyTTS:
         total_ms = max(self.chunk_ms, 200)
         n_chunks = total_ms // self.chunk_ms
         for _ in range(n_chunks):
-            yield TTSChunk(pcm=b"\x00" * bytes_per_chunk, sample_rate=self.sample_rate_out, is_final=False)
-        yield TTSChunk(pcm=b"\x00" * bytes_per_chunk, sample_rate=self.sample_rate_out, is_final=True)
+            yield TTSChunk(
+                pcm=b"\x00" * bytes_per_chunk,
+                sample_rate=self.sample_rate_out,
+                is_final=False,
+            )
+        yield TTSChunk(
+            pcm=b"\x00" * bytes_per_chunk,
+            sample_rate=self.sample_rate_out,
+            is_final=True,
+        )
 
 
 # =============================================================================
@@ -107,7 +113,9 @@ class DummyLLM:
     scripted: list[LLMResponse] = field(default_factory=list)
     default_text: str = "Hello, this is a dummy agent reply."
     fallback_tool_name: str = "transfer_to_human_agents"
-    fallback_tool_args: dict[str, Any] = field(default_factory=lambda: {"summary": "out of scope"})
+    fallback_tool_args: dict[str, Any] = field(
+        default_factory=lambda: {"summary": "out of scope"}
+    )
 
     def script(self, responses: list[LLMResponse]) -> None:
         self.scripted = list(responses)
@@ -144,10 +152,14 @@ class DummyLLM:
 
 
 def scripted_text(text: str) -> LLMResponse:
-    return LLMResponse(content=text, usage={"prompt_tokens": 0, "completion_tokens": 0}, latency_ms=0.0)
+    return LLMResponse(
+        content=text, usage={"prompt_tokens": 0, "completion_tokens": 0}, latency_ms=0.0
+    )
 
 
-def scripted_tool_call(name: str, args: dict[str, Any], call_id: str = "tc") -> LLMResponse:
+def scripted_tool_call(
+    name: str, args: dict[str, Any], call_id: str = "tc"
+) -> LLMResponse:
     return LLMResponse(
         content=None,
         tool_calls=[LLMToolCall(id=call_id, name=name, arguments=args)],

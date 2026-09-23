@@ -18,20 +18,21 @@ The viewer re-scans the runs folder on every rerun (which happens when
 the user clicks **Refresh** or when **Auto-refresh** is enabled), so
 runs started in another terminal appear without restarting Streamlit.
 """
+
 from __future__ import annotations
 
 import sys
 import time
+from datetime import datetime, timedelta
 from pathlib import Path
-from typing import Iterable
 
 import streamlit as st
 
 # Make ``viewer`` importable when Streamlit runs ``app.py`` directly.
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from viewer import run_loader  # noqa: E402
 from viewer import render as R  # noqa: E402
+from viewer import run_loader  # noqa: E402
 
 DEFAULT_RUNS_ROOT = Path(__file__).resolve().parent.parent / "data" / "runs"
 
@@ -64,8 +65,19 @@ def _runs_root() -> Path:
     )
 
 
+def _run_mtime(run: run_loader.RunSummary) -> float:
+    files = [run.path / "summary.json"]
+    files.extend(run.path.glob("task_*/sim_*/trajectory.json"))
+    files.extend(run.path.glob("task_*/sim_*/voice_trace.jsonl"))
+    files.extend(run.path.glob("task_*/sim_/*.wav"))
+    return max((path.stat().st_mtime for path in files if path.exists()), default=0.0)
+
+
 def _load_runs(runs_root: Path) -> list[run_loader.RunSummary]:
-    return [run_loader.load_summary(p) for p in run_loader.discover_runs(runs_root)]
+    runs = [
+        run_loader.load_summary(path) for path in run_loader.discover_runs(runs_root)
+    ]
+    return sorted(runs, key=_run_mtime, reverse=True)
 
 
 def _sim_mtime(sim: run_loader.SimView) -> float:
@@ -74,19 +86,21 @@ def _sim_mtime(sim: run_loader.SimView) -> float:
     return max((f.stat().st_mtime for f in files if f.exists()), default=0.0)
 
 
-def _selected_run(summaries: list[run_loader.RunSummary]) -> run_loader.RunSummary | None:
+def _selected_run(
+    summaries: list[run_loader.RunSummary],
+) -> run_loader.RunSummary | None:
     if not summaries:
         return None
-    labels = [s.name if s.complete else f"{s.name} (partial)" for s in summaries]
-    # Default to the most-recently-modified run (top of the list, since
-    # discover_runs sorts alphabetically — show that and let user pick).
+    labels = []
+    for summary in summaries:
+        timestamp = datetime.fromtimestamp(_run_mtime(summary)).strftime(
+            "%Y-%m-%d %H:%M:%S"
+        )
+        suffix = "" if summary.complete else " (partial)"
+        labels.append(f"{summary.name} — {timestamp}{suffix}")
     choice = st.sidebar.selectbox("Select run", labels, index=0)
     return next(
-        (
-            s
-            for s, lbl in zip(summaries, labels)
-            if lbl == choice
-        ),
+        (s for s, lbl in zip(summaries, labels) if lbl == choice),
         summaries[0],
     )
 
@@ -99,7 +113,9 @@ def _selected_sim(run: run_loader.RunSummary) -> run_loader.SimView | None:
     # Newest sim first so an in-progress task shows up at the top.
     sims.sort(key=_sim_mtime, reverse=True)
     labels = [f"task {s.task_id} · sim {s.sim_id[:8]}" for s in sims]
-    idx = st.sidebar.selectbox("Select sim", range(len(sims)), format_func=lambda i: labels[i])
+    idx = st.sidebar.selectbox(
+        "Select sim", range(len(sims)), format_func=lambda i: labels[i]
+    )
     sim = sims[idx]
     return run_loader.load_sim(sim)
 
@@ -152,7 +168,11 @@ def page_compare(runs: list[run_loader.RunSummary]) -> None:
     fig, ax = plt.subplots(figsize=(11, max(3.0, 0.5 * len(task_ids) + 2)))
     width = 0.8 / max(1, len(runs))
     for i, r in enumerate(runs):
-        per_task = {row["task_id"]: (row["reward"] or 0.0) for row in rows if row["run"] == r.name}
+        per_task = {
+            row["task_id"]: (row["reward"] or 0.0)
+            for row in rows
+            if row["run"] == r.name
+        }
         ys = [per_task.get(t, 0.0) for t in task_ids]
         ax.barh(
             [i + j * width for j in range(len(task_ids))],
@@ -181,8 +201,18 @@ def page_run(run: run_loader.RunSummary) -> None:
     if cfg:
         st.caption(
             " · ".join(
-                f"{k}={v}" for k, v in cfg.items()
-                if k in {"domain", "stt", "tts", "agent_llm", "user_llm", "minimax_api_base", "split"}
+                f"{k}={v}"
+                for k, v in cfg.items()
+                if k
+                in {
+                    "domain",
+                    "stt",
+                    "tts",
+                    "agent_llm",
+                    "user_llm",
+                    "minimax_api_base",
+                    "split",
+                }
             )
         )
 
@@ -195,7 +225,12 @@ def page_run(run: run_loader.RunSummary) -> None:
                 {
                     "task_id": r.get("task_id"),
                     "trial": r.get("trial"),
-                    "reward": r.get("reward"),
+                    "local_reward": r.get("local_reward"),
+                    "strict_reward": r.get("reward")
+                    if r.get("strict_reward_available", True)
+                    else None,
+                    "db_match": r.get("db_match"),
+                    "actions": f"{r.get('actions_matched', 0)}/{r.get('actions_total', 0)}",
                     "termination": r.get("termination_reason"),
                     "duration_s": round(r.get("duration_seconds", 0) or 0, 1),
                     "trajectory": r.get("trajectory_path"),
@@ -214,13 +249,24 @@ def page_run(run: run_loader.RunSummary) -> None:
     st.caption(_freshness_badge(sim))
     R.render_run_header(sim)
 
-    tab_t, tab_r, tab_tr = st.tabs(["Transcript", "Reward", "Trace timeline"])
+    tab_t, tab_r, tab_tr, tab_a = st.tabs(
+        ["Transcript", "Reward", "Trace timeline", "Audio"]
+    )
     with tab_t:
         R.render_transcript(sim)
     with tab_r:
         R.render_reward(sim)
     with tab_tr:
         R.render_trace_timeline(sim)
+    with tab_a:
+        for label, filename in (
+            ("Agent audio", "agent_audio.wav"),
+            ("User audio", "user_audio.wav"),
+        ):
+            audio_path = sim.path / filename
+            if audio_path.exists():
+                st.caption(label)
+                st.audio(str(audio_path))
 
 
 # ---------------------------------------------------------------------------
@@ -248,8 +294,12 @@ def _sidebar_controls(runs: list[run_loader.RunSummary]) -> tuple[list[str], boo
         disabled=not auto_refresh,
     )
     if auto_refresh:
-        # st_autorefresh runs the script every ``refresh_secs`` ms.
-        st.autorefresh(interval=int(refresh_secs * 1000), key="autorefresh")
+
+        @st.fragment(run_every=timedelta(seconds=refresh_secs))
+        def _refresh_fragment():
+            st.rerun()
+
+        _refresh_fragment()
 
     compare_names = st.sidebar.multiselect(
         "Compare runs",

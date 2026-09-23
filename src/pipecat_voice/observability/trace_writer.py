@@ -20,6 +20,7 @@ After the run, ``dump_simulation_run(simulation_run)`` writes the full tau2
 ``SimulationRun`` (with messages, tool calls, termination reason, reward
 info) to ``trajectory.json``.
 """
+
 from __future__ import annotations
 
 import json
@@ -27,7 +28,7 @@ import time
 import uuid
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, IO
+from typing import IO, Any
 
 
 @dataclass
@@ -86,6 +87,9 @@ class TraceWriter:
     def emit_meta(self, config_snapshot: dict[str, Any]) -> None:
         """Write a ``meta`` event with the resolved config snapshot."""
         self.emit({"type": "meta", "config": config_snapshot})
+
+    def reset_clock(self) -> None:
+        self._t0 = time.time()
 
     def dump_simulation_run(self, simulation_run) -> Path:
         """Dump a tau2 ``SimulationRun`` as JSON to ``trajectory.json``.

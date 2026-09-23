@@ -10,6 +10,7 @@ exposes helpers used by the Pipecat agent pipeline:
   the environment so DB state and message history match the spec before the
   conversation starts.
 """
+
 from __future__ import annotations
 
 from typing import Optional

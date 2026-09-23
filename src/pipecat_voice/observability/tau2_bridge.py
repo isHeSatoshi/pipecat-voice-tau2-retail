@@ -33,26 +33,22 @@ Termination reason:
 - Max-time / max-turns hit → ``TerminationReason.TIMEOUT``.
 - Other → ``TerminationReason.AGENT_STOP``.
 """
+
 from __future__ import annotations
 
 import json
-import time
 import uuid
 from typing import Any, Optional
 
 from loguru import logger
-
 from tau2.data_model.message import (
     AssistantMessage,
     Message,
-    SystemMessage,
     ToolMessage,
     UserMessage,
 )
 from tau2.data_model.simulation import SimulationRun, TerminationReason
 from tau2.data_model.tasks import Task
-
-from pipecat_voice.observability.trace_writer import TraceWriter
 
 
 def _next_id(prefix: str = "msg") -> str:
@@ -91,7 +87,9 @@ def messages_from_context(context_messages: list[dict[str, Any]]) -> list[Messag
                     )
                     for tc in tool_calls
                 ]
-                out.append(UserMessage(role="user", content=content or "", tool_calls=tau_tc))
+                out.append(
+                    UserMessage(role="user", content=content or "", tool_calls=tau_tc)
+                )
                 pending_tool_ids.extend(tc.id for tc in tau_tc)
             else:
                 out.append(UserMessage(role="user", content=content))
@@ -113,7 +111,9 @@ def messages_from_context(context_messages: list[dict[str, Any]]) -> list[Messag
                     for tc in tool_calls
                 ]
                 out.append(
-                    AssistantMessage(role="assistant", content=content or None, tool_calls=tau_tc)
+                    AssistantMessage(
+                        role="assistant", content=content or None, tool_calls=tau_tc
+                    )
                 )
                 pending_tool_ids.extend(tc.id for tc in tau_tc)
             else:
@@ -121,18 +121,20 @@ def messages_from_context(context_messages: list[dict[str, Any]]) -> list[Messag
         elif role == "tool":
             tool_call_id = m.get("tool_call_id", _next_id("tc"))
             content = m.get("content") or ""
-            # Try to parse JSON, fall back to raw string.
+            parsed = None
             try:
                 parsed = json.loads(content)
                 content_str = json.dumps(parsed)
             except (TypeError, ValueError):
                 content_str = str(content)
+            error = bool(m.get("error")) or _looks_like_tool_error(parsed)
             out.append(
                 ToolMessage(
                     id=tool_call_id,
                     role="tool",
                     content=content_str,
                     requestor="assistant",
+                    error=error,
                 )
             )
             if tool_call_id in pending_tool_ids:
@@ -140,6 +142,24 @@ def messages_from_context(context_messages: list[dict[str, Any]]) -> list[Messag
         else:
             logger.warning(f"Unknown message role in context: {role!r}")
     return out
+
+
+def _looks_like_tool_error(value: Any) -> bool:
+    if isinstance(value, dict) and value.get("error"):
+        return True
+    text = str(value or "").lower()
+    return any(
+        marker in text
+        for marker in (
+            "missing 1 required",
+            "unexpected keyword argument",
+            "unexpected_arguments",
+            "invalid_tool_arguments",
+            "not found",
+            "error:",
+            "invalid ",
+        )
+    )
 
 
 def build_simulation_run(
@@ -150,6 +170,7 @@ def build_simulation_run(
     duration_seconds: float,
     agent_cost: Optional[float] = None,
     user_cost: Optional[float] = None,
+    seed: int | None = None,
     extra_info: Optional[dict[str, Any]] = None,
 ) -> SimulationRun:
     """Build a tau2 ``SimulationRun`` from the captured conversation."""
@@ -164,7 +185,7 @@ def build_simulation_run(
         agent_cost=agent_cost,
         user_cost=user_cost,
         messages=messages,
-        seed=None,
+        seed=seed,
         mode="voice",
         info=extra_info or {},
     )
@@ -191,7 +212,11 @@ def score_simulation_run(
     from tau2.evaluator.evaluator import EvaluationType, evaluate_simulation
 
     etype = EvaluationType(evaluation_type)
-    domain = task.user_scenario.instructions.domain if hasattr(task.user_scenario.instructions, "domain") else "retail"
+    domain = (
+        task.user_scenario.instructions.domain
+        if hasattr(task.user_scenario.instructions, "domain")
+        else "retail"
+    )
     # Fall back to the environment name if instructions don't carry domain.
     # strict_replay=False: voice transcripts garble ids/args, so replayed
     # tool outputs cosmetically differ from recorded ones; aborting on that
@@ -219,14 +244,19 @@ def run_evaluator_local(simulation_run: SimulationRun, task: Task) -> Any:
     ``gpt-4.1`` (OpenAI) and crashes without ``OPENAI_API_KEY``. This harness
     only carries a MiniMax key on an Anthropic-compatible endpoint, which
     litellm cannot be routed to (its Anthropic provider honors no base-URL
-    env var). So we run the three LLM-free evaluators and merge exactly like
-    ``ALL`` does, minus NL. The exclusion is recorded in ``info``.
+    env     var). So we run the three LLM-free evaluators and report their partial
+    product in ``info``. Strict reward is forced to zero when NL assertions are
+    required, preventing an ungraded dimension from producing a false pass.
     """
     from tau2.data_model.simulation import RewardInfo
     from tau2.data_model.tasks import RewardType
     from tau2.evaluator.evaluator import EvaluationType, evaluate_simulation
 
-    domain = task.user_scenario.instructions.domain if hasattr(task.user_scenario.instructions, "domain") else "retail"
+    domain = (
+        task.user_scenario.instructions.domain
+        if hasattr(task.user_scenario.instructions, "domain")
+        else "retail"
+    )
     kwargs: dict[str, Any] = {
         "simulation": simulation_run,
         "task": task,
@@ -254,11 +284,17 @@ def run_evaluator_local(simulation_run: SimulationRun, task: Task) -> Any:
             breakdown.update(comm_ri.reward_breakdown)
         reward *= comm_ri.reward
 
+    evaluated_reward = reward
+    nl_excluded = bool(basis & {RewardType.NL_ASSERTION})
+    if nl_excluded:
+        reward = 0.0
     info = {
         "env": env_ri.info,
         "nl": None,
         "communicate": comm_ri.info,
         "action": act_ri.info,
+        "partial_reward": evaluated_reward,
+        "strict_reward_available": not nl_excluded,
         "note": (
             "NL_ASSERTIONS excluded: the NL judge needs OPENAI_API_KEY "
             "(defaults to gpt-4.1); this harness only has a MiniMax key."

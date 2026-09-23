@@ -5,15 +5,15 @@ Streamlit fragments (via ``st.*`` calls) or plain Python data structures
 suitable for plotting. The viewer file ``app.py`` orchestrates page
 layout; this module just renders.
 """
+
 from __future__ import annotations
 
 import json
-from typing import Any, Iterable
+from typing import Any
 
 import streamlit as st
 
 from viewer.run_loader import SimView, messages, reward_summary
-
 
 # ---------------------------------------------------------------------------
 # Compact cells
@@ -45,7 +45,13 @@ def render_run_header(sim: SimView) -> None:
     rs = reward_summary(sim)
     cols = st.columns(5)
     cols[0].metric("Task", sim.task_id)
-    cols[1].metric("Reward", f"{rs['reward']:.3f}" if rs["reward"] is not None else "—")
+    if rs["strict_reward_available"]:
+        cols[1].metric(
+            "Reward", f"{rs['reward']:.3f}" if rs["reward"] is not None else "—"
+        )
+    else:
+        partial = rs["partial_reward"]
+        cols[1].metric("Local reward", f"{partial:.3f}" if partial is not None else "—")
     cols[2].metric(
         "DB match",
         _bool_icon(rs["db_match"]),
@@ -57,8 +63,14 @@ def render_run_header(sim: SimView) -> None:
     cols[4].metric("Termination", traj.get("termination_reason", "—") or "—")
     sub_cols = st.columns(3)
     sub_cols[0].metric("Duration (s)", f"{traj.get('duration', 0):.1f}")
-    sub_cols[1].metric("Env assertions", f"{rs['env_assertions_passed']}/{rs['env_assertions_total']}")
+    sub_cols[1].metric(
+        "Env assertions", f"{rs['env_assertions_passed']}/{rs['env_assertions_total']}"
+    )
     sub_cols[2].metric("Sim id", sim.sim_id)
+    if not rs["strict_reward_available"]:
+        st.caption(
+            "Local reward uses DB, ACTION, and COMMUNICATE. Strict Tau2 reward is unavailable because NL assertions are not scored."
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -82,7 +94,9 @@ def _tool_calls_summary(tool_calls: Any) -> str:
                 args = json.loads(args)
             except json.JSONDecodeError:
                 pass
-        parts.append(f"`{name}`({_shorten(json.dumps(args, ensure_ascii=False) if args is not None else '', n=120)})")
+        parts.append(
+            f"`{name}`({_shorten(json.dumps(args, ensure_ascii=False) if args is not None else '', n=120)})"
+        )
     return " · ".join(parts)
 
 
@@ -91,6 +105,11 @@ def render_transcript(sim: SimView) -> None:
     if not msgs:
         st.info("No messages in trajectory.")
         return
+
+    if sim.conversation_audio is not None:
+        st.subheader("Full conversation")
+        st.caption("Mixed agent and user audio in conversation order")
+        st.audio(str(sim.conversation_audio))
 
     # Group consecutive tool + tool-result pairs so the reader sees the
     # call and its response side by side.
@@ -115,19 +134,17 @@ def render_transcript(sim: SimView) -> None:
         content = m.get("content") or ""
         tcs = m.get("tool_calls") or []
         audio = m.get("audio_path")
-        ts = m.get("timestamp")
 
         if role == "user":
             with st.chat_message("user", avatar="🙋"):
                 st.markdown(_shorten(content, 4000))
                 if audio:
-                    st.caption(f"🔊 audio: `{audio}`")
+                    st.audio(audio)
         elif role == "assistant":
             with st.chat_message("assistant", avatar="🤖"):
                 if content:
                     st.markdown(_shorten(content, 4000))
                 if tcs:
-                    tc_lines = [_tool_calls_summary(tcs)] if _tool_calls_summary(tcs) else []
                     for tc in tcs:
                         tid = tc.get("id")
                         args = tc.get("arguments")
@@ -144,7 +161,9 @@ def render_transcript(sim: SimView) -> None:
                             tr = tool_results[tid]
                             tr_content = tr.get("content") or ""
                             tr_err = tr.get("error", False)
-                            label = "tool result" if not tr_err else "tool result (error)"
+                            label = (
+                                "tool result" if not tr_err else "tool result (error)"
+                            )
                             st.markdown(f"↪ **{label}**")
                             try:
                                 parsed = json.loads(tr_content)
@@ -154,7 +173,7 @@ def render_transcript(sim: SimView) -> None:
                         elif tid in pending_tool_ids:
                             st.caption("(no tool result recorded)")
                 if audio:
-                    st.caption(f"🔊 audio: `{audio}`")
+                    st.audio(audio)
         elif role == "tool":
             # Already shown next to the call.
             pass
@@ -175,7 +194,15 @@ def render_reward(sim: SimView) -> None:
         st.info("No reward_info on this simulation.")
         return
 
-    st.subheader(f"Final reward: **{ri.get('reward', '—')}**")
+    info = ri.get("info") or {}
+    strict_available = info.get("strict_reward_available", True)
+    if strict_available:
+        st.subheader(f"Final reward: **{ri.get('reward', '—')}**")
+    else:
+        st.subheader(f"Local reward: **{info.get('partial_reward', '—')}**")
+        st.warning(
+            "Strict Tau2 reward is unavailable because this task requires an NL assertion and no compatible judge is configured."
+        )
     basis = ri.get("reward_basis") or []
     if basis:
         st.caption("Reward basis: " + ", ".join(str(b) for b in basis))
@@ -195,13 +222,15 @@ def render_reward(sim: SimView) -> None:
         rows = []
         for a in actions:
             act = a.get("action") or {}
-            rows.append({
-                "match": _bool_icon(a.get("action_match")),
-                "name": act.get("name"),
-                "args": json.dumps(act.get("arguments") or {}, ensure_ascii=False),
-                "reward": a.get("action_reward"),
-                "type": (a.get("tool_type") or "—"),
-            })
+            rows.append(
+                {
+                    "match": _bool_icon(a.get("action_match")),
+                    "name": act.get("name"),
+                    "args": json.dumps(act.get("arguments") or {}, ensure_ascii=False),
+                    "reward": a.get("action_reward"),
+                    "type": (a.get("tool_type") or "—"),
+                }
+            )
         st.dataframe(rows, width="stretch", hide_index=True)
 
     # Env assertions.
@@ -235,7 +264,14 @@ EVENT_COLOURS = {
     "tool_call": "#8c564b",
     "tool_result": "#17becf",
     "stt_result": "#e377c2",
-    "tts_call": "#7f7f7f",
+    "vad_start": "#f7b6d2",
+    "vad_stop": "#c51b8a",
+    "llm_start": "#cab2d6",
+    "llm_end": "#8856a7",
+    "llm_run": "#9467bd",
+    "tts_start": "#c7c7c7",
+    "tts_stop": "#7f7f7f",
+    "frame_error": "#d62728",
 }
 
 
@@ -284,7 +320,17 @@ def render_trace_timeline(sim: SimView) -> None:
         {
             "t (s)": round(t_ms / 1000.0, 2),
             "type": et,
-            "summary": _shorten(json.dumps({k: v for k, v in ev.items() if k not in {"task_id", "simulation_id", "t_offset_ms"}}, default=str), 200),
+            "summary": _shorten(
+                json.dumps(
+                    {
+                        k: v
+                        for k, v in ev.items()
+                        if k not in {"task_id", "simulation_id", "t_offset_ms"}
+                    },
+                    default=str,
+                ),
+                200,
+            ),
         }
         for t_ms, et, ev in rows
     ]

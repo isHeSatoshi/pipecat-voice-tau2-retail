@@ -10,6 +10,7 @@ to match Parakeet's preferred input rate; we resample if needed using
 Lazy import of ``chatterbox`` so the harness remains importable without the
 heavy torchaudio dependency.
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -89,12 +90,18 @@ class ChatterboxTTS:
         # Chatterbox exposes its native sample rate via `self._model.sr`.
         sr_in = getattr(self._model, "sr", self.sample_rate_out)
         # Convert to 16-bit PCM mono, resampling if necessary.
-        pcm_bytes = await loop.run_in_executor(None, self._to_pcm16, wav, sr_in, self.sample_rate_out)
+        pcm_bytes = await loop.run_in_executor(
+            None, self._to_pcm16, wav, sr_in, self.sample_rate_out
+        )
         # Stream in 100 ms slices for parity with the dummy implementation.
         slice_bytes = self.sample_rate_out * 2 * 100 // 1000
         for i in range(0, len(pcm_bytes), slice_bytes):
             is_final = i + slice_bytes >= len(pcm_bytes)
-            yield TTSChunk(pcm=pcm_bytes[i : i + slice_bytes], sample_rate=self.sample_rate_out, is_final=is_final)
+            yield TTSChunk(
+                pcm=pcm_bytes[i : i + slice_bytes],
+                sample_rate=self.sample_rate_out,
+                is_final=is_final,
+            )
 
     def _infer(self, text: str):
         # Runs on _CHATTERBOX_EXECUTOR (single thread) — see module docstring.

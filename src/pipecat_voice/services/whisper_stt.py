@@ -4,6 +4,7 @@ This is a thin stub so the harness can be invoked with ``--stt whisper``
 without forcing a hard dependency on the OpenAI SDK. Real implementations
 should subclass Pipecat's ``WhisperSTTService`` directly.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass

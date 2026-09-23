@@ -20,16 +20,15 @@ Stop detection is intentionally at the integration boundary (here) rather
 than inside tau2's turn-based orchestrator: tau2 is the eval/ground-truth
 source, not the runtime driver.
 """
+
 from __future__ import annotations
 
 import asyncio
 from dataclasses import dataclass
-from typing import Any, Optional
+from typing import Any
 
 from loguru import logger
-
-from pipecat.frames.frames import Frame, LLMFullResponseStartFrame, StopTaskFrame
-from pipecat.observers.base_observer import BaseObserver
+from pipecat.frames.frames import Frame, LLMFullResponseStartFrame
 from pipecat.pipeline.base_pipeline import BasePipeline
 from pipecat.pipeline.pipeline import Pipeline
 from pipecat.processors.aggregators.llm_context import LLMContext
@@ -42,14 +41,16 @@ from pipecat.services.stt_service import STTService
 from pipecat.services.tts_service import TTSService
 
 from pipecat_voice.config import VoiceConfig
-from pipecat_voice.observability.trace_writer import TraceWriter
 from pipecat_voice.transport.virtual_transport import VirtualTransport
 
 
 def _build_user_system_prompt_lazy(persona_text: str, scenario_text: str) -> str:
     """Lazy import to avoid a circular dep with pipecat_voice.tau2.__init__."""
     from pipecat_voice.tau2.context import build_user_system_prompt
-    return build_user_system_prompt(persona_text=persona_text, scenario_text=scenario_text)
+
+    return build_user_system_prompt(
+        persona_text=persona_text, scenario_text=scenario_text
+    )
 
 
 @dataclass
@@ -69,6 +70,20 @@ class StopOnUserSignalProcessor(FrameProcessor):
     """
 
     _SIGNALS = ("###STOP###", "###TRANSFER###", "###OUT-OF-SCOPE###")
+    _COMPLETION_PHRASES = (
+        "that's all i needed",
+        "that is all i needed",
+        "that's all",
+        "thanks, bye",
+        "goodbye",
+    )
+
+    @classmethod
+    def _should_stop(cls, text: str) -> bool:
+        normalized = " ".join(text.lower().split())
+        return any(signal.lower() in normalized for signal in cls._SIGNALS) or any(
+            phrase in normalized for phrase in cls._COMPLETION_PHRASES
+        )
 
     def __init__(self, stop_event: asyncio.Event):
         super().__init__(name="StopOnUserSignal")
@@ -81,8 +96,8 @@ class StopOnUserSignalProcessor(FrameProcessor):
             self._turn_text = ""
         elif isinstance(frame, Frame) and getattr(frame, "text", None):
             self._turn_text += frame.text or ""
-            if any(sig in self._turn_text for sig in self._SIGNALS):
-                logger.info("User simulator emitted stop signal")
+            if self._should_stop(self._turn_text):
+                logger.info("User simulator emitted a stop or completion signal")
                 if not self._stop_event.is_set():
                     self._stop_event.set()
                 # Forward the frame downstream so the assistant aggregator
@@ -107,7 +122,9 @@ def build_user_pipeline(
     to know when to tear both pipelines down.
     """
     # Build user simulator system prompt from task.user_scenario.
-    persona_text = (task.user_scenario.persona or "").strip() if task.user_scenario.persona else ""
+    persona_text = (
+        (task.user_scenario.persona or "").strip() if task.user_scenario.persona else ""
+    )
     scenario_text = str(task.user_scenario.instructions)
     system_prompt = _build_user_system_prompt_lazy(persona_text, scenario_text)
 
@@ -116,7 +133,10 @@ def build_user_pipeline(
     # To bootstrap, seed an initial user message telling the LLM to greet.
     initial_messages: list[dict[str, Any]] = [
         {"role": "system", "content": system_prompt},
-        {"role": "user", "content": "Begin the call. Greet the agent and state your reason for calling."},
+        {
+            "role": "user",
+            "content": "Begin the call. Greet the agent and state your reason for calling.",
+        },
     ]
     context = LLMContext(messages=initial_messages, tools=[])
 
@@ -140,4 +160,6 @@ def build_user_pipeline(
         ]
     )
     logger.info("Built user pipeline for task=%s", task.id)
-    return UserPipelineParts(pipeline=pipeline, context=context, transport=transport, stop_event=stop_event)
+    return UserPipelineParts(
+        pipeline=pipeline, context=context, transport=transport, stop_event=stop_event
+    )

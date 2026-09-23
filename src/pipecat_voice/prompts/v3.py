@@ -5,10 +5,11 @@ mangled id (voice STT drops the '#' and adds dashes). v3 adds: treat a
 tool error as information, fix the argument once from context, retry at
 most once, then ask the user — never blind-retry the same call.
 """
+
 from __future__ import annotations
 
-from pipecat_voice.prompts.v2 import ADVANCE_RULE, TOOL_DISCIPLINE, VOICE_TURN_RULES
 from pipecat_voice.prompts.baseline import AGENT_INSTRUCTION
+from pipecat_voice.prompts.v2 import ADVANCE_RULE, TOOL_DISCIPLINE, VOICE_TURN_RULES
 
 ERROR_RECOVERY = """
 Recovering from tool errors (read carefully):

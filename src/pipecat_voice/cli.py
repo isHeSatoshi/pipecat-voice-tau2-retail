@@ -21,6 +21,7 @@ Usage
 Every run writes to ``<out>/task_<id>/sim_<uuid>/`` containing
 ``trajectory.json`` and ``voice_trace.jsonl``.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -31,31 +32,87 @@ from typing import Optional
 
 from loguru import logger
 
-from pipecat_voice.config import VoiceConfig, load_config
+from pipecat_voice.config import load_config
 from pipecat_voice.tau2.environment import load_tasks_filtered
 from pipecat_voice.tau2.runner import Tau2EvalRunner
 
 
 def _build_parser() -> argparse.ArgumentParser:
-    p = argparse.ArgumentParser(prog="pipecat-voice", description="Pipecat + tau2 retail voice eval.")
+    p = argparse.ArgumentParser(
+        prog="pipecat-voice", description="Pipecat + tau2 retail voice eval."
+    )
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    run = sub.add_parser("run", help="Run one or more tau2 retail tasks through the voice harness.")
-    run.add_argument("--task", type=str, default=None, help="Single tau2 task id to run.")
-    run.add_argument("--tasks", type=str, nargs="*", default=None, help="Multiple task ids to run.")
-    run.add_argument("--split", type=str, default=None, help="Task split name (e.g. base, train, test).")
-    run.add_argument("--num-trials", type=int, default=1, help="Number of trials per task.")
-    run.add_argument("--max-tasks", type=int, default=None, help="Cap on number of tasks to run.")
+    run = sub.add_parser(
+        "run", help="Run one or more tau2 tasks through the voice harness."
+    )
+    run.add_argument(
+        "--task", type=str, default=None, help="Single tau2 task id to run."
+    )
+    run.add_argument(
+        "--tasks", type=str, nargs="*", default=None, help="Multiple task ids to run."
+    )
+    run.add_argument(
+        "--domain",
+        type=str,
+        default=None,
+        help="Tau-bench domain (retail, airline, telecom, mock).",
+    )
+    run.add_argument(
+        "--split",
+        type=str,
+        default=None,
+        help="Task split name (e.g. base, train, test).",
+    )
+    run.add_argument(
+        "--num-trials", type=int, default=1, help="Number of trials per task."
+    )
+    run.add_argument(
+        "--max-tasks", type=int, default=None, help="Cap on number of tasks to run."
+    )
 
-    run.add_argument("--stt", type=str, default=None, help="STT impl: parakeet | whisper | dummy.")
-    run.add_argument("--tts", type=str, default=None, help="TTS impl: chatterbox | elevenlabs | dummy.")
-    run.add_argument("--agent-llm", type=str, default=None, help="Agent LLM impl: minimax | anthropic | dummy.")
-    run.add_argument("--user-llm", type=str, default=None, help="User LLM impl: minimax | anthropic | dummy.")
+    run.add_argument(
+        "--stt", type=str, default=None, help="STT impl: parakeet | whisper | dummy."
+    )
+    run.add_argument(
+        "--tts",
+        type=str,
+        default=None,
+        help="TTS impl: chatterbox | elevenlabs | dummy.",
+    )
+    run.add_argument(
+        "--agent-llm",
+        type=str,
+        default=None,
+        help="Agent LLM impl: minimax | anthropic | dummy.",
+    )
+    run.add_argument(
+        "--user-llm",
+        type=str,
+        default=None,
+        help="User LLM impl: minimax | anthropic | dummy.",
+    )
+    run.add_argument("--agent-model", type=str, default=None, help="Agent model id.")
+    run.add_argument(
+        "--user-model", type=str, default=None, help="User simulator model id."
+    )
     run.add_argument("--seed", type=int, default=None, help="Random seed.")
     run.add_argument("--out", type=str, default=None, help="Output directory.")
-    run.add_argument("--max-seconds", type=int, default=None, help="Max conversation duration (seconds).")
-    run.add_argument("--sample-rate", type=int, default=None, help="PCM sample rate on the audio bus.")
-    run.add_argument("--no-vad", action="store_true", help="Disable Silero VAD (debug only).")
+    run.add_argument(
+        "--max-seconds",
+        type=int,
+        default=None,
+        help="Max conversation duration (seconds).",
+    )
+    run.add_argument(
+        "--sample-rate",
+        type=int,
+        default=None,
+        help="PCM sample rate on the audio bus.",
+    )
+    run.add_argument(
+        "--no-vad", action="store_true", help="Disable Silero VAD (debug only)."
+    )
     run.add_argument(
         "--write-summary",
         action="store_true",
@@ -77,6 +134,14 @@ def _build_parser() -> argparse.ArgumentParser:
             "append to SUMMARY.md. Example: --check auth_loop"
         ),
     )
+
+    analyze = sub.add_parser(
+        "analyze", help="Analyze saved trajectories without rerunning models."
+    )
+    analyze.add_argument("--run", type=str, nargs="+", required=True)
+    analyze.add_argument("--domain", type=str, default=None)
+    analyze.add_argument("--split", type=str, default=None)
+    analyze.add_argument("--out", type=str, default=None)
     return p
 
 
@@ -84,6 +149,40 @@ def main(argv: list[str] | None = None) -> int:
     args = _build_parser().parse_args(argv)
     if args.cmd == "run":
         return _cmd_run(args)
+    if args.cmd == "analyze":
+        return _cmd_analyze(args)
+    return 0
+
+
+def _cmd_analyze(args) -> int:
+    from pipecat_voice.eval.report import analyze_run
+
+    reports = []
+    for path in args.run:
+        run_dir = Path(path)
+        config = {}
+        summary_path = run_dir / "summary.json"
+        if summary_path.exists():
+            try:
+                config = json.loads(summary_path.read_text(encoding="utf-8")).get(
+                    "config", {}
+                )
+            except (OSError, json.JSONDecodeError):
+                config = {}
+        reports.append(
+            analyze_run(
+                run_dir,
+                domain=args.domain or config.get("domain", "retail"),
+                split=args.split or config.get("split", "base"),
+            )
+        )
+    payload = reports[0] if len(reports) == 1 else {"runs": reports}
+    text = json.dumps(payload, indent=2, ensure_ascii=False)
+    if args.out:
+        out = Path(args.out)
+        out.parent.mkdir(parents=True, exist_ok=True)
+        out.write_text(text + "\n", encoding="utf-8")
+    print(text)
     return 0
 
 
@@ -98,6 +197,12 @@ def _cmd_run(args) -> int:
         overrides["agent_llm_impl"] = args.agent_llm
     if args.user_llm is not None:
         overrides["user_llm_impl"] = args.user_llm
+    if args.domain is not None:
+        overrides["domain"] = args.domain
+    if args.agent_model is not None:
+        overrides["agent_model"] = args.agent_model
+    if args.user_model is not None:
+        overrides["user_model"] = args.user_model
     if args.seed is not None:
         overrides["seed"] = args.seed
     if args.out is not None:
@@ -120,8 +225,10 @@ def _cmd_run(args) -> int:
     pv = getattr(args, "prompt_variant", None)
     if pv:
         from pipecat_voice.prompts import load_agent_prompt
+
         try:
             cfg.agent_system_prompt_override = load_agent_prompt(pv)
+            cfg.prompt_variant = pv
             logger.info(f"Loaded prompt variant '{pv}' for agent system prompt.")
         except KeyError as e:
             logger.error(str(e))
@@ -136,11 +243,20 @@ def _cmd_run(args) -> int:
         task_ids = []
 
     split = args.split if args.split is not None else cfg.task_split
+    cfg.task_split = split
     tasks = load_tasks_filtered(
         cfg.domain, split, task_ids=task_ids, max_tasks=args.max_tasks
     )
     if not tasks:
         logger.error(f"No tasks matched task_ids={task_ids!r} split={split!r}")
+        return 1
+    found_task_ids = {str(task.id) for task in tasks}
+    missing_task_ids = sorted(set(task_ids) - found_task_ids)
+    if missing_task_ids:
+        logger.error(
+            f"Unknown task ids for domain={cfg.domain} split={split}: "
+            f"{missing_task_ids}"
+        )
         return 1
 
     logger.info(
@@ -149,18 +265,21 @@ def _cmd_run(args) -> int:
         f"out={cfg.out_dir}"
     )
 
+    base_seed = cfg.seed
     runner = Tau2EvalRunner(cfg=cfg, trace_dir=cfg.out_dir, enable_vad=not args.no_vad)
 
     results = []
     for trial in range(args.num_trials):
+        cfg.seed = base_seed + trial
         for task in tasks:
-            logger.info(f"[trial {trial+1}/{args.num_trials}] task={task.id}")
+            logger.info(f"[trial {trial + 1}/{args.num_trials}] task={task.id}")
             try:
                 res = runner.run(task)
             except Exception as e:
                 logger.exception(f"Task {task.id} failed: {e}")
                 res = {"task_id": task.id, "error": str(e)}
             res["trial"] = trial + 1
+            res["seed"] = cfg.seed
             results.append(res)
             print(json.dumps(res, ensure_ascii=False))
 
@@ -185,6 +304,13 @@ def _cmd_run(args) -> int:
                         "agent_llm": cfg.agent_llm_impl,
                         "user_llm": cfg.user_llm_impl,
                         "minimax_api_base": cfg.minimax_api_base,
+                        "agent_model": cfg.agent_model,
+                        "user_model": cfg.user_model,
+                        "prompt_variant": cfg.prompt_variant,
+                        "seed": base_seed,
+                        "max_conversation_seconds": cfg.max_conversation_seconds,
+                        "vad_enabled": not args.no_vad,
+                        "tool_execution_policy": "single_serialized_exact_signature",
                     },
                     "results": results,
                 },
@@ -199,9 +325,15 @@ def _cmd_run(args) -> int:
     if args.write_summary:
         try:
             check_names = _resolve_check_names(args.check)
-            _write_run_summary_md(cfg.out_dir, cfg, split, results, check_names=check_names)
+            _write_run_summary_md(
+                cfg.out_dir, cfg, split, results, check_names=check_names
+            )
         except Exception as e:  # pragma: no cover
             logger.warning(f"Could not write SUMMARY.md: {e}")
+    if any(
+        result.get("error") or result.get("infrastructure_error") for result in results
+    ):
+        return 1
     return 0
 
 
@@ -214,6 +346,7 @@ def _resolve_check_names(spec: Optional[str]) -> Optional[list[str]]:
         return None
     if spec == "all":
         from pipecat_voice.eval import CHECKS
+
         return list(CHECKS.keys())
     return [n.strip() for n in spec.split(",") if n.strip()]
 
@@ -233,7 +366,9 @@ def _write_run_summary_md(
     """
     md_path = out_dir / "SUMMARY.md"
     n = len(results)
-    rewards = [r.get("reward") for r in results if isinstance(r.get("reward"), (int, float))]
+    rewards = [
+        r.get("reward") for r in results if isinstance(r.get("reward"), (int, float))
+    ]
     avg_reward = (sum(rewards) / len(rewards)) if rewards else 0.0
     passed = sum(1 for r in rewards if r >= 0.999)
     duration = sum((r.get("duration_seconds") or 0) for r in results)
@@ -245,12 +380,23 @@ def _write_run_summary_md(
     lines.append("")
     lines.append("| key | value |")
     lines.append("| --- | --- |")
-    for k in ("domain", "split", "stt_impl", "tts_impl", "agent_llm_impl", "user_llm_impl", "agent_model", "user_model", "minimax_api_base", "max_conversation_seconds", "seed"):
+    for k in (
+        "domain",
+        "split",
+        "stt_impl",
+        "tts_impl",
+        "agent_llm_impl",
+        "user_llm_impl",
+        "agent_model",
+        "user_model",
+        "minimax_api_base",
+        "max_conversation_seconds",
+        "seed",
+    ):
         v = getattr(cfg, k, None)
         if v not in (None, ""):
             lines.append(f"| {k} | `{v}` |")
-    if cfg.agent_system_prompt_override:
-        lines.append("| prompt_variant | overridden |")
+    lines.append(f"| prompt_variant | `{cfg.prompt_variant}` |")
     lines.append("")
     lines.append("## Headline")
     lines.append("")
@@ -274,7 +420,9 @@ def _write_run_summary_md(
         lines.append("## Failure-mode checks")
         lines.append("")
         try:
-            check_section = _render_check_section(out_dir, results, check_names)
+            check_section = _render_check_section(
+                out_dir, results, check_names, domain=cfg.domain, split=split
+            )
             if check_section:
                 lines.extend(check_section)
             else:
@@ -290,6 +438,9 @@ def _render_check_section(
     out_dir: Path,
     results: list[dict],
     check_names: list[str],
+    *,
+    domain: str = "retail",
+    split: str = "base",
 ) -> list[str]:
     """Render per-task failure-mode check rows for SUMMARY.md.
 
@@ -297,33 +448,43 @@ def _render_check_section(
     pass/fail outcome of every requested check on every trajectory.
     Returns ``[]`` if no trajectory files are present.
     """
-    from pipecat_voice.eval import CHECKS, run_all_checks
+    from pipecat_voice.eval import run_all_checks
 
     rows: list[str] = []
     header_done = False
     for r in results:
         traj_path = r.get("trajectory_path")
+        task_id = r.get("task_id")
         if not traj_path:
             continue
         # Resolve relative paths against out_dir.
-        p = Path(traj_path)
-        if not p.is_absolute():
-            p = (out_dir / traj_path).resolve()
-        if not p.exists():
+        raw_path = Path(traj_path)
+        candidates = [raw_path]
+        if not raw_path.is_absolute():
+            candidates.append(out_dir / raw_path)
+            candidates.append(out_dir / raw_path.name)
+            if task_id is not None:
+                candidates.extend(out_dir.glob(f"task_{task_id}/sim_*/trajectory.json"))
+        p = next(
+            (candidate.resolve() for candidate in candidates if candidate.exists()),
+            None,
+        )
+        if p is None:
             continue
         try:
             from tau2.data_model.simulation import SimulationRun
+
             sim_run = SimulationRun.model_validate_json(p.read_text(encoding="utf-8"))
         except Exception:
             continue
         # Re-load the task.
-        task_id = r.get("task_id")
         task = None
         try:
             from pipecat_voice.tau2.environment import load_tasks_filtered
+
             loaded = load_tasks_filtered(
-                getattr(r, "domain", "retail") if hasattr(r, "domain") else "retail",
-                "base",
+                domain,
+                split,
                 task_ids=[task_id] if task_id else None,
             )
             task = loaded[0] if loaded else None

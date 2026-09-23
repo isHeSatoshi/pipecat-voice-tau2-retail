@@ -16,6 +16,7 @@ Adding a new check:
 The checks are *pure* — no I/O, no LLM calls, no global state. They
 read messages and tool calls from ``sim_run.messages`` and decide.
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -25,7 +26,6 @@ from tau2.data_model.simulation import SimulationRun
 from tau2.data_model.tasks import Task
 
 from pipecat_voice.eval.checks import CheckResult  # noqa: E402
-
 
 CheckFn = Callable[[SimulationRun, Task], CheckResult]
 
@@ -73,8 +73,8 @@ def _register_defaults() -> None:
     from pipecat_voice.eval import checks as _checks
 
     register("auth_loop", _checks.check_auth_loop)
-    register("no_tool_calls", _checks.check_no_tool_calls)
-    register("premature_stop", _checks.check_premature_stop)
+    register("tool_argument_integrity", _checks.check_tool_argument_integrity)
+    register("write_protocol", _checks.check_write_protocol)
 
 
 _register_defaults()

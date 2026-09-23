@@ -17,12 +17,16 @@ Environment variables
 Lazy import of ``anthropic`` so the harness still loads without it
 (useful for tests that pass ``--llm dummy``).
 """
+
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Any, Optional
+from typing import TYPE_CHECKING, Any
 
 from loguru import logger
+
+if TYPE_CHECKING:
+    from pipecat_voice.config import VoiceConfig
 
 
 @dataclass
@@ -61,8 +65,10 @@ class MiniMaxAnthropicLLMServiceFactory:
                 "`uv pip install anthropic`."
             ) from e
         try:
-            from pipecat.services.anthropic.llm import AnthropicLLMService  # type: ignore
-            from pipecat.services.anthropic.llm import AnthropicLLMSettings  # type: ignore
+            from pipecat.services.anthropic.llm import (
+                AnthropicLLMService,  # type: ignore
+                AnthropicLLMSettings,  # type: ignore
+            )
         except ImportError as e:
             raise RuntimeError("Pipecat's AnthropicLLMService is unavailable.") from e
 
@@ -109,10 +115,13 @@ def build_minimax_llm(cfg: VoiceConfig, *, side: str = "agent"):
         return build_minimax_llm_service(cfg, side=side)
     elif impl == "anthropic":
         # Use the real Anthropic SDK directly (not via MiniMax proxy).
-        from pipecat_voice.services.litelmm_minimax import MiniMaxAnthropicLLMServiceFactory
-        from anthropic import AsyncAnthropic
-        from pipecat.services.anthropic.llm import AnthropicLLMService, AnthropicLLMSettings
         import os
+
+        from anthropic import AsyncAnthropic
+        from pipecat.services.anthropic.llm import (
+            AnthropicLLMService,
+            AnthropicLLMSettings,
+        )
 
         api_key = os.environ.get("ANTHROPIC_API_KEY", "")
         model = cfg.agent_model if side == "agent" else cfg.user_model
@@ -122,6 +131,7 @@ def build_minimax_llm(cfg: VoiceConfig, *, side: str = "agent"):
     elif impl == "dummy":
         # Lazy import so the dummy branch doesn't pull Pipecat services.
         from pipecat_voice.services.dummy_stt_tts_llm import DummyLLM
+
         return DummyLLM(model=cfg.agent_model if side == "agent" else cfg.user_model)
     else:
         raise ValueError(f"Unknown agent_llm_impl: {impl!r}")
