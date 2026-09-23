@@ -1,0 +1,22 @@
+{
+  "config": {
+    "domain": "retail",
+    "split": "base",
+    "stt": "parakeet",
+    "tts": "chatterbox",
+    "agent_llm": "minimax",
+    "user_llm": "minimax",
+    "minimax_api_base": "https://api.minimax.io/anthropic"
+  },
+  "results": [
+    {
+      "task_id": "1",
+      "reward": 0.0,
+      "termination_reason": "agent_stop",
+      "duration_seconds": 180.1112596988678,
+      "trajectory_path": "data\\runs\\ab_v1\\task_1\\sim_9f45201b\\trajectory.json",
+      "trace_path": "data\\runs\\ab_v1\\task_1\\sim_9f45201b\\voice_trace.jsonl",
+      "trial": 1
+    }
+  ]
+}
