@@ -42,6 +42,18 @@ The raw `data/runs/v4_calibrated_batch/SUMMARY.md` is stale: it reports 14 rows 
 
 Strict Tau2 reward was not scored because the harness used the local ENV, ACTION, and COMMUNICATE evaluators only. The `NL_ASSERTION` judge defaults to an OpenAI model and was unavailable in this run. A strict field of zero therefore means **strict reward unavailable**, not a scored zero-success rate.
 
+### Visual report
+
+![Task outcomes](reports/v4_calibrated_batch/charts/task_outcomes.png)
+
+![Attempt outcomes](reports/v4_calibrated_batch/charts/attempt_outcomes.png)
+
+![Behavior-check pass rates](reports/v4_calibrated_batch/charts/check_pass_rates.png)
+
+![Attempt durations](reports/v4_calibrated_batch/charts/attempt_durations.png)
+
+![Representative check matrix](reports/v4_calibrated_batch/charts/representative_check_matrix.png)
+
 See [`reports/v4_calibrated_batch/report.md`](reports/v4_calibrated_batch/report.md) for the full analysis, tables, charts, and caveats.
 
 ## Architecture
