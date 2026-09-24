@@ -14,6 +14,34 @@ The harness is a closed-loop virtual-audio experiment. User TTS output is writte
 
 The retained final evidence is `data/runs/v4_calibrated_batch/`. The derived report in `reports/v4_calibrated_batch/` is generated from that raw bundle and does not edit it.
 
+## PR summary
+
+### Implementation approach
+
+I started by reading the Pipecat and Tau-bench repositories, then built the smallest useful closed loop before adding complexity. The customer simulator generates speech, Chatterbox renders it, the audio bus carries PCM in both directions, Silero marks speech boundaries, Parakeet transcribes the customer, MiniMax chooses the next grounded action, and Chatterbox returns the agent response. Tau-bench owns the retail state and executes the tools.
+
+The important implementation choice was to make every stage observable. A run records the customer and agent audio separately, the canonical Tau2 trajectory, tool calls and results, STT/VAD/LLM/TTS events, errors, termination, reward components, and prompt/model provenance. I used the Streamlit viewer as a debugging instrument, not just a scoreboard: I selected a run, read the transcript, listened to both channels, followed the trace timeline, and checked the actual tool arguments and database state. That manual loop is how the authentication loops, name and zip-code errors, ordered-preference mistakes, payment-policy violation, and audio/transcript misalignment became visible.
+
+I also treated the LLM as an unreliable narrator. In some runs it tried to optimize for a visible shortcut or reward signal instead of faithfully serving the customer: claiming completion, repeating a write, accepting the wrong payment path, or transferring away from a failed request. I did not trust self-reported success. The agent has to ground ids in fresh tool results, validate arguments, state the exact write, wait for an immediate yes, and report the actual tool result. Runtime guards and offline checks exist because a prompt cannot make a write safe by itself.
+
+Authentication was one of the clearest voice-specific problems. STT could turn a first or last name into a plausible but incorrect spelling. The recovery policy asks for the first name one letter at a time, then the last name one letter at a time, and asks for the zip code digit by digit before retrying the lookup. The same grounded lookup is used for the corrected spelling; no customer identity or product id is hardcoded.
+
+The small `checking..just a sec` acknowledgement before tool calls was also deliberate. A real caller should not be left in dead air while a database lookup happens, so the phrase is spoken at the start of a tool operation, rate-limited by a cooldown, and kept out of the scored context. It is a user-experience bridge, not a substitute for a real answer or a way to hide a failed tool call.
+
+### Approaches considered and trade-offs
+
+Prompt-only repair was the cheapest option, but it could not repair empty schemas, unsafe repeated writes, bad VAD initialization, or audio feedback loops. Runtime validation and confirmation guards are less elegant, but they put a boundary around actions that an LLM should not be trusted to enforce alone.
+
+A cascaded STT/LLM/TTS design was chosen over a native audio model because it exposes failure attribution. It makes names, IDs, VAD boundaries, TTS pauses, tool arguments, and database changes separately visible. The cost is latency and the possibility that speech corrupts an otherwise correct identifier.
+
+The in-process virtual bus was chosen over a real acoustic transport because it is repeatable and easy to inspect. It supports logical full-duplex behavior, interruption frames, two independent voices, and deterministic audio timing, but it does not prove microphone quality, echo cancellation, packet-loss behavior, or real-world barge-in performance.
+
+MiniMax was used for both the agent and the customer simulator to keep the experiment controlled and affordable. That is also a limitation: the two sides can share failure modes and correlated latency. Local evaluation was used because it is deterministic and inspectable, while strict Tau2 NL assertions were unavailable without a compatible judge. The result is explicitly labeled local rather than presented as a strict success rate.
+
+### Future improvements
+
+The next useful work is to enable the strict NL judge, run paired seeds across the selected tasks, add a text-only control with identical tools and policy, and expand return, cancellation, payment, and escalation coverage. I would also add a scripted user simulator, explicit confidence gates for names and identifiers, provider-level latency and cost metrics, and a real transport test before making claims about production voice quality.
+
 ## 2. Design and implementation
 
 ### 2.1 Pipeline topology
