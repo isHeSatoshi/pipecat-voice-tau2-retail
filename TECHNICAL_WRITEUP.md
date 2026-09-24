@@ -43,7 +43,21 @@ Retail writes receive an additional live-context guard: an immediate affirmative
 
 The agent uses a state-oriented v4 prompt with rules for authentication, grounded IDs, one tool call per assistant turn, exact write proposals, confirmation, and completion. The runtime also uses VAD and buffered audio transport behavior to avoid treating short TTS gaps as completed caller turns. A short `checking..just a sec` acknowledgement is inserted before grounded read/write calls when the configured prefill cooldown permits it. It is sent as a TTS frame and is not added to the scored context.
 
-### 2.4 Evidence and observability
+### 2.4 Voice-system engineering
+
+The voice path is treated as a full system rather than a text wrapper around the LLM.
+
+- **Logical full-duplex behavior:** the agent and user workers run concurrently with two PCM directions, interruption support, and independent input/output processors. This is full-duplex at the pipeline level, not acoustic full duplex in a physical room.
+- **VAD:** Silero is initialized with the pipeline sample rate and emits speech-start and speech-stop frames. Those boundaries stop the system from treating every small audio chunk as a new caller turn.
+- **STT buffering:** Parakeet receives accumulated utterance audio and runs at end-of-speech or after a safe silence gap. This is important for names, zip codes, order ids, and tool arguments, which are especially vulnerable to fragmented recognition.
+- **TTS continuity:** Chatterbox synthesizes the complete assistant response before the response is forwarded through the virtual output. This reduces false turn boundaries caused by sentence-level pauses.
+- **Interruption and hold behavior:** the pipeline allows barge-in-style interruption, treats short checking phrases as non-substantive, and keeps those phrases out of the scored context.
+- **Audio evidence:** the harness records separate agent and customer audio, a mixed reference conversation, and per-turn segment metadata when exact capture is available.
+- **Shared observability clock:** VAD, STT, LLM, tool, TTS, lifecycle, and error events use a conversation-relative timeline, making it possible to attribute failures to a specific voice stage.
+
+The design is intentionally a repeatable virtual acoustic environment. It does not claim microphone realism, acoustic echo cancellation, packet-loss behavior, or production-grade full-duplex performance.
+
+### 2.5 Evidence and observability
 
 Each simulation records:
 

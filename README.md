@@ -71,6 +71,20 @@ user LLM -> user TTS -> virtual PCM bus -> agent STT
 
 The virtual transport is an in-memory closed-loop transport, not a deployment-grade acoustic full-duplex system. It provides repeatable audio timing, VAD boundaries, recordings, and trace events without exposing a microphone or network transport.
 
+## Voice-system details
+
+A voice agent is more than an LLM with a microphone attached. This harness treats the audio path as a first-class system:
+
+- **Logical full-duplex loop:** the agent and simulated customer run concurrently, with two PCM directions, interruption support, and separate input/output processors. This is full-duplex at the pipeline level, not acoustic full duplex in a real room.
+- **VAD turn detection:** Silero is initialized at the pipeline sample rate and emits speech-start and speech-stop events. Those boundaries prevent every 20 ms audio frame from becoming a new customer turn.
+- **Utterance-buffered STT:** Parakeet receives accumulated audio and transcribes at end-of-speech or a safe silence gap. This reduces fragmented names, zip codes, and tool arguments caused by frame-by-frame recognition.
+- **Continuous TTS responses:** Chatterbox synthesizes the complete assistant response before it is forwarded through the output transport. That keeps sentence pauses from looking like completed caller turns.
+- **Interruption and hold behavior:** the pipeline allows interruptions, treats short hold phrases as non-substantive, and keeps them out of the scored conversation context.
+- **Audio evidence:** each run retains agent audio, customer audio, the mixed reference conversation, and per-turn segment metadata when exact capture is available.
+- **Traceability:** VAD, STT, LLM, tool, TTS, lifecycle, and error events share a conversation-relative clock, so a voice failure can be traced to a specific stage.
+
+The main limitation is intentional: this is a repeatable virtual acoustic environment, not a claim about microphone quality, echo cancellation, packet loss, or real-world barge-in.
+
 ## Requirements
 
 - Python 3.12 or 3.13.
