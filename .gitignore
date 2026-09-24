@@ -1,0 +1,40 @@
+# Python environments and build output
+.venv/
+venv/
+ENV/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.log
+*.err
+*.tmp
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local agent/tooling state
+.agents/
+.claude/
+viewer/streamlit.log
+viewer/streamlit.err
+
+# Exploratory local scripts and extra run artifacts
+probe*.py
+smoke*.py
+score*.py
+analyze_*.py
+backfill_*.py
+run_checks.py
+data/runs/*
+!data/runs/v4_calibrated_batch/
+!data/runs/v4_calibrated_batch/**

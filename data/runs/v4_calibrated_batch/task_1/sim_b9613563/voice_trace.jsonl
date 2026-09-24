@@ -1,0 +1,542 @@
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 1.0, "type": "meta", "config": {"domain": "retail", "split": "base", "agent_llm_impl": "minimax", "user_llm_impl": "minimax", "agent_model": "MiniMax-M2.7", "user_model": "MiniMax-M2.7", "stt_impl": "parakeet", "tts_impl": "chatterbox", "sample_rate": 16000, "max_conversation_seconds": 360, "seed": 42, "minimax_api_base": "https://api.minimax.io/anthropic", "run_id": "sim_b9613563", "prompt": "v4", "prompt_sha256": "d71d2aac7bc29f09db55782624f56c0e47975efed16d846edb983406b504c82e", "vad_enabled": true, "tool_execution_policy": "single_serialized_exact_signature"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 0.0, "type": "run_start"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 485.66, "type": "llm_run", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 487.66, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 511.21, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 7145.91, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 7146.4, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 19916.89, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 19916.89, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 19932.95, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 19932.95, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 19944.47, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 19986.03, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 19995.53, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 20029.1, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 20268.76, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 20292.83, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21147.99, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21322.85, "type": "stt_result", "side": "agent", "text": "Clears throat. Hi there.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21322.85, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21322.85, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21477.83, "type": "stt_result", "side": "agent", "text": "Um, I recently received order number wtundr-wtunder 378156, and I'd like to set up some exchanges.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21477.83, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21477.83, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21612.61, "type": "stt_result", "side": "agent", "text": "Specifically, I'd like to swap out the mechanical keyboard for one with clicky switches and the smart thermostat for a Google Home compatible version instead of Apple HomeKit.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21612.61, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 21612.61, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 22612.39, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 22615.89, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 29574.91, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 29575.41, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42339.7, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42340.7, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42349.71, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42349.71, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42380.77, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42431.33, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42456.37, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42679.64, "type": "stt_result", "side": "user", "text": "I'd be happy to help you with those exchanges.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42679.64, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42679.64, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42825.02, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42938.69, "type": "stt_result", "side": "user", "text": "Could you please verify your identity by providing your email or your first name, last name, and zip code?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 42939.19, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 43960.75, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 43964.26, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 47930.76, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 47931.26, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59372.89, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59372.89, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59377.9, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59377.9, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59405.44, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59405.94, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59418.96, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59451.52, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59681.0, "type": "stt_result", "side": "agent", "text": "Sure.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59681.0, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59681.0, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59689.51, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59804.14, "type": "stt_result", "side": "agent", "text": "First name Yousaf, last name Rossi, and my zip code is 19122.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 59804.14, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 60804.41, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 60808.41, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 60812.41, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 63714.66, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 63715.66, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_obwuvm75ibhb_1", "arguments": {"first_name": "Yousaf", "last_name": "Rossi", "zip": "19122"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 63718.16, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 63724.17, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_obwuvm75ibhb_1", "arguments": {"first_name": "Yousaf", "last_name": "Rossi", "zip": "19122"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 63725.17, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_obwuvm75ibhb_1", "result": {"error": "User not found"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67390.36, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_obwuvm75ibhb_1", "arguments": {"first_name": "Yousaf", "last_name": "Rossi", "zip": "19122"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67390.36, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_obwuvm75ibhb_1", "result": {"error": "User not found"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67401.41, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67418.45, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67424.45, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67444.49, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67574.92, "type": "stt_result", "side": "user", "text": "Checking", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67575.43, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67575.43, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67577.43, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67577.93, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67675.08, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67772.74, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 67772.74, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 68775.57, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 68779.07, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 68780.57, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 70260.44, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 70261.45, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 71618.65, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 71619.15, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81209.48, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81209.48, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81219.5, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81219.5, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81265.54, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81391.29, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81430.38, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81702.28, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81799.9, "type": "stt_result", "side": "user", "text": "I wasn't able to find an account with that name and zip code.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81799.9, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81800.41, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81812.92, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81813.42, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81814.42, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 81845.47, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 82222.25, "type": "stt_result", "side": "user", "text": "Could you provide your email address instead to help locate your account?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 82222.25, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 82222.25, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 83223.77, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 83227.27, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 86716.49, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 86717.49, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 86717.99, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 102996.01, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 102996.51, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103005.01, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103005.01, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103024.54, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103122.2, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103142.59, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103318.44, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103333.45, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103403.55, "type": "stt_result", "side": "agent", "text": "Oh, um I actually don't remember my email address off the top of my head.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103414.05, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103414.05, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103414.55, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103415.56, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103634.84, "type": "stt_result", "side": "agent", "text": "I could try to. I mean, it's probably something I have written down at home.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103634.84, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103635.34, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 103647.87, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 104127.13, "type": "stt_result", "side": "agent", "text": "Is there anything else I can give you to help locate it?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 104127.63, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 105130.6, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 105133.61, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 111174.75, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 111174.75, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 117977.38, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 117977.38, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 117991.43, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 118076.1, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 118087.61, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 118175.25, "type": "stt_result", "side": "user", "text": "I understand. Unfortunately, I'm only able to locate accounts using the email or the combination of first name, last name, and zip code.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 118175.25, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 118175.25, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 118267.48, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 118323.6, "type": "stt_result", "side": "user", "text": "Could you try to find your email address somewhere, or would you like to try a different name or zip code?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 118323.6, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 119341.03, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 119342.54, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 119343.04, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 119343.04, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 126837.95, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 126838.45, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 131932.34, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 131932.34, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 131938.85, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 131950.4, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 131958.42, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 131967.94, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 131987.53, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 131990.54, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132058.65, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132063.15, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132079.18, "type": "stt_result", "side": "agent", "text": "Hmm, okay.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132079.68, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132079.68, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132132.29, "type": "stt_result", "side": "agent", "text": "Let me try spelling my last name.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132132.29, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132132.29, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132166.33, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132189.37, "type": "stt_result", "side": "agent", "text": "It's R-O-S-S-I, and my zip code is 19122.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132189.87, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132189.87, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132236.97, "type": "stt_result", "side": "agent", "text": "Does that help?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 132236.97, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 133255.2, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 133257.2, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 138295.67, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 138296.68, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 138296.68, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 143863.62, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 143863.62, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 143877.64, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 143926.24, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 143939.27, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 143970.99, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 143975.5, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144007.58, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144034.62, "type": "stt_result", "side": "user", "text": "I've already tried the spelling Rossi Rossi and it wasn't found.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144034.62, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144034.62, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144094.24, "type": "stt_result", "side": "user", "text": "Could you double check your first name and zip code?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144094.24, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144094.24, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144145.34, "type": "stt_result", "side": "user", "text": "or try providing your email address instead.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144145.34, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 144145.34, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 145164.29, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 145165.79, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 151380.55, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 151381.55, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 155959.09, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 155959.09, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 155972.1, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156012.23, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156021.34, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156063.93, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156071.44, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156113.98, "type": "stt_result", "side": "agent", "text": "Oh sorry about that, it's Yusuf Y-U-S-U-F for the first name.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156113.98, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156118.48, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156172.59, "type": "stt_result", "side": "agent", "text": "And zip code one nine one two two.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156172.59, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156172.59, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156226.68, "type": "stt_result", "side": "agent", "text": "Does that make a difference?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 156226.68, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 157224.48, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 157225.98, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 160631.2, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 160631.2, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_qq5mys3qfo1q_1", "arguments": {"first_name": "Yusuf", "last_name": "Rossi", "zip": "19122"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 160632.71, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_qq5mys3qfo1q_1", "result": {"result": "yusuf_rossi_9620"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 161936.68, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_qq5mys3qfo1q_1", "arguments": {"first_name": "Yusuf", "last_name": "Rossi", "zip": "19122"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 161936.68, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_qq5mys3qfo1q_1", "result": {"result": "yusuf_rossi_9620"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 161938.2, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_qq5mys3qfo1q_1", "arguments": {"first_name": "Yusuf", "last_name": "Rossi", "zip": "19122"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 161938.2, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_qq5mys3qfo1q_1", "result": {"result": "yusuf_rossi_9620"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 161940.2, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 161946.73, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 162142.28, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 162198.89, "type": "stt_result", "side": "user", "text": "Shreking, just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 162199.4, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 162199.9, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 163216.77, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 163218.77, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 163218.77, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 163219.27, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 165625.5, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 165626.0, "type": "tool_call", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_ge5c8m3s8vtr_1", "arguments": {"user_id": "yusuf_rossi_9620"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 165626.5, "type": "tool_result", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_ge5c8m3s8vtr_1", "result": {"user_id": "yusuf_rossi_9620", "name": {"first_name": "Yusuf", "last_name": "Rossi"}, "address": {"address1": "763 Broadway", "address2": "Suite 135", "city": "Philadelphia", "country": "USA", "state": "PA", "zip": "19122"}, "email": "yusuf.rossi7301@example.com", "payment_methods": {"credit_card_9513926": {"source": "credit_card", "id": "credit_card_9513926", "brand": "mastercard", "last_four": "2478"}}, "orders": ["#W6247578", "#W9711842", "#W4776164", "#W6679257", "#W2378156"]}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166598.55, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166598.55, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166898.46, "type": "tool_call", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_ge5c8m3s8vtr_1", "arguments": {"user_id": "yusuf_rossi_9620"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166898.46, "type": "tool_result", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_ge5c8m3s8vtr_1", "result": {"user_id": "yusuf_rossi_9620", "name": {"first_name": "Yusuf", "last_name": "Rossi"}, "address": {"address1": "763 Broadway", "address2": "Suite 135", "city": "Philadelphia", "country": "USA", "state": "PA", "zip": "19122"}, "email": "yusuf.rossi7301@example.com", "payment_methods": {"credit_card_9513926": {"source": "credit_card", "id": "credit_card_9513926", "brand": "mastercard", "last_four": "2478"}}, "orders": ["#W6247578", "#W9711842", "#W4776164", "#W6679257", "#W2378156"]}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166902.96, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166911.47, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166917.97, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166927.98, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166996.08, "type": "stt_result", "side": "user", "text": "Checking", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166996.58, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166996.58, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 166998.58, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 167001.08, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 167077.21, "type": "stt_result", "side": "user", "text": "Just a set.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 167077.21, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 167078.21, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 168070.38, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 168072.97, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 169182.45, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 169183.46, "type": "tool_call", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_vm114jbd57nt_1", "arguments": {"order_id": "#W2378156"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 169184.46, "type": "tool_result", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_vm114jbd57nt_1", "result": {"order_id": "#W2378156", "user_id": "yusuf_rossi_9620", "address": {"address1": "763 Broadway", "address2": "Suite 135", "city": "Philadelphia", "country": "USA", "state": "PA", "zip": "19122"}, "items": [{"name": "Headphones", "product_id": "6992792935", "item_id": "4202497723", "price": 342.81, "options": {"type": "over-ear", "connectivity": "wireless", "color": "blue"}}, {"name": "Vacuum Cleaner", "product_id": "1762337868", "item_id": "4602305039", "price": 561.05, "options": {"type": "robotic", "bagged/bagless": "bagged", "features": "cordless"}}, {"name": "Mechanical Keyboard", "product_id": "1656367028", "item_id": "1151293680", "price": 272.33, "options": {"switch type": "linear", "backlight": "RGB", "size": "full size"}}, {"name": "Smart Thermostat", "product_id": "4896585277", "item_id": "4983901480", "price": 262.47, "options": {"compatibility": "Apple HomeKit", "color": "black"}}, {"name": "Smart Watch", "product_id": "6945232052", "item_id": "9408160950", "price": 381.26, "options": {"color": "gold", "band material": "leather", "display": "LCD"}}], "status": "delivered", "fulfillments": [{"tracking_id": ["843053632392"], "item_ids": ["4202497723", "4602305039", "1151293680", "4983901480", "9408160950"]}], "payment_history": [{"transaction_type": "payment", "amount": 1819.92, "payment_method_id": "credit_card_9513926"}], "cancel_reason": null, "exchange_items": null, "exchange_new_items": null, "exchange_payment_method_id": null, "exchange_price_difference": null, "return_items": null, "return_payment_method_id": null}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170126.39, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170126.89, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170862.36, "type": "tool_call", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_vm114jbd57nt_1", "arguments": {"order_id": "#W2378156"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170862.36, "type": "tool_result", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_vm114jbd57nt_1", "result": {"order_id": "#W2378156", "user_id": "yusuf_rossi_9620", "address": {"address1": "763 Broadway", "address2": "Suite 135", "city": "Philadelphia", "country": "USA", "state": "PA", "zip": "19122"}, "items": [{"name": "Headphones", "product_id": "6992792935", "item_id": "4202497723", "price": 342.81, "options": {"type": "over-ear", "connectivity": "wireless", "color": "blue"}}, {"name": "Vacuum Cleaner", "product_id": "1762337868", "item_id": "4602305039", "price": 561.05, "options": {"type": "robotic", "bagged/bagless": "bagged", "features": "cordless"}}, {"name": "Mechanical Keyboard", "product_id": "1656367028", "item_id": "1151293680", "price": 272.33, "options": {"switch type": "linear", "backlight": "RGB", "size": "full size"}}, {"name": "Smart Thermostat", "product_id": "4896585277", "item_id": "4983901480", "price": 262.47, "options": {"compatibility": "Apple HomeKit", "color": "black"}}, {"name": "Smart Watch", "product_id": "6945232052", "item_id": "9408160950", "price": 381.26, "options": {"color": "gold", "band material": "leather", "display": "LCD"}}], "status": "delivered", "fulfillments": [{"tracking_id": ["843053632392"], "item_ids": ["4202497723", "4602305039", "1151293680", "4983901480", "9408160950"]}], "payment_history": [{"transaction_type": "payment", "amount": 1819.92, "payment_method_id": "credit_card_9513926"}], "cancel_reason": null, "exchange_items": null, "exchange_new_items": null, "exchange_payment_method_id": null, "exchange_price_difference": null, "return_items": null, "return_payment_method_id": null}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170867.37, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170877.38, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170880.88, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170894.9, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170970.48, "type": "stt_result", "side": "user", "text": "Uh.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170970.98, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170970.98, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 170972.49, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 171058.1, "type": "stt_result", "side": "user", "text": "Checking just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 171058.1, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 172053.78, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 172055.28, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 174355.14, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 174355.64, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 174827.25, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 174829.25, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_aq23du96sx0e_1", "arguments": {"product_id": "1656367028"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 174831.25, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 174832.25, "type": "tool_result", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_aq23du96sx0e_1", "result": {"name": "Mechanical Keyboard", "product_id": "1656367028", "variants": {"9690244451": {"item_id": "9690244451", "options": {"switch type": "clicky", "backlight": "RGB", "size": "60%"}, "available": false, "price": 236.51}, "7706410293": {"item_id": "7706410293", "options": {"switch type": "clicky", "backlight": "none", "size": "full size"}, "available": true, "price": 269.16}, "3616838507": {"item_id": "3616838507", "options": {"switch type": "tactile", "backlight": "white", "size": "full size"}, "available": true, "price": 226.11}, "8484921793": {"item_id": "8484921793", "options": {"switch type": "linear", "backlight": "RGB", "size": "80%"}, "available": true, "price": 230.15}, "1340995114": {"item_id": "1340995114", "options": {"switch type": "tactile", "backlight": "none", "size": "full size"}, "available": false, "price": 235.13}, "6342039236": {"item_id": "6342039236", "options": {"switch type": "clicky", "backlight": "white", "size": "full size"}, "available": true, "price": 244.91}, "1421289881": {"item_id": "1421289881", "options": {"switch type": "linear", "backlight": "none", "size": "80%"}, "available": true, "price": 268.77}, "7867398203": {"item_id": "7867398203", "options": {"switch type": "linear", "backlight": "RGB", "size": "60%"}, "available": true, "price": 232.7}, "4648814700": {"item_id": "4648814700", "options": {"switch type": "linear", "backlight": "white", "size": "60%"}, "available": false, "price": 228.84}, "5222576926": {"item_id": "5222576926", "options": {"switch type": "linear", "backlight": "white", "size": "full size"}, "available": false, "price": 249.95}, "4402162122": {"item_id": "4402162122", "options": {"switch type": "tactile", "backlight": "RGB", "size": "60%"}, "available": true, "price": 233.9}, "1151293680": {"item_id": "1151293680", "options": {"switch type": "linear", "backlight": "RGB", "size": "full size"}, "available": true, "price": 272.33}, "2299424241": {"item_id": "2299424241", "options": {"switch type": "clicky", "backlight": "RGB", "size": "80%"}, "available": true, "price": 237.48}, "4843487907": {"item_id": "4843487907", "options": {"switch type": "clicky", "backlight": "white", "size": "80%"}, "available": false, "price": 254.84}, "9025753381": {"item_id": "9025753381", "options": {"switch type": "clicky", "backlight": "RGB", "size": "full size"}, "available": false, "price": 231.58}, "6439196450": {"item_id": "6439196450", "options": {"switch type": "tactile", "backlight": "none", "size": "60%"}, "available": false, "price": 254.56}, "9991484137": {"item_id": "9991484137", "options": {"switch type": "tactile", "backlight": "white", "size": "80%"}, "available": true, "price": 240.97}, "9665000388": {"item_id": "9665000388", "options": {"switch type": "clicky", "backlight": "none", "size": "80%"}, "available": true, "price": 269.46}, "9570044148": {"item_id": "9570044148", "options": {"switch type": "linear", "backlight": "none", "size": "full size"}, "available": true, "price": 231.37}, "7658724607": {"item_id": "7658724607", "options": {"switch type": "tactile", "backlight": "none", "size": "80%"}, "available": true, "price": 256.73}}}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 179871.79, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 179871.79, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 179878.8, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 179878.8, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 179898.31, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 179973.97, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180006.52, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180194.78, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180217.8, "type": "stt_result", "side": "agent", "text": "Okay, no problem.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180217.8, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180217.8, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180218.8, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180219.3, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180221.3, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_aq23du96sx0e_1", "arguments": {"product_id": "1656367028"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180230.81, "type": "tool_result", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_aq23du96sx0e_1", "result": {"name": "Mechanical Keyboard", "product_id": "1656367028", "variants": {"9690244451": {"item_id": "9690244451", "options": {"switch type": "clicky", "backlight": "RGB", "size": "60%"}, "available": false, "price": 236.51}, "7706410293": {"item_id": "7706410293", "options": {"switch type": "clicky", "backlight": "none", "size": "full size"}, "available": true, "price": 269.16}, "3616838507": {"item_id": "3616838507", "options": {"switch type": "tactile", "backlight": "white", "size": "full size"}, "available": true, "price": 226.11}, "8484921793": {"item_id": "8484921793", "options": {"switch type": "linear", "backlight": "RGB", "size": "80%"}, "available": true, "price": 230.15}, "1340995114": {"item_id": "1340995114", "options": {"switch type": "tactile", "backlight": "none", "size": "full size"}, "available": false, "price": 235.13}, "6342039236": {"item_id": "6342039236", "options": {"switch type": "clicky", "backlight": "white", "size": "full size"}, "available": true, "price": 244.91}, "1421289881": {"item_id": "1421289881", "options": {"switch type": "linear", "backlight": "none", "size": "80%"}, "available": true, "price": 268.77}, "7867398203": {"item_id": "7867398203", "options": {"switch type": "linear", "backlight": "RGB", "size": "60%"}, "available": true, "price": 232.7}, "4648814700": {"item_id": "4648814700", "options": {"switch type": "linear", "backlight": "white", "size": "60%"}, "available": false, "price": 228.84}, "5222576926": {"item_id": "5222576926", "options": {"switch type": "linear", "backlight": "white", "size": "full size"}, "available": false, "price": 249.95}, "4402162122": {"item_id": "4402162122", "options": {"switch type": "tactile", "backlight": "RGB", "size": "60%"}, "available": true, "price": 233.9}, "1151293680": {"item_id": "1151293680", "options": {"switch type": "linear", "backlight": "RGB", "size": "full size"}, "available": true, "price": 272.33}, "2299424241": {"item_id": "2299424241", "options": {"switch type": "clicky", "backlight": "RGB", "size": "80%"}, "available": true, "price": 237.48}, "4843487907": {"item_id": "4843487907", "options": {"switch type": "clicky", "backlight": "white", "size": "80%"}, "available": false, "price": 254.84}, "9025753381": {"item_id": "9025753381", "options": {"switch type": "clicky", "backlight": "RGB", "size": "full size"}, "available": false, "price": 231.58}, "6439196450": {"item_id": "6439196450", "options": {"switch type": "tactile", "backlight": "none", "size": "60%"}, "available": false, "price": 254.56}, "9991484137": {"item_id": "9991484137", "options": {"switch type": "tactile", "backlight": "white", "size": "80%"}, "available": true, "price": 240.97}, "9665000388": {"item_id": "9665000388", "options": {"switch type": "clicky", "backlight": "none", "size": "80%"}, "available": true, "price": 269.46}, "9570044148": {"item_id": "9570044148", "options": {"switch type": "linear", "backlight": "none", "size": "full size"}, "available": true, "price": 231.37}, "7658724607": {"item_id": "7658724607", "options": {"switch type": "tactile", "backlight": "none", "size": "80%"}, "available": true, "price": 256.73}}}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180435.49, "type": "stt_result", "side": "agent", "text": "Take your time.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180435.49, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180435.49, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 180436.99, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 181454.42, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 181459.92, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 188225.94, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 188226.44, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_sy3l8f4l421l_1", "arguments": {"product_id": "4896585277"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 188236.45, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_sy3l8f4l421l_1", "arguments": {"product_id": "4896585277"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 188237.45, "type": "tool_result", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_sy3l8f4l421l_1", "result": {"name": "Smart Thermostat", "product_id": "4896585277", "variants": {"8722653925": {"item_id": "8722653925", "options": {"compatibility": "Google Assistant", "color": "white"}, "available": false, "price": 227.8}, "8593894906": {"item_id": "8593894906", "options": {"compatibility": "Amazon Alexa", "color": "white"}, "available": false, "price": 263.11}, "2791467853": {"item_id": "2791467853", "options": {"compatibility": "Google Assistant", "color": "stainless steel"}, "available": false, "price": 242.53}, "7747408585": {"item_id": "7747408585", "options": {"compatibility": "Google Assistant", "color": "black"}, "available": true, "price": 249.01}, "4953074738": {"item_id": "4953074738", "options": {"compatibility": "Amazon Alexa", "color": "black"}, "available": true, "price": 226.02}, "4983901480": {"item_id": "4983901480", "options": {"compatibility": "Apple HomeKit", "color": "black"}, "available": true, "price": 262.47}, "9480266227": {"item_id": "9480266227", "options": {"compatibility": "Apple HomeKit", "color": "stainless steel"}, "available": true, "price": 255.98}, "6243148452": {"item_id": "6243148452", "options": {"compatibility": "Amazon Alexa", "color": "stainless steel"}, "available": true, "price": 247.0}, "3377900078": {"item_id": "3377900078", "options": {"compatibility": "Apple HomeKit", "color": "white"}, "available": true, "price": 260.68}}}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191779.12, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_sy3l8f4l421l_1", "arguments": {"product_id": "4896585277"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191779.12, "type": "tool_result", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_sy3l8f4l421l_1", "result": {"name": "Smart Thermostat", "product_id": "4896585277", "variants": {"8722653925": {"item_id": "8722653925", "options": {"compatibility": "Google Assistant", "color": "white"}, "available": false, "price": 227.8}, "8593894906": {"item_id": "8593894906", "options": {"compatibility": "Amazon Alexa", "color": "white"}, "available": false, "price": 263.11}, "2791467853": {"item_id": "2791467853", "options": {"compatibility": "Google Assistant", "color": "stainless steel"}, "available": false, "price": 242.53}, "7747408585": {"item_id": "7747408585", "options": {"compatibility": "Google Assistant", "color": "black"}, "available": true, "price": 249.01}, "4953074738": {"item_id": "4953074738", "options": {"compatibility": "Amazon Alexa", "color": "black"}, "available": true, "price": 226.02}, "4983901480": {"item_id": "4983901480", "options": {"compatibility": "Apple HomeKit", "color": "black"}, "available": true, "price": 262.47}, "9480266227": {"item_id": "9480266227", "options": {"compatibility": "Apple HomeKit", "color": "stainless steel"}, "available": true, "price": 255.98}, "6243148452": {"item_id": "6243148452", "options": {"compatibility": "Amazon Alexa", "color": "stainless steel"}, "available": true, "price": 247.0}, "3377900078": {"item_id": "3377900078", "options": {"compatibility": "Apple HomeKit", "color": "white"}, "available": true, "price": 260.68}}}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191780.62, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_sy3l8f4l421l_1", "arguments": {"product_id": "4896585277"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191781.12, "type": "tool_result", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_sy3l8f4l421l_1", "result": {"name": "Smart Thermostat", "product_id": "4896585277", "variants": {"8722653925": {"item_id": "8722653925", "options": {"compatibility": "Google Assistant", "color": "white"}, "available": false, "price": 227.8}, "8593894906": {"item_id": "8593894906", "options": {"compatibility": "Amazon Alexa", "color": "white"}, "available": false, "price": 263.11}, "2791467853": {"item_id": "2791467853", "options": {"compatibility": "Google Assistant", "color": "stainless steel"}, "available": false, "price": 242.53}, "7747408585": {"item_id": "7747408585", "options": {"compatibility": "Google Assistant", "color": "black"}, "available": true, "price": 249.01}, "4953074738": {"item_id": "4953074738", "options": {"compatibility": "Amazon Alexa", "color": "black"}, "available": true, "price": 226.02}, "4983901480": {"item_id": "4983901480", "options": {"compatibility": "Apple HomeKit", "color": "black"}, "available": true, "price": 262.47}, "9480266227": {"item_id": "9480266227", "options": {"compatibility": "Apple HomeKit", "color": "stainless steel"}, "available": true, "price": 255.98}, "6243148452": {"item_id": "6243148452", "options": {"compatibility": "Amazon Alexa", "color": "stainless steel"}, "available": true, "price": 247.0}, "3377900078": {"item_id": "3377900078", "options": {"compatibility": "Apple HomeKit", "color": "white"}, "available": true, "price": 260.68}}}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191789.14, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191800.65, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191812.67, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191833.19, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191942.9, "type": "stt_result", "side": "user", "text": "Checking?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191943.4, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 191943.4, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 192034.51, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 192132.6, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 192132.6, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 193123.08, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 193125.58, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 193125.58, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 193127.58, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 195546.24, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 195547.24, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 200546.38, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 200547.38, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 202934.21, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 202934.21, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 202943.72, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 202943.72, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 202995.77, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203016.3, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203038.89, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203067.42, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203077.93, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203259.89, "type": "stt_result", "side": "agent", "text": "Mm, okay.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203260.39, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203260.39, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203262.89, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203295.93, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203456.07, "type": "stt_result", "side": "agent", "text": "Still checking?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203456.07, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203456.57, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203686.85, "type": "stt_result", "side": "agent", "text": "Just wanted to make sure you're still there.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203686.85, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 203687.35, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 204696.72, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 204701.72, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 204703.23, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 204703.73, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 212830.54, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 212831.04, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244109.82, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244109.82, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244120.33, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244120.33, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244129.84, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244141.85, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244188.89, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244201.4, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244325.55, "type": "stt_result", "side": "user", "text": "Yes, I'm still here. I found your order and the available options for exchange.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244325.55, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244325.55, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244327.55, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244327.55, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244388.35, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244392.35, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244468.45, "type": "stt_result", "side": "user", "text": "For the mechanical keyboard, here are the available clicky switch options. Clicky, No Backlight, full size $2691116.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244468.45, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244472.95, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244473.45, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244473.95, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244524.51, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244529.51, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244601.07, "type": "stt_result", "side": "user", "text": "Slicky white backlight full size 244-91.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244601.07, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244601.07, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244652.15, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244660.65, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244689.67, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244717.21, "type": "stt_result", "side": "user", "text": "Clicky RGB backlight, 80% size 237.48. Clicky no backlight, 80% size $237.146.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244717.21, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244717.21, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244718.21, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244718.21, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244778.77, "type": "stt_result", "side": "user", "text": "For the smart thermostat, there's one Google Home compatible option available Google Assistant Black $239.11 or $169.1.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244778.77, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244778.77, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244832.82, "type": "stt_result", "side": "user", "text": "Which variants would you like to exchange for?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 244832.82, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 245824.46, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 245825.96, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 256035.36, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 256035.36, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261828.71, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261828.71, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261842.23, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261853.76, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261864.77, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261920.36, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261925.48, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261959.05, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261969.07, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261983.6, "type": "stt_result", "side": "agent", "text": "Okay, let me see.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261983.6, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261988.61, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 261989.11, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 262049.2, "type": "stt_result", "side": "agent", "text": "For the keyboard, I don't see Clicky RGB backlight full size available.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 262049.2, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 262049.2, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 262077.24, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 262098.77, "type": "stt_result", "side": "agent", "text": "So I'll just go with the thermostat exchange.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 262098.77, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 262098.77, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 262156.37, "type": "stt_result", "side": "agent", "text": "The Google Assistant Block One.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 262156.37, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 263182.82, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 263185.33, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 273581.4, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 273582.42, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 281951.48, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 281951.48, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 281955.49, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 281955.49, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 281969.01, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 282032.59, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 282044.1, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 282160.26, "type": "stt_result", "side": "user", "text": "Just to clarify, are you only exchanging the thermostat for now or would you also like to proceed with a keyboard exchange?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 282160.76, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 282160.76, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 282428.59, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 282493.66, "type": "stt_result", "side": "user", "text": "For the Thermostat Exchange, the price difference is 1346, you'll receive a refund. Which payment method would you like to use for the refund? You have a credit card ending in 2478.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 282494.16, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 283487.16, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 283488.66, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 290999.45, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 291000.46, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 294439.67, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 294439.67, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 294450.18, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 294642.9, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 294704.47, "type": "stt_result", "side": "agent", "text": "Um, I'll just do the thermostat exchange for now, yeah. And I'll use that credit card ending in two four seven eight for the refund.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 294704.47, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 294705.47, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 295700.33, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 295702.34, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 295702.85, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 295702.85, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 301360.3, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 301360.8, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308447.31, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308447.31, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308454.91, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308460.92, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308491.45, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308502.99, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308564.58, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308567.58, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308622.77, "type": "stt_result", "side": "user", "text": "To confirm, I'll be exchanging the smart thermostat.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308622.77, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308622.77, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308629.27, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308629.77, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308645.8, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308667.84, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308705.97, "type": "stt_result", "side": "user", "text": "Apple HomeKit for the Google Assistant compatible version of", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308705.97, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308705.97, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308764.12, "type": "stt_result", "side": "user", "text": "with a 1346 refund to your credit card ending in 2478.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308764.12, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308764.12, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308765.12, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308769.62, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308808.66, "type": "stt_result", "side": "user", "text": "Reply yes to confirm.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 308809.16, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 309808.13, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 309810.12, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 313108.7, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 313109.2, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 314532.66, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 314532.66, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 314543.18, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 314615.95, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 314662.5, "type": "stt_result", "side": "agent", "text": "Yes, that's correct.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 314663.0, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 314664.0, "type": "vad_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 315658.04, "type": "vad_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 315660.04, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 319190.43, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 319190.93, "type": "tool_call", "side": "agent", "name": "exchange_delivered_order_items", "tool_call_id": "call_function_y814vr4ollja_1", "arguments": {"order_id": "#W2378156", "item_ids": ["4983901480"], "new_item_ids": ["7747408585"], "payment_method_id": "credit_card_9513926"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 319192.44, "type": "tool_result", "side": "agent", "name": "exchange_delivered_order_items", "tool_call_id": "call_function_y814vr4ollja_1", "result": {"order_id": "#W2378156", "user_id": "yusuf_rossi_9620", "address": {"address1": "763 Broadway", "address2": "Suite 135", "city": "Philadelphia", "country": "USA", "state": "PA", "zip": "19122"}, "items": [{"name": "Headphones", "product_id": "6992792935", "item_id": "4202497723", "price": 342.81, "options": {"type": "over-ear", "connectivity": "wireless", "color": "blue"}}, {"name": "Vacuum Cleaner", "product_id": "1762337868", "item_id": "4602305039", "price": 561.05, "options": {"type": "robotic", "bagged/bagless": "bagged", "features": "cordless"}}, {"name": "Mechanical Keyboard", "product_id": "1656367028", "item_id": "1151293680", "price": 272.33, "options": {"switch type": "linear", "backlight": "RGB", "size": "full size"}}, {"name": "Smart Thermostat", "product_id": "4896585277", "item_id": "4983901480", "price": 262.47, "options": {"compatibility": "Apple HomeKit", "color": "black"}}, {"name": "Smart Watch", "product_id": "6945232052", "item_id": "9408160950", "price": 381.26, "options": {"color": "gold", "band material": "leather", "display": "LCD"}}], "status": "exchange requested", "fulfillments": [{"tracking_id": ["843053632392"], "item_ids": ["4202497723", "4602305039", "1151293680", "4983901480", "9408160950"]}], "payment_history": [{"transaction_type": "payment", "amount": 1819.92, "payment_method_id": "credit_card_9513926"}], "cancel_reason": null, "exchange_items": ["4983901480"], "exchange_new_items": ["7747408585"], "exchange_payment_method_id": "credit_card_9513926", "exchange_price_difference": -13.46, "return_items": null, "return_payment_method_id": null}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320640.92, "type": "tool_call", "side": "agent", "name": "exchange_delivered_order_items", "tool_call_id": "call_function_y814vr4ollja_1", "arguments": {"order_id": "#W2378156", "item_ids": ["4983901480"], "new_item_ids": ["7747408585"], "payment_method_id": "credit_card_9513926"}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320640.92, "type": "tool_result", "side": "agent", "name": "exchange_delivered_order_items", "tool_call_id": "call_function_y814vr4ollja_1", "result": {"order_id": "#W2378156", "user_id": "yusuf_rossi_9620", "address": {"address1": "763 Broadway", "address2": "Suite 135", "city": "Philadelphia", "country": "USA", "state": "PA", "zip": "19122"}, "items": [{"name": "Headphones", "product_id": "6992792935", "item_id": "4202497723", "price": 342.81, "options": {"type": "over-ear", "connectivity": "wireless", "color": "blue"}}, {"name": "Vacuum Cleaner", "product_id": "1762337868", "item_id": "4602305039", "price": 561.05, "options": {"type": "robotic", "bagged/bagless": "bagged", "features": "cordless"}}, {"name": "Mechanical Keyboard", "product_id": "1656367028", "item_id": "1151293680", "price": 272.33, "options": {"switch type": "linear", "backlight": "RGB", "size": "full size"}}, {"name": "Smart Thermostat", "product_id": "4896585277", "item_id": "4983901480", "price": 262.47, "options": {"compatibility": "Apple HomeKit", "color": "black"}}, {"name": "Smart Watch", "product_id": "6945232052", "item_id": "9408160950", "price": 381.26, "options": {"color": "gold", "band material": "leather", "display": "LCD"}}], "status": "exchange requested", "fulfillments": [{"tracking_id": ["843053632392"], "item_ids": ["4202497723", "4602305039", "1151293680", "4983901480", "9408160950"]}], "payment_history": [{"transaction_type": "payment", "amount": 1819.92, "payment_method_id": "credit_card_9513926"}], "cancel_reason": null, "exchange_items": ["4983901480"], "exchange_new_items": ["7747408585"], "exchange_payment_method_id": "credit_card_9513926", "exchange_price_difference": -13.46, "return_items": null, "return_payment_method_id": null}}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320645.43, "type": "llm_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320651.44, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320657.46, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320666.96, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320718.06, "type": "stt_result", "side": "user", "text": "Checking", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320718.06, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320718.06, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320904.06, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320949.68, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 320949.68, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 321944.27, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 321946.28, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 324050.03, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 324050.03, "type": "tts_start", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 324606.03, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 324606.53, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 330848.63, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 330848.63, "type": "llm_end", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 330859.63, "type": "tts_stop", "side": "agent"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 330869.65, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 330899.73, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 330910.25, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 330988.44, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 330997.46, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331050.13, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331058.64, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331064.65, "type": "stt_result", "side": "user", "text": "Your thermostat exchange has been processed.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331064.65, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331064.65, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331071.15, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331172.91, "type": "stt_result", "side": "user", "text": "You'll receive a 1346 refund to your credit card ending and two four seven eight.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331172.91, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331172.91, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331285.75, "type": "stt_result", "side": "user", "text": "and you'll get an email with instructions on how to return the item.", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331285.75, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331285.75, "type": "vad_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331394.0, "type": "stt_result", "side": "user", "text": "Is there anything else I can help you with?", "user_id": "", "timestamp": ""}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 331394.0, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 332392.78, "type": "vad_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 332394.77, "type": "llm_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 341972.27, "type": "llm_end", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 341972.78, "type": "tts_start", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 343184.97, "type": "stop_signal", "reason": "agent_stop", "basis": "post_write_inactivity"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 343186.97, "type": "tts_stop", "side": "user"}
+{"task_id": "1", "simulation_id": "f42289e7-e669-4716-9ffc-218c27c3ddf6", "t_offset_ms": 343440.92, "type": "run_end", "duration_seconds": 343.3227074146271, "termination": "agent_stop", "checks": [{"name": "auth_loop", "passed": false, "message": "agent asked for authentication details 4 times"}, {"name": "tool_argument_integrity", "passed": false, "message": "call_function_obwuvm75ibhb_1: {\"error\": \"User not found\"}"}, {"name": "write_protocol", "passed": true, "message": "write calls=1, expected write categories=1"}]}

@@ -1,0 +1,74 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pipecat-voice"
+version = "0.1.0"
+description = "Cascaded Pipecat closed-loop voice-agent evaluation harness for tau2-bench retail."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+license = "MIT"
+authors = [
+    { name = "Voice Eval" },
+]
+dependencies = [
+    # tau2-bench is the eval side: environment, tasks, tools, policies, evaluator.
+    # Installed separately via `uv pip install -e ../tau2-bench` (see README).
+    # Listed here as a normal dependency to avoid hatch direct-reference issues.
+    "tau2==1.0.1",
+    # Pipecat: streaming pipeline, transports, VAD, interruption primitives.
+    "pipecat-ai==1.11.0",
+    # LiteLLM is already a tau2 dep, but we list it explicitly for the MiniMax adapter.
+    "litellm>=1.80.15,<1.82.7",
+    "anthropic>=0.40.0",
+    "scipy>=1.12.0",
+    # Observability + audio I/O
+    "loguru>=0.7.3",
+    "numpy>=1.24.0",
+    "pydantic>=2.5.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+voice = [
+    # Parakeet STT and Chatterbox TTS are heavy local dependencies.
+    "nemo_toolkit[asr]>=2.0.0; python_version >= '3.12'",
+    "chatterbox-tts>=0.1.1",
+]
+dummy = [
+    # No extra deps; the dummy STT/TTS use stdlib only.
+]
+viewer = [
+    "streamlit>=1.45.0",
+    "matplotlib>=3.8.0",
+]
+dev = [
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.23.0",
+    "ruff>=0.9.1",
+]
+
+[project.scripts]
+pipecat-voice = "pipecat_voice.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pipecat_voice"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+filterwarnings = [
+    "ignore::DeprecationWarning:litellm.*:",
+    "ignore::DeprecationWarning:pipecat.*:",
+]
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+ignore = ["E501", "F541"]

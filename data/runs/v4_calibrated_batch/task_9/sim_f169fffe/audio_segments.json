@@ -1,0 +1,149 @@
+{
+  "conversation": "conversation.wav",
+  "segments": [
+    {
+      "side": "agent",
+      "index": 1,
+      "path": "audio\\agent_turn_01.wav",
+      "start_ms": 12270.81,
+      "duration_ms": 6981.5,
+      "message_index": 2
+    },
+    {
+      "side": "agent",
+      "index": 2,
+      "path": "audio\\agent_turn_02.wav",
+      "start_ms": 31162.53,
+      "duration_ms": 7784.19,
+      "message_index": 6
+    },
+    {
+      "side": "agent",
+      "index": 3,
+      "path": "audio\\agent_turn_03.wav",
+      "start_ms": 71850.46,
+      "duration_ms": 9744.25,
+      "message_index": 20
+    },
+    {
+      "side": "agent",
+      "index": 4,
+      "path": "audio\\agent_turn_04.wav",
+      "start_ms": 104199.8,
+      "duration_ms": 2363.69,
+      "message_index": 26
+    },
+    {
+      "side": "agent",
+      "index": 5,
+      "path": "audio\\agent_turn_05.wav",
+      "start_ms": 118378.57,
+      "duration_ms": 20494.0,
+      "message_index": 28
+    },
+    {
+      "side": "agent",
+      "index": 6,
+      "path": "audio\\agent_turn_06.wav",
+      "start_ms": 149041.31,
+      "duration_ms": 33408.88,
+      "message_index": 30
+    },
+    {
+      "side": "agent",
+      "index": 7,
+      "path": "audio\\agent_turn_07.wav",
+      "start_ms": 182132.52,
+      "duration_ms": 15332.38,
+      "message_index": 32
+    },
+    {
+      "side": "agent",
+      "index": 8,
+      "path": "audio\\agent_turn_08.wav",
+      "start_ms": 206161.9,
+      "duration_ms": 9891.12,
+      "message_index": 36
+    },
+    {
+      "side": "user",
+      "index": 1,
+      "path": "audio\\user_turn_01.wav",
+      "start_ms": 4327.96,
+      "duration_ms": 4477.38,
+      "message_index": 1
+    },
+    {
+      "side": "user",
+      "index": 2,
+      "path": "audio\\user_turn_02.wav",
+      "start_ms": 20412.14,
+      "duration_ms": 2990.94,
+      "message_index": 3
+    },
+    {
+      "side": "user",
+      "index": 3,
+      "path": "audio\\user_turn_03.wav",
+      "start_ms": 32075.17,
+      "duration_ms": 4182.44,
+      "message_index": 7
+    },
+    {
+      "side": "user",
+      "index": 4,
+      "path": "audio\\user_turn_04.wav",
+      "start_ms": 40562.34,
+      "duration_ms": 4089.38,
+      "message_index": 21
+    },
+    {
+      "side": "user",
+      "index": 5,
+      "path": "audio\\user_turn_05.wav",
+      "start_ms": 82305.22,
+      "duration_ms": 4119.62,
+      "message_index": 27
+    },
+    {
+      "side": "user",
+      "index": 6,
+      "path": "audio\\user_turn_06.wav",
+      "start_ms": 109047.14,
+      "duration_ms": 1658.94,
+      "message_index": 29
+    },
+    {
+      "side": "user",
+      "index": 7,
+      "path": "audio\\user_turn_07.wav",
+      "start_ms": 137894.87,
+      "duration_ms": 5020.81,
+      "message_index": 31
+    },
+    {
+      "side": "user",
+      "index": 8,
+      "path": "audio\\user_turn_08.wav",
+      "start_ms": 173423.91,
+      "duration_ms": 4062.31,
+      "message_index": 33
+    },
+    {
+      "side": "user",
+      "index": 9,
+      "path": "audio\\user_turn_09.wav",
+      "start_ms": 195905.09,
+      "duration_ms": 2245.88,
+      "message_index": null
+    },
+    {
+      "side": "user",
+      "index": 10,
+      "path": "audio\\user_turn_10.wav",
+      "start_ms": 206889.18,
+      "duration_ms": 5752.31,
+      "message_index": null
+    }
+  ]
+}

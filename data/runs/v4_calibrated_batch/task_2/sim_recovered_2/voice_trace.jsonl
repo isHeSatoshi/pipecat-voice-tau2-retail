@@ -1,0 +1,50 @@
+{"type": "run_start", "t_offset_ms": 0, "recovered": true, "source": "saved console output"}
+{"type": "tts_start", "t_offset_ms": 7461, "message_index": 0, "role": "assistant", "text": "Hi! How can I help you today?", "recovered": true}
+{"type": "tts_stop", "t_offset_ms": 7462, "message_index": 0, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 14922, "message_index": 1, "role": "user", "text": "Hi, um I'm calling because I need to know how many t-shirt options you currently have in your online store, and I also want to return a few things.", "recovered": true}
+{"type": "tool_call", "t_offset_ms": 22383, "message_index": 2, "tool_name": "list_all_product_types", "arguments": {}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 29844, "message_index": 3, "tool_call_id": "call_function_azly67klkuog_1", "error": false, "recovered": true}
+{"type": "tool_call", "t_offset_ms": 37305, "message_index": 4, "tool_name": "get_product_details", "arguments": {"product_id": "9523456873"}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 44766, "message_index": 5, "tool_call_id": "call_function_91lgdf7u5bsr_1", "error": false, "recovered": true}
+{"type": "tts_start", "t_offset_ms": 52227, "message_index": 6, "role": "assistant", "text": "We currently have 10 available T-Shirt options in our store.\n\nNow, to help you with a return, I'll need to verify your identity. Could you please provide your first name, last name, and ZIP code?", "recovered": true}
+{"type": "tts_stop", "t_offset_ms": 52228, "message_index": 6, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 59688, "message_index": 7, "role": "user", "text": "Sure, it's Yusuf Rossi and my zip code is 19122.", "recovered": true}
+{"type": "tool_call", "t_offset_ms": 67149, "message_index": 8, "tool_name": "find_user_id_by_name_zip", "arguments": {"first_name": "Yusuf", "last_name": "Rossi", "zip": "19122"}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 74610, "message_index": 9, "tool_call_id": "call_function_6ezfzdvfcs1d_1", "error": false, "recovered": true}
+{"type": "tool_call", "t_offset_ms": 82071, "message_index": 10, "tool_name": "get_user_details", "arguments": {"user_id": "yusuf_rossi_9620"}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 89532, "message_index": 11, "tool_call_id": "call_function_tv9akptcqsdi_1", "error": false, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 104454, "message_index": 13, "role": "user", "text": "Okay, take your time.", "recovered": true}
+{"type": "tool_call", "t_offset_ms": 111915, "message_index": 14, "tool_name": "get_order_details", "arguments": {"order_id": "#W6247578"}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 119376, "message_index": 15, "tool_call_id": "call_function_y4lfegapefx4_1", "error": false, "recovered": true}
+{"type": "tool_call", "t_offset_ms": 126837, "message_index": 16, "tool_name": "get_order_details", "arguments": {"order_id": "#W9711842"}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 134298, "message_index": 17, "tool_call_id": "call_function_6gxq1yovws0a_1", "error": false, "recovered": true}
+{"type": "tool_call", "t_offset_ms": 141759, "message_index": 18, "tool_name": "get_order_details", "arguments": {"order_id": "#W4776164"}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 149220, "message_index": 19, "tool_call_id": "call_function_p7gjsic4rftv_1", "error": false, "recovered": true}
+{"type": "tool_call", "t_offset_ms": 156681, "message_index": 20, "tool_name": "get_order_details", "arguments": {"order_id": "#W6679257"}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 164142, "message_index": 21, "tool_call_id": "call_function_jfdfprmaj8oo_1", "error": false, "recovered": true}
+{"type": "tool_call", "t_offset_ms": 171603, "message_index": 22, "tool_name": "get_order_details", "arguments": {"order_id": "#W2378156"}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 179064, "message_index": 23, "tool_call_id": "call_function_hnyv83437pes_1", "error": false, "recovered": true}
+{"type": "tts_start", "t_offset_ms": 186525, "message_index": 24, "role": "assistant", "text": "I found your delivered orders:\n- Order #W6679257: Digital Camera ($2895.55)\n- Order #W2378156: Headphones ($342.81), Vacuum Cleaner ($561.05), Mechanical Keyboard ($272.33), Smart Thermostat ($262.47), Smart Watch ($381.26)\n\nWhich items would you like to return?", "recovered": true}
+{"type": "tts_stop", "t_offset_ms": 186526, "message_index": 24, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 193986, "message_index": 25, "role": "user", "text": "Um, I'd like to return the vacuum cleaner, the headphones, and I don't see a smartwatch on that list. Could you double check?", "recovered": true}
+{"type": "tts_start", "t_offset_ms": 201447, "message_index": 26, "role": "assistant", "text": "I apologize for the oversight. Order #W2378156 does include a Smart Watch ($381.26) in addition to the items I listed. So to confirm, you'd like to return the Vacuum Cleaner, Headphones, and Smart Watch from order #W2378156. Is that correct?", "recovered": true}
+{"type": "tts_stop", "t_offset_ms": 201448, "message_index": 26, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 208908, "message_index": 27, "role": "user", "text": "Yes, that's correct. the vacuum cleaner, headphones, and smartwatch from Nat Order.", "recovered": true}
+{"type": "tts_start", "t_offset_ms": 216369, "message_index": 28, "role": "assistant", "text": "Just to confirm, you want to return these items from order #W2378156:\n- Headphones ($342.81)\n- Vacuum Cleaner ($561.05)\n- Smart Watch ($381.26)\n\nTotal refund: $1,285.12 to your credit card ending in 2478. Reply yes to confirm.", "recovered": true}
+{"type": "tts_stop", "t_offset_ms": 216370, "message_index": 28, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 223830, "message_index": 29, "role": "user", "text": "Yes, that's correct.", "recovered": true}
+{"type": "tool_call", "t_offset_ms": 231291, "message_index": 30, "tool_name": "return_delivered_order_items", "arguments": {"order_id": "#W2378156", "item_ids": ["4602305039", "4202497723", "9408160950"], "payment_method_id": "credit_card_9513926"}, "recovered": true}
+{"type": "tool_result", "t_offset_ms": 238752, "message_index": 31, "tool_call_id": "call_function_n86qfhhqqz36_1", "error": false, "recovered": true}
+{"type": "tts_start", "t_offset_ms": 246213, "message_index": 32, "role": "assistant", "text": "Your return has been processed. You'll receive an email with instructions on how to return the Headphones, Vacuum Cleaner, and Smart Watch. The $1,285.12 refund will be credited to your credit card ending in 2478.\n\nIs there anything else I can help you with?", "recovered": true}
+{"type": "tts_stop", "t_offset_ms": 246214, "message_index": 32, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 253674, "message_index": 33, "role": "user", "text": "Um, actually, I don't really remember my email address. How will I get those instructions?", "recovered": true}
+{"type": "tts_start", "t_offset_ms": 261135, "message_index": 34, "role": "assistant", "text": "The return instructions will be sent to the email address we have on file: yusuf.rossi7301@example.com. You should receive it shortly.", "recovered": true}
+{"type": "tts_stop", "t_offset_ms": 261136, "message_index": 34, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 268596, "message_index": 35, "role": "user", "text": "Oh, okay. Could you spell that out for me? It came through a bit garbled.", "recovered": true}
+{"type": "tts_start", "t_offset_ms": 276057, "message_index": 36, "role": "assistant", "text": "Sure, it's yusuf dot rossi seven three zero one at example dot com.", "recovered": true}
+{"type": "tts_stop", "t_offset_ms": 276058, "message_index": 36, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 283518, "message_index": 37, "role": "user", "text": "Sorry, you went through kind of fast. Could you spell out the whole email address for me, please?", "recovered": true}
+{"type": "tts_start", "t_offset_ms": 290979, "message_index": 38, "role": "assistant", "text": "Sure. y-u-s-u-f, period, r-o-s-s-i, 7-3-0-1, @, e-x-a-m-p-l-e, period, c-o-m.", "recovered": true}
+{"type": "tts_stop", "t_offset_ms": 290980, "message_index": 38, "recovered": true}
+{"type": "stt_result", "t_offset_ms": 298440, "message_index": 39, "role": "user", "text": "Okay, got it. So that's usup.ra c seven three zero one at example.com. Yeah, I got that. Thanks. And that's everything I needed, so I think we're good.", "recovered": true}
+{"type": "stop_signal", "t_offset_ms": 305911, "reason": "agent_stop", "recovered": true}

@@ -1,0 +1,169 @@
+{
+  "conversation": "conversation.wav",
+  "segments": [
+    {
+      "side": "agent",
+      "index": 1,
+      "path": "audio\\agent_turn_01.wav",
+      "start_ms": 18157.65,
+      "duration_ms": 8326.31,
+      "message_index": null,
+      "legacy_message_index": 2
+    },
+    {
+      "side": "agent",
+      "index": 2,
+      "path": "audio\\agent_turn_02.wav",
+      "start_ms": 39293.5,
+      "duration_ms": 8481.81,
+      "message_index": null,
+      "legacy_message_index": 6
+    },
+    {
+      "side": "agent",
+      "index": 3,
+      "path": "audio\\agent_turn_03.wav",
+      "start_ms": 66483.71,
+      "duration_ms": 5928.25,
+      "message_index": null,
+      "legacy_message_index": 8
+    },
+    {
+      "side": "agent",
+      "index": 4,
+      "path": "audio\\agent_turn_04.wav",
+      "start_ms": 84993.7,
+      "duration_ms": 7712.5,
+      "message_index": null,
+      "legacy_message_index": 10
+    },
+    {
+      "side": "agent",
+      "index": 5,
+      "path": "audio\\agent_turn_05.wav",
+      "start_ms": 121538.76,
+      "duration_ms": 1111.75,
+      "message_index": null,
+      "legacy_message_index": 28
+    },
+    {
+      "side": "agent",
+      "index": 6,
+      "path": "audio\\agent_turn_06.wav",
+      "start_ms": 161089.66,
+      "duration_ms": 20799.38,
+      "message_index": null,
+      "legacy_message_index": null
+    },
+    {
+      "side": "user",
+      "index": 1,
+      "path": "audio\\user_turn_01.wav",
+      "start_ms": 6621.04,
+      "duration_ms": 7620.19,
+      "message_index": null,
+      "legacy_message_index": 1
+    },
+    {
+      "side": "user",
+      "index": 2,
+      "path": "audio\\user_turn_02.wav",
+      "start_ms": 26526.19,
+      "duration_ms": 4356.31,
+      "message_index": null,
+      "legacy_message_index": 3
+    },
+    {
+      "side": "user",
+      "index": 3,
+      "path": "audio\\user_turn_03.wav",
+      "start_ms": 40103.57,
+      "duration_ms": 4597.56,
+      "message_index": null,
+      "legacy_message_index": 7
+    },
+    {
+      "side": "user",
+      "index": 4,
+      "path": "audio\\user_turn_04.wav",
+      "start_ms": 50088.41,
+      "duration_ms": 6076.88,
+      "message_index": null,
+      "legacy_message_index": 9
+    },
+    {
+      "side": "user",
+      "index": 5,
+      "path": "audio\\user_turn_05.wav",
+      "start_ms": 74057.76,
+      "duration_ms": 5797.5,
+      "message_index": null,
+      "legacy_message_index": 11
+    },
+    {
+      "side": "user",
+      "index": 6,
+      "path": "audio\\user_turn_06.wav",
+      "start_ms": 96262.27,
+      "duration_ms": 6811.5,
+      "message_index": null,
+      "legacy_message_index": 12
+    },
+    {
+      "side": "user",
+      "index": 7,
+      "path": "audio\\user_turn_07.wav",
+      "start_ms": 111593.77,
+      "duration_ms": 609.19,
+      "message_index": null,
+      "legacy_message_index": 19
+    },
+    {
+      "side": "user",
+      "index": 8,
+      "path": "audio\\user_turn_08.wav",
+      "start_ms": 115593.08,
+      "duration_ms": 1438.19,
+      "message_index": null,
+      "legacy_message_index": 24
+    },
+    {
+      "side": "user",
+      "index": 9,
+      "path": "audio\\user_turn_09.wav",
+      "start_ms": 120679.35,
+      "duration_ms": 1724.25,
+      "message_index": null,
+      "legacy_message_index": 27
+    },
+    {
+      "side": "user",
+      "index": 10,
+      "path": "audio\\user_turn_10.wav",
+      "start_ms": 137095.56,
+      "duration_ms": 3343.38,
+      "message_index": null,
+      "legacy_message_index": 29
+    },
+    {
+      "side": "user",
+      "index": 11,
+      "path": "audio\\user_turn_11.wav",
+      "start_ms": 150057.16,
+      "duration_ms": 3163.62,
+      "message_index": null,
+      "legacy_message_index": null
+    },
+    {
+      "side": "user",
+      "index": 12,
+      "path": "audio\\user_turn_12.wav",
+      "start_ms": 177534.19,
+      "duration_ms": 7021.44,
+      "message_index": null,
+      "legacy_message_index": null
+    }
+  ],
+  "pairing_status": "legacy_unverified",
+  "source_manifest": "audio_segments.json"
+}

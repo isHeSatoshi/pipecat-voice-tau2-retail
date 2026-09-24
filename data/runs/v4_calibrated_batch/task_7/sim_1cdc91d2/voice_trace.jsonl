@@ -1,0 +1,488 @@
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 0.5, "type": "meta", "config": {"domain": "retail", "split": "train", "agent_llm_impl": "minimax", "user_llm_impl": "minimax", "agent_model": "MiniMax-M2.7", "user_model": "MiniMax-M2.7", "stt_impl": "parakeet", "tts_impl": "chatterbox", "sample_rate": 16000, "max_conversation_seconds": 360, "seed": 42, "minimax_api_base": "https://api.minimax.io/anthropic", "run_id": "sim_1cdc91d2", "prompt": "v4", "prompt_sha256": "4b68b65d91ee2586f0047928f24cc09b8c8c2aa46b58da25513b82a6364a3fda", "vad_enabled": true, "tool_execution_policy": "single_serialized_exact_signature"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 0.0, "type": "run_start"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 508.97, "type": "llm_run", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 511.49, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 538.95, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 9954.75, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 9955.25, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 25608.34, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 25608.34, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 25617.86, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 25617.86, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 25669.95, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 25671.46, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 26022.73, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 27284.54, "type": "stt_result", "side": "agent", "text": "Clearstroat Hi, um I'm calling because I'd like to exchange some items I recently purchased. A water bottle and a desk lamp, specifically.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 27285.04, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 27286.04, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 28291.29, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 28294.3, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 28296.8, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 28297.3, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 32689.31, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 32690.82, "type": "tts_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 46824.24, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 46824.24, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 46833.76, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 46833.76, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 46863.77, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 46919.39, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 46942.07, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 47223.31, "type": "stt_result", "side": "user", "text": "I'd be happy to help you exchange your water bottle and desk lamp.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 47223.31, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 47223.81, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 47391.9, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 47529.1, "type": "stt_result", "side": "user", "text": "Could you please authenticate yourself by providing your email address or your first name, last name, and zip code?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 47529.1, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 47532.61, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 48528.82, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 48531.32, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 48531.32, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 48532.32, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 52066.85, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 52066.85, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65122.32, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65122.32, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65129.33, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65129.33, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65171.92, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65219.01, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65256.06, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65453.32, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65464.84, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65508.4, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65519.96, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65555.1, "type": "stt_result", "side": "agent", "text": "Clear's throat, shut up.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65555.1, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65555.1, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65569.12, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65570.12, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65666.78, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65735.33, "type": "stt_result", "side": "agent", "text": "Sure, my name is May Kovax and I live in Zipcode 2.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65735.33, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65735.33, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65858.98, "type": "stt_result", "side": "agent", "text": "Eight, two, three.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65859.98, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65859.98, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65998.75, "type": "stt_result", "side": "agent", "text": "Three, six.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65998.75, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 65999.25, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 67017.3, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 67020.31, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 69644.85, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 69646.36, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_biwel9655hcv_1", "arguments": {"first_name": "May", "last_name": "Kovax", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 69652.37, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_biwel9655hcv_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74410.09, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_biwel9655hcv_1", "arguments": {"first_name": "May", "last_name": "Kovax", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74410.09, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_biwel9655hcv_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74419.11, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74421.66, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74435.18, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74450.2, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74475.87, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74603.23, "type": "stt_result", "side": "user", "text": "Checking", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74603.73, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74603.73, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74668.91, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74785.31, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 74785.31, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 75798.75, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 75809.26, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 77637.43, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 77638.43, "type": "tts_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 77690.0, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 77691.51, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 92718.92, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 92718.92, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 92734.97, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 92734.97, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 92765.11, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 92859.08, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 92900.66, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 93276.89, "type": "stt_result", "side": "user", "text": "I couldn't find your account with that information.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 93277.39, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 93277.39, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 93283.31, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 93283.31, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 93285.81, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 93332.96, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 93585.02, "type": "stt_result", "side": "user", "text": "Could you please spell your first name letter by letter, then your last name letter by letter, and say your zip code digit by digit?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 93585.02, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 94571.97, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 94574.97, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 94579.48, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 98395.1, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 98398.1, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 110604.87, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 110604.87, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 110610.89, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 110610.89, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 110634.56, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 110988.71, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 111141.92, "type": "stt_result", "side": "agent", "text": "Speaking slowly, first name M E E I I, last name K-O-V-A-C-CS, zip code 28236.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 111141.92, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 111143.42, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 112157.75, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 112161.66, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 115365.47, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 115366.48, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_uz4sy084ibjy_1", "arguments": {"first_name": "Meeii", "last_name": "Kovacss", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 115372.0, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_uz4sy084ibjy_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120072.65, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_uz4sy084ibjy_1", "arguments": {"first_name": "Meeii", "last_name": "Kovacss", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120072.65, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_uz4sy084ibjy_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120086.18, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120104.15, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120125.2, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120157.36, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120286.8, "type": "stt_result", "side": "user", "text": "Checking", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120286.8, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120286.8, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120328.37, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120467.75, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120467.75, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 120468.25, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 121481.6, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 121484.1, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 121484.6, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 121485.1, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 123489.27, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 123489.27, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_4mlo1mp6rcxm_1", "arguments": {"first_name": "May", "last_name": "Kovacs", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 123496.33, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_4mlo1mp6rcxm_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 123744.92, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 123746.42, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 127558.47, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_4mlo1mp6rcxm_1", "arguments": {"first_name": "May", "last_name": "Kovacs", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 127558.47, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_4mlo1mp6rcxm_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 127567.47, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 127609.05, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 127861.25, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 128094.56, "type": "stt_result", "side": "user", "text": "Checking just a sack.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 128095.06, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 128096.07, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 128099.07, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 129105.71, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 129108.72, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 129109.22, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 129110.22, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 130481.97, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 130482.58, "type": "tts_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 130485.58, "type": "tts_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 131018.03, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 131019.03, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140236.1, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140236.1, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140281.18, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140351.8, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140378.83, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140635.31, "type": "stt_result", "side": "user", "text": "I still can't find your account.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140635.31, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140635.81, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140639.31, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140640.32, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 140711.96, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 141004.78, "type": "stt_result", "side": "user", "text": "Could you please provide your email address instead?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 141004.78, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 142001.49, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 142004.99, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 144513.76, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 144514.26, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149005.09, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149005.09, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149019.68, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149028.7, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149037.23, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149146.04, "type": "stt_result", "side": "agent", "text": "Pauses.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149146.04, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149146.04, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149275.22, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149335.31, "type": "stt_result", "side": "agent", "text": "Oh, um, I'm not sure I remember my email address off the top of my head. Is there anything else I can provide to help locate my account?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 149335.31, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 150333.88, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 150335.89, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 155584.43, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 155584.43, "type": "tts_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 158881.26, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 158881.26, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 158892.77, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 158969.87, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 159027.62, "type": "stt_result", "side": "user", "text": "Could you please say your zip code digit by digit one more time to make sure it's correct?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 159027.62, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 159028.12, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 160029.28, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 160031.29, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 160031.29, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 160031.78, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 162540.86, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 162540.86, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 165279.06, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 165279.06, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 165282.61, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 165289.12, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 165337.78, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 165393.43, "type": "stt_result", "side": "agent", "text": "Speaking clearly. Sure, it's two eight two three six.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 165393.93, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 165394.94, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 166390.2, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 166392.3, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 173320.18, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 173320.18, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_0bybdirdq59b_1", "arguments": {"first_name": "Meeii", "last_name": "Kovacss", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 173322.14, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_0bybdirdq59b_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174697.23, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_0bybdirdq59b_1", "arguments": {"first_name": "Meeii", "last_name": "Kovacss", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174697.23, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_0bybdirdq59b_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174701.26, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174707.27, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174711.27, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174722.32, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174765.46, "type": "stt_result", "side": "user", "text": "Checking?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174765.46, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174765.46, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 174953.23, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 175020.85, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 175020.85, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 176026.05, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 176028.05, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 177423.28, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 177423.28, "type": "tts_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 177691.64, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 177691.64, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180421.12, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180421.63, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180435.67, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180489.15, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180501.21, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180594.4, "type": "stt_result", "side": "user", "text": "Do you have an order number for the items you'd like to exchange?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180594.4, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180594.4, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180596.91, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180650.03, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180749.91, "type": "stt_result", "side": "user", "text": "That would help me locate your account.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180749.91, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 180749.91, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 181770.15, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 181772.12, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 183926.26, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 183926.76, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187417.51, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187418.01, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187421.53, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187429.03, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187435.05, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187449.07, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187531.22, "type": "stt_result", "side": "agent", "text": "Pauses?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187531.22, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187531.22, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187531.73, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187531.73, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187656.51, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187712.14, "type": "stt_result", "side": "agent", "text": "Hmm, I don't have my order number with me right now. I don't remember it off the top of my head, sorry.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 187712.14, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 188713.53, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 188715.53, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 192235.21, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 192235.21, "type": "tts_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195827.44, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195827.44, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195829.94, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195829.94, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195837.97, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195865.05, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195877.59, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195945.71, "type": "stt_result", "side": "user", "text": "Could you please spell your first name one letter at a time?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195946.21, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 195946.21, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 196107.11, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 196162.25, "type": "stt_result", "side": "user", "text": "Pause, then spell your last name one letter at a time.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 196162.25, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 197150.83, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 197152.35, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 200149.27, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 200150.27, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 203645.84, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 203646.34, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 203656.84, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 203679.9, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 203687.92, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 203768.17, "type": "stt_result", "side": "agent", "text": "First name M E I P.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 203768.17, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 203768.17, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 203984.96, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 204057.58, "type": "stt_result", "side": "agent", "text": "Pause us last name K O V A C S.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 204057.58, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 205055.84, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 205057.84, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 208275.02, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 208275.52, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_5u552zriv1wz_1", "arguments": {"first_name": "Meip", "last_name": "Kovacs", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 208277.03, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_5u552zriv1wz_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209744.15, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_5u552zriv1wz_1", "arguments": {"first_name": "Meip", "last_name": "Kovacs", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209744.15, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_5u552zriv1wz_1", "result": {"error": "User not found"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209748.15, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209749.15, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209756.68, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209763.22, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209774.26, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209820.31, "type": "stt_result", "side": "user", "text": "Checking", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209820.31, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209820.31, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 209974.87, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 210021.55, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 210021.55, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 211018.93, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 211020.95, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 213245.96, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 214184.29, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 214184.79, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_acvkpoqu5vof_1", "arguments": {"first_name": "Mei", "last_name": "Kovacs", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 214185.79, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_acvkpoqu5vof_1", "result": {"result": "mei_kovacs_8020"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 214186.79, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_acvkpoqu5vof_1", "result": {"result": "mei_kovacs_8020"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 214186.79, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_acvkpoqu5vof_1", "arguments": {"first_name": "Mei", "last_name": "Kovacs", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215556.13, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_acvkpoqu5vof_1", "arguments": {"first_name": "Mei", "last_name": "Kovacs", "zip": "28236"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215556.13, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_acvkpoqu5vof_1", "result": {"result": "mei_kovacs_8020"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215560.15, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215561.67, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215567.17, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215573.71, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215585.24, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215625.31, "type": "stt_result", "side": "user", "text": "Checking", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215625.31, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215625.31, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215688.98, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215733.16, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215733.16, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 215733.66, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 216731.65, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 216733.15, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 216733.65, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 216733.65, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 218108.84, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 218109.84, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 218173.1, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 218173.61, "type": "tool_call", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_twvr5vpuqa57_1", "arguments": {"user_id": "mei_kovacs_8020"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 218174.61, "type": "tool_result", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_twvr5vpuqa57_1", "result": {"user_id": "mei_kovacs_8020", "name": {"first_name": "Mei", "last_name": "Kovacs"}, "address": {"address1": "317 Elm Street", "address2": "Suite 461", "city": "Charlotte", "country": "USA", "state": "NC", "zip": "28236"}, "email": "mei.kovacs8232@example.com", "payment_methods": {"paypal_7644869": {"source": "paypal", "id": "paypal_7644869"}}, "orders": ["#W6390527", "#W7800651", "#W8065207"]}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219367.44, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219367.94, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219377.97, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219383.5, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219393.53, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219469.26, "type": "stt_result", "side": "agent", "text": "Sure, take it.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219469.26, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219469.26, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219471.75, "type": "tool_call", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_twvr5vpuqa57_1", "arguments": {"user_id": "mei_kovacs_8020"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219471.75, "type": "tool_result", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_twvr5vpuqa57_1", "result": {"user_id": "mei_kovacs_8020", "name": {"first_name": "Mei", "last_name": "Kovacs"}, "address": {"address1": "317 Elm Street", "address2": "Suite 461", "city": "Charlotte", "country": "USA", "state": "NC", "zip": "28236"}, "email": "mei.kovacs8232@example.com", "payment_methods": {"paypal_7644869": {"source": "paypal", "id": "paypal_7644869"}}, "orders": ["#W6390527", "#W7800651", "#W8065207"]}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219596.57, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219678.27, "type": "stt_result", "side": "agent", "text": "Take your time.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 219678.27, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 220699.97, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 220703.04, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 220703.04, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 220704.04, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 224606.31, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 224606.82, "type": "tool_call", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_f9z6f08u1ex1_1", "arguments": {"order_id": "#W6390527"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 224607.32, "type": "tool_result", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_f9z6f08u1ex1_1", "result": {"order_id": "#W6390527", "user_id": "mei_kovacs_8020", "address": {"address1": "317 Elm Street", "address2": "Suite 461", "city": "Charlotte", "country": "USA", "state": "NC", "zip": "28236"}, "items": [{"name": "Desk Lamp", "product_id": "6817146515", "item_id": "8384507844", "price": 137.94, "options": {"color": "white", "brightness": "medium", "power source": "USB"}}, {"name": "Hiking Boots", "product_id": "7363354090", "item_id": "1615379700", "price": 253.89, "options": {"size": "10", "material": "synthetic", "waterproof": "yes"}}, {"name": "Water Bottle", "product_id": "8310926033", "item_id": "8538875209", "price": 45.13, "options": {"capacity": "500ml", "material": "glass", "color": "black"}}], "status": "delivered", "fulfillments": [{"tracking_id": ["745984883162"], "item_ids": ["8384507844", "1615379700", "8538875209"]}], "payment_history": [{"transaction_type": "payment", "amount": 436.96, "payment_method_id": "paypal_7644869"}], "cancel_reason": null, "exchange_items": null, "exchange_new_items": null, "exchange_payment_method_id": null, "exchange_price_difference": null, "return_items": null, "return_payment_method_id": null}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 224608.82, "type": "tool_result", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_f9z6f08u1ex1_1", "result": {"order_id": "#W6390527", "user_id": "mei_kovacs_8020", "address": {"address1": "317 Elm Street", "address2": "Suite 461", "city": "Charlotte", "country": "USA", "state": "NC", "zip": "28236"}, "items": [{"name": "Desk Lamp", "product_id": "6817146515", "item_id": "8384507844", "price": 137.94, "options": {"color": "white", "brightness": "medium", "power source": "USB"}}, {"name": "Hiking Boots", "product_id": "7363354090", "item_id": "1615379700", "price": 253.89, "options": {"size": "10", "material": "synthetic", "waterproof": "yes"}}, {"name": "Water Bottle", "product_id": "8310926033", "item_id": "8538875209", "price": 45.13, "options": {"capacity": "500ml", "material": "glass", "color": "black"}}], "status": "delivered", "fulfillments": [{"tracking_id": ["745984883162"], "item_ids": ["8384507844", "1615379700", "8538875209"]}], "payment_history": [{"transaction_type": "payment", "amount": 436.96, "payment_method_id": "paypal_7644869"}], "cancel_reason": null, "exchange_items": null, "exchange_new_items": null, "exchange_payment_method_id": null, "exchange_price_difference": null, "return_items": null, "return_payment_method_id": null}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 226026.96, "type": "tool_call", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_f9z6f08u1ex1_1", "arguments": {"order_id": "#W6390527"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 226026.96, "type": "tool_result", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_f9z6f08u1ex1_1", "result": {"order_id": "#W6390527", "user_id": "mei_kovacs_8020", "address": {"address1": "317 Elm Street", "address2": "Suite 461", "city": "Charlotte", "country": "USA", "state": "NC", "zip": "28236"}, "items": [{"name": "Desk Lamp", "product_id": "6817146515", "item_id": "8384507844", "price": 137.94, "options": {"color": "white", "brightness": "medium", "power source": "USB"}}, {"name": "Hiking Boots", "product_id": "7363354090", "item_id": "1615379700", "price": 253.89, "options": {"size": "10", "material": "synthetic", "waterproof": "yes"}}, {"name": "Water Bottle", "product_id": "8310926033", "item_id": "8538875209", "price": 45.13, "options": {"capacity": "500ml", "material": "glass", "color": "black"}}], "status": "delivered", "fulfillments": [{"tracking_id": ["745984883162"], "item_ids": ["8384507844", "1615379700", "8538875209"]}], "payment_history": [{"transaction_type": "payment", "amount": 436.96, "payment_method_id": "paypal_7644869"}], "cancel_reason": null, "exchange_items": null, "exchange_new_items": null, "exchange_payment_method_id": null, "exchange_price_difference": null, "return_items": null, "return_payment_method_id": null}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 226031.49, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 226032.5, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 226040.01, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 226305.11, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 226359.91, "type": "stt_result", "side": "user", "text": "Checking just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 226359.91, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 226360.92, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 227362.8, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 227364.82, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 230099.2, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 230099.2, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_viyrnalllk6r_1", "arguments": {"product_id": "6817146515"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 230100.2, "type": "tool_result", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_viyrnalllk6r_1", "result": {"name": "Desk Lamp", "product_id": "6817146515", "variants": {"9083642334": {"item_id": "9083642334", "options": {"color": "white", "brightness": "high", "power source": "USB"}, "available": true, "price": 164.28}, "4385534692": {"item_id": "4385534692", "options": {"color": "white", "brightness": "high", "power source": "AC adapter"}, "available": false, "price": 138.07}, "7624783998": {"item_id": "7624783998", "options": {"color": "black", "brightness": "high", "power source": "AC adapter"}, "available": true, "price": 154.17}, "1270145486": {"item_id": "1270145486", "options": {"color": "white", "brightness": "high", "power source": "battery"}, "available": false, "price": 144.07}, "5320792178": {"item_id": "5320792178", "options": {"color": "black", "brightness": "medium", "power source": "AC adapter"}, "available": true, "price": 135.24}, "5370728469": {"item_id": "5370728469", "options": {"color": "silver", "brightness": "medium", "power source": "USB"}, "available": true, "price": 164.97}, "6805564527": {"item_id": "6805564527", "options": {"color": "black", "brightness": "medium", "power source": "USB"}, "available": true, "price": 158.41}, "1569765161": {"item_id": "1569765161", "options": {"color": "silver", "brightness": "low", "power source": "AC adapter"}, "available": true, "price": 143.02}, "7453605304": {"item_id": "7453605304", "options": {"color": "silver", "brightness": "low", "power source": "battery"}, "available": true, "price": 150.01}, "9190635437": {"item_id": "9190635437", "options": {"color": "black", "brightness": "low", "power source": "USB"}, "available": true, "price": 153.23}, "4447749792": {"item_id": "4447749792", "options": {"color": "white", "brightness": "medium", "power source": "AC adapter"}, "available": false, "price": 139.8}, "8384507844": {"item_id": "8384507844", "options": {"color": "white", "brightness": "medium", "power source": "USB"}, "available": false, "price": 137.94}}}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 230217.09, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 230217.59, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231627.88, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_viyrnalllk6r_1", "arguments": {"product_id": "6817146515"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231627.88, "type": "tool_result", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_viyrnalllk6r_1", "result": {"name": "Desk Lamp", "product_id": "6817146515", "variants": {"9083642334": {"item_id": "9083642334", "options": {"color": "white", "brightness": "high", "power source": "USB"}, "available": true, "price": 164.28}, "4385534692": {"item_id": "4385534692", "options": {"color": "white", "brightness": "high", "power source": "AC adapter"}, "available": false, "price": 138.07}, "7624783998": {"item_id": "7624783998", "options": {"color": "black", "brightness": "high", "power source": "AC adapter"}, "available": true, "price": 154.17}, "1270145486": {"item_id": "1270145486", "options": {"color": "white", "brightness": "high", "power source": "battery"}, "available": false, "price": 144.07}, "5320792178": {"item_id": "5320792178", "options": {"color": "black", "brightness": "medium", "power source": "AC adapter"}, "available": true, "price": 135.24}, "5370728469": {"item_id": "5370728469", "options": {"color": "silver", "brightness": "medium", "power source": "USB"}, "available": true, "price": 164.97}, "6805564527": {"item_id": "6805564527", "options": {"color": "black", "brightness": "medium", "power source": "USB"}, "available": true, "price": 158.41}, "1569765161": {"item_id": "1569765161", "options": {"color": "silver", "brightness": "low", "power source": "AC adapter"}, "available": true, "price": 143.02}, "7453605304": {"item_id": "7453605304", "options": {"color": "silver", "brightness": "low", "power source": "battery"}, "available": true, "price": 150.01}, "9190635437": {"item_id": "9190635437", "options": {"color": "black", "brightness": "low", "power source": "USB"}, "available": true, "price": 153.23}, "4447749792": {"item_id": "4447749792", "options": {"color": "white", "brightness": "medium", "power source": "AC adapter"}, "available": false, "price": 139.8}, "8384507844": {"item_id": "8384507844", "options": {"color": "white", "brightness": "medium", "power source": "USB"}, "available": false, "price": 137.94}}}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231632.9, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231641.95, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231647.45, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231659.07, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231730.75, "type": "stt_result", "side": "user", "text": "Checking", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231730.75, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231730.75, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231732.75, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231770.32, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231851.26, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 231851.26, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 232860.15, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 232862.13, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 233431.72, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 233431.72, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_52ljgmdwhgup_1", "arguments": {"product_id": "8310926033"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 233434.23, "type": "tool_result", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_52ljgmdwhgup_1", "result": {"name": "Water Bottle", "product_id": "8310926033", "variants": {"1434748144": {"item_id": "1434748144", "options": {"capacity": "1000ml", "material": "glass", "color": "red"}, "available": false, "price": 49.72}, "4579334072": {"item_id": "4579334072", "options": {"capacity": "750ml", "material": "glass", "color": "black"}, "available": true, "price": 54.85}, "6469567736": {"item_id": "6469567736", "options": {"capacity": "1000ml", "material": "glass", "color": "blue"}, "available": false, "price": 47.84}, "3453331371": {"item_id": "3453331371", "options": {"capacity": "500ml", "material": "stainless steel", "color": "black"}, "available": true, "price": 52.79}, "2439754078": {"item_id": "2439754078", "options": {"capacity": "1000ml", "material": "stainless steel", "color": "red"}, "available": true, "price": 49.51}, "7843064651": {"item_id": "7843064651", "options": {"capacity": "750ml", "material": "stainless steel", "color": "blue"}, "available": true, "price": 50.14}, "7918497119": {"item_id": "7918497119", "options": {"capacity": "500ml", "material": "glass", "color": "blue"}, "available": false, "price": 54.51}, "5758737025": {"item_id": "5758737025", "options": {"capacity": "500ml", "material": "glass", "color": "green"}, "available": true, "price": 45.09}, "7533802601": {"item_id": "7533802601", "options": {"capacity": "500ml", "material": "stainless steel", "color": "green"}, "available": true, "price": 48.59}, "3229676465": {"item_id": "3229676465", "options": {"capacity": "500ml", "material": "plastic", "color": "black"}, "available": true, "price": 51.94}, "2366567022": {"item_id": "2366567022", "options": {"capacity": "1000ml", "material": "stainless steel", "color": "blue"}, "available": false, "price": 54.04}, "6974536207": {"item_id": "6974536207", "options": {"capacity": "750ml", "material": "plastic", "color": "blue"}, "available": true, "price": 49.3}, "6777246137": {"item_id": "6777246137", "options": {"capacity": "750ml", "material": "stainless steel", "color": "red"}, "available": true, "price": 47.76}, "8538875209": {"item_id": "8538875209", "options": {"capacity": "500ml", "material": "glass", "color": "black"}, "available": true, "price": 45.13}, "9127591879": {"item_id": "9127591879", "options": {"capacity": "750ml", "material": "stainless steel", "color": "black"}, "available": false, "price": 48.47}, "7661609223": {"item_id": "7661609223", "options": {"capacity": "1000ml", "material": "stainless steel", "color": "black"}, "available": true, "price": 46.51}, "4947921075": {"item_id": "4947921075", "options": {"capacity": "750ml", "material": "stainless steel", "color": "green"}, "available": false, "price": 49.57}, "7199146548": {"item_id": "7199146548", "options": {"capacity": "750ml", "material": "plastic", "color": "black"}, "available": true, "price": 48.02}}}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234621.04, "type": "tool_call", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_52ljgmdwhgup_1", "arguments": {"product_id": "8310926033"}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234621.04, "type": "tool_result", "side": "agent", "name": "get_product_details", "tool_call_id": "call_function_52ljgmdwhgup_1", "result": {"name": "Water Bottle", "product_id": "8310926033", "variants": {"1434748144": {"item_id": "1434748144", "options": {"capacity": "1000ml", "material": "glass", "color": "red"}, "available": false, "price": 49.72}, "4579334072": {"item_id": "4579334072", "options": {"capacity": "750ml", "material": "glass", "color": "black"}, "available": true, "price": 54.85}, "6469567736": {"item_id": "6469567736", "options": {"capacity": "1000ml", "material": "glass", "color": "blue"}, "available": false, "price": 47.84}, "3453331371": {"item_id": "3453331371", "options": {"capacity": "500ml", "material": "stainless steel", "color": "black"}, "available": true, "price": 52.79}, "2439754078": {"item_id": "2439754078", "options": {"capacity": "1000ml", "material": "stainless steel", "color": "red"}, "available": true, "price": 49.51}, "7843064651": {"item_id": "7843064651", "options": {"capacity": "750ml", "material": "stainless steel", "color": "blue"}, "available": true, "price": 50.14}, "7918497119": {"item_id": "7918497119", "options": {"capacity": "500ml", "material": "glass", "color": "blue"}, "available": false, "price": 54.51}, "5758737025": {"item_id": "5758737025", "options": {"capacity": "500ml", "material": "glass", "color": "green"}, "available": true, "price": 45.09}, "7533802601": {"item_id": "7533802601", "options": {"capacity": "500ml", "material": "stainless steel", "color": "green"}, "available": true, "price": 48.59}, "3229676465": {"item_id": "3229676465", "options": {"capacity": "500ml", "material": "plastic", "color": "black"}, "available": true, "price": 51.94}, "2366567022": {"item_id": "2366567022", "options": {"capacity": "1000ml", "material": "stainless steel", "color": "blue"}, "available": false, "price": 54.04}, "6974536207": {"item_id": "6974536207", "options": {"capacity": "750ml", "material": "plastic", "color": "blue"}, "available": true, "price": 49.3}, "6777246137": {"item_id": "6777246137", "options": {"capacity": "750ml", "material": "stainless steel", "color": "red"}, "available": true, "price": 47.76}, "8538875209": {"item_id": "8538875209", "options": {"capacity": "500ml", "material": "glass", "color": "black"}, "available": true, "price": 45.13}, "9127591879": {"item_id": "9127591879", "options": {"capacity": "750ml", "material": "stainless steel", "color": "black"}, "available": false, "price": 48.47}, "7661609223": {"item_id": "7661609223", "options": {"capacity": "1000ml", "material": "stainless steel", "color": "black"}, "available": true, "price": 46.51}, "4947921075": {"item_id": "4947921075", "options": {"capacity": "750ml", "material": "stainless steel", "color": "green"}, "available": false, "price": 49.57}, "7199146548": {"item_id": "7199146548", "options": {"capacity": "750ml", "material": "plastic", "color": "black"}, "available": true, "price": 48.02}}}}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234625.04, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234625.55, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234632.96, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234867.49, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234917.58, "type": "stt_result", "side": "user", "text": "Checking just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234918.58, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234919.08, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 234920.08, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 235894.39, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 235895.89, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 238543.88, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 238544.38, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240099.94, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240099.94, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240107.61, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240114.22, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240122.74, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240172.83, "type": "stt_result", "side": "agent", "text": "Hello?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240172.83, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240172.83, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240174.33, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240298.12, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240340.18, "type": "stt_result", "side": "agent", "text": "Are you still there?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 240340.18, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 241340.09, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 241343.14, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 241343.14, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 241343.64, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 248835.7, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 248835.7, "type": "tts_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 253888.49, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 253888.49, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 253891.51, "type": "tts_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 253891.51, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 253902.11, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 253913.21, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 253923.74, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 253964.0, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 253971.55, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254042.71, "type": "stt_result", "side": "user", "text": "Yes, I'm here.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254042.71, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254042.71, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254047.71, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254048.21, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254104.38, "type": "stt_result", "side": "user", "text": "I found your order with a desk lamp and water bottle.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254104.38, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254104.38, "type": "vad_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254192.93, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254255.58, "type": "stt_result", "side": "user", "text": "Which desk clamp variant would you like to exchange to and which water bottle variant would you like?", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 254255.58, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 255251.65, "type": "vad_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 255253.65, "type": "llm_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 262280.23, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 262280.23, "type": "tts_start", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267051.25, "type": "tts_stop", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267051.25, "type": "llm_end", "side": "user"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267064.26, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267090.79, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267100.31, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267134.89, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267139.89, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267205.05, "type": "stt_result", "side": "agent", "text": "For the water bottle, I'd like a bigger one.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267205.05, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267205.05, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267261.24, "type": "stt_result", "side": "agent", "text": "For the desk lamp, I'd like a less bright variant.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267261.24, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267261.24, "type": "vad_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267387.99, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267444.66, "type": "stt_result", "side": "agent", "text": "My preference is AC adapter, then battery, then USB.", "user_id": "", "timestamp": ""}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 267444.66, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 268444.98, "type": "vad_stop", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 268447.48, "type": "llm_start", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 283170.3, "type": "llm_end", "side": "agent"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 360201.02, "type": "stop_signal", "reason": "timeout"}
+{"task_id": "7", "simulation_id": "581efd5e-115e-4462-9e08-a3eb60929f14", "t_offset_ms": 360469.34, "type": "run_end", "duration_seconds": 360.3916358947754, "termination": "timeout", "checks": [{"name": "auth_loop", "passed": false, "message": "authentication tool `('find_user_id_by_name_zip', \"[('first_name', 'Meeii'), ('last_name', 'Kovacss'), ('zip', '28236')]\")` repeated the same call 2 times"}, {"name": "tool_argument_integrity", "passed": false, "message": "call_function_biwel9655hcv_1: {\"error\": \"User not found\"}; call_function_uz4sy084ibjy_1: {\"error\": \"User not found\"}; call_function_4mlo1mp6rcxm_1: {\"error\": \"User not found\"}; call_function_0bybdirdq59b_1: {\"error\": \"User not found\"}; call_function_5u552zriv1wz_1: {\"error\": \"User not found\"}"}, {"name": "write_protocol", "passed": false, "message": "no expected write action was attempted"}]}

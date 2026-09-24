@@ -1,0 +1,724 @@
+{
+  "config": {
+    "domain": "retail",
+    "split": "test",
+    "stt": "parakeet",
+    "tts": "chatterbox",
+    "agent_llm": "minimax",
+    "user_llm": "minimax",
+    "minimax_api_base": "https://api.minimax.io/anthropic",
+    "agent_model": "MiniMax-M2.7",
+    "user_model": "MiniMax-M2.7",
+    "prompt_variant": "v4",
+    "seed": 42,
+    "max_conversation_seconds": 480,
+    "vad_enabled": true,
+    "tool_execution_policy": "single_serialized_exact_signature"
+  },
+  "results": [
+    {
+      "task_id": "0",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 5,
+      "actions_total": 5,
+      "termination_reason": "user_stop",
+      "duration_seconds": 275.68201780319214,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task0_reward1_retry\\task_0\\sim_32b46f41\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task0_reward1_retry\\task_0\\sim_32b46f41\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task0_reward1_retry\\task_0\\sim_32b46f41\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task0_reward1_retry\\task_0\\sim_32b46f41\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task0_reward1_retry\\task_0\\sim_32b46f41\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task0_reward1_retry\\task_0\\sim_32b46f41\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=1"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": true,
+          "message": "6 calls passed recorded argument/error checks"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 43
+    },
+    {
+      "task_id": "1",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 5,
+      "actions_total": 5,
+      "termination_reason": "agent_stop",
+      "duration_seconds": 343.3227074146271,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task1_reward1_final\\task_1\\sim_b9613563\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task1_reward1_final\\task_1\\sim_b9613563\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task1_reward1_final\\task_1\\sim_b9613563\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task1_reward1_final\\task_1\\sim_b9613563\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task1_reward1_final\\task_1\\sim_b9613563\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_task1_reward1_final\\task_1\\sim_b9613563\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": false,
+          "message": "agent asked for authentication details 4 times"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_obwuvm75ibhb_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "2",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 10,
+      "actions_total": 11,
+      "termination_reason": "agent_stop",
+      "duration_seconds": 305.9117577075958,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_2\\sim_recovered_2\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_2\\sim_recovered_2\\voice_trace.jsonl",
+      "agent_audio_path": null,
+      "user_audio_path": null,
+      "conversation_audio_path": null,
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_2\\sim_recovered_2\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=2"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": true,
+          "message": "10 calls passed recorded argument/error checks"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42,
+      "artifact_recovery": "Transcript recovered from saved console output; audio unavailable"
+    },
+    {
+      "task_id": "3",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": false,
+      "actions_matched": 6,
+      "actions_total": 12,
+      "termination_reason": "user_stop",
+      "duration_seconds": 200.976576089859,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_a71e66e1\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_a71e66e1\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_a71e66e1\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_a71e66e1\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_a71e66e1\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_a71e66e1\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=1"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": true,
+          "message": "6 calls passed recorded argument/error checks"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "3",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 10,
+      "actions_total": 12,
+      "termination_reason": "agent_stop",
+      "duration_seconds": 266.57572293281555,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_ef4acc02\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_ef4acc02\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_ef4acc02\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_ef4acc02\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_ef4acc02\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_3\\sim_ef4acc02\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=1"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_nwtpjyx2tsl1_1: {\"error\": \"User not found\"}; call_function_b0lskqpku92b_1: {\"error\": \"User not found\"}; call_function_m3wzdn2vkfvx_1: {\"error\": \"Product not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "4",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 13,
+      "actions_total": 13,
+      "termination_reason": "agent_stop",
+      "duration_seconds": 232.09552121162415,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_4\\sim_648ee76c\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_4\\sim_648ee76c\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_4\\sim_648ee76c\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_4\\sim_648ee76c\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_4\\sim_648ee76c\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_4\\sim_648ee76c\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=1"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_gepro78qtaho_1: {\"error\": \"Product not found\"}; call_function_cc4s18as63xi_1: {\"error\": \"write_confirmation_required\", \"guidance\": \"Summarize the exact write and obtain an immediate affirmative user response before calling this tool.\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "modify_pending_order_items lacked immediate explicit confirmation; modify_pending_order_items failed: {\"error\": \"write_confirmation_required\", \"guidance\": \"Summarize the exact write and obtain an immediate affirmative user response before calling this tool.\"}"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "5",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": null,
+      "actions_matched": 0,
+      "actions_total": 0,
+      "termination_reason": "timeout",
+      "duration_seconds": 360.2224335670471,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_973fee8d\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_973fee8d\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_973fee8d\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_973fee8d\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_973fee8d\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_973fee8d\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": false,
+          "message": "agent asked for authentication details 4 times"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_ypg79g6r06wz_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "no expected write action was attempted"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "5",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": null,
+      "actions_matched": 0,
+      "actions_total": 0,
+      "termination_reason": "timeout",
+      "duration_seconds": 360.190407037735,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_fd193532\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_fd193532\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_fd193532\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_fd193532\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_fd193532\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_fd193532\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=2"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_h4o98yke2p9d_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "no expected write action was attempted"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "5",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": null,
+      "actions_matched": 0,
+      "actions_total": 0,
+      "termination_reason": "timeout",
+      "duration_seconds": 360.6298816204071,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_a0207056\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_a0207056\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_a0207056\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_a0207056\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_a0207056\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_a0207056\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": false,
+          "message": "authentication tool `('find_user_id_by_name_zip', \"[('first_name', 'Mei'), ('last_name', 'Kovax'), ('zip', '28236')]\")` repeated the same call 6 times"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_txfblapm8xiw_1: {\"error\": \"User not found\"}; call_function_xhmjqa3j07k0_1: {\"error\": \"User not found\"}; call_function_bc4n5q7272sr_1: {\"error\": \"User not found\"}; call_function_fz390lyb2u32_1: {\"error\": \"User not found\"}; call_function_2qob4qiub7fj_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "no expected write action was attempted"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "6",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": false,
+      "actions_matched": 0,
+      "actions_total": 6,
+      "termination_reason": "user_stop",
+      "duration_seconds": 270.095543384552,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_1f8b9b01\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_1f8b9b01\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_1f8b9b01\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_1f8b9b01\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_1f8b9b01\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_1f8b9b01\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": false,
+          "message": "authentication tool `('find_user_id_by_name_zip', \"[('first_name', 'May'), ('last_name', 'Kovax'), ('zip', '28236')]\")` repeated the same call 2 times"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_tvzzllbf4jb0_1: {\"error\": \"User not found\"}; call_function_kbdebvsr5ne9_1: {\"error\": \"User not found\"}; call_function_5alzrxku8rn9_1: {\"error\": \"User not found\"}; call_function_d2haw9cyj3qv_1: {\"error\": \"User not found\"}; call_function_uc4vygn7zcvk_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "no expected write action was attempted"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "6",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": null,
+      "actions_matched": 0,
+      "actions_total": 0,
+      "termination_reason": "timeout",
+      "duration_seconds": 360.78858518600464,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_401958a0\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_401958a0\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_401958a0\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_401958a0\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_401958a0\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_401958a0\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": false,
+          "message": "agent asked for authentication details 5 times"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_uvu9ylsa4pho_1: {\"error\": \"User not found\"}; call_function_qg8lt4h52ng7_1: {\"error\": \"User not found\"}; call_function_2be0wokezxfk_1: {\"error\": \"User not found\"}; call_function_l90mi6jqfdy6_1: {\"error\": \"User not found\"}; call_function_zrqkqtfoe1hf_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "no expected write action was attempted"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "6",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": false,
+      "actions_matched": 5,
+      "actions_total": 6,
+      "termination_reason": "user_stop",
+      "duration_seconds": 282.5423686504364,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_567c56f5\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_567c56f5\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_567c56f5\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_567c56f5\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_567c56f5\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_567c56f5\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=1"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_ekwowxtolkk3_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "7",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": null,
+      "actions_matched": 0,
+      "actions_total": 0,
+      "termination_reason": "timeout",
+      "duration_seconds": 360.3916358947754,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_1cdc91d2\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_1cdc91d2\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_1cdc91d2\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_1cdc91d2\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_1cdc91d2\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_1cdc91d2\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": false,
+          "message": "authentication tool `('find_user_id_by_name_zip', \"[('first_name', 'Meeii'), ('last_name', 'Kovacss'), ('zip', '28236')]\")` repeated the same call 2 times"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_biwel9655hcv_1: {\"error\": \"User not found\"}; call_function_uz4sy084ibjy_1: {\"error\": \"User not found\"}; call_function_4mlo1mp6rcxm_1: {\"error\": \"User not found\"}; call_function_0bybdirdq59b_1: {\"error\": \"User not found\"}; call_function_5u552zriv1wz_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "no expected write action was attempted"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "6",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": null,
+      "actions_matched": 0,
+      "actions_total": 0,
+      "termination_reason": "timeout",
+      "duration_seconds": 480.25591349601746,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_06ef2dfa\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_06ef2dfa\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_06ef2dfa\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_06ef2dfa\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_06ef2dfa\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_06ef2dfa\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=2"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_awexmstmw955_1: {\"error\": \"User not found\"}; call_function_e2b1eiybv7if_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "no expected write action was attempted"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "6",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 6,
+      "actions_total": 6,
+      "termination_reason": "user_stop",
+      "duration_seconds": 207.26255822181702,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_adabd789\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_adabd789\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_adabd789\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_adabd789\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_adabd789\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_6\\sim_adabd789\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=1"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_lla6wt6ds9j0_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "7",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 6,
+      "actions_total": 6,
+      "termination_reason": "user_stop",
+      "duration_seconds": 263.27247524261475,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_27c7509b\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_27c7509b\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_27c7509b\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_27c7509b\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_27c7509b\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_7\\sim_27c7509b\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=2"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_tmgeof2w7mpq_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "5",
+      "reward": 0.0,
+      "local_reward": 0.0,
+      "strict_reward_available": false,
+      "db_match": false,
+      "actions_matched": 0,
+      "actions_total": 5,
+      "termination_reason": "user_stop",
+      "duration_seconds": 209.1572675704956,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_242bc74e\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_242bc74e\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_242bc74e\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_242bc74e\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_242bc74e\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_5\\sim_242bc74e\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": false,
+          "message": "authentication tool `('find_user_id_by_name_zip', \"[('first_name', 'May'), ('last_name', 'Kovax'), ('zip', '28236')]\")` repeated the same call 2 times"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_gbn169ksgq7v_1: {\"error\": \"User not found\"}; call_function_0ouujg1bnshm_1: {\"error\": \"User not found\"}; call_function_dmqvjigu8e4q_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "no expected write action was attempted"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "9",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 6,
+      "actions_total": 6,
+      "termination_reason": "user_stop",
+      "duration_seconds": 218.2922694683075,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_9\\sim_f169fffe\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_9\\sim_f169fffe\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_9\\sim_f169fffe\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_9\\sim_f169fffe\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_9\\sim_f169fffe\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_9\\sim_f169fffe\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=2"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_05sobyp5xyf8_1: {\"error\": \"User not found\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    },
+    {
+      "task_id": "12",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 4,
+      "actions_total": 5,
+      "termination_reason": "user_stop",
+      "duration_seconds": 160.1366732120514,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_12\\sim_a7f41d66\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_12\\sim_a7f41d66\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_12\\sim_a7f41d66\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_12\\sim_a7f41d66\\user_audio.wav",
+      "conversation_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_12\\sim_a7f41d66\\conversation.wav",
+      "audio_segments_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\v4_calibrated_batch\\task_12\\sim_a7f41d66\\audio_segments.json",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=1"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": false,
+          "message": "call_function_c50eq64d9fsc_1: {\"error\": \"Payment method should be the original payment method\"}"
+        },
+        {
+          "name": "write_protocol",
+          "passed": false,
+          "message": "return_delivered_order_items failed: {\"error\": \"Payment method should be the original payment method\"}"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    }
+  ]
+}

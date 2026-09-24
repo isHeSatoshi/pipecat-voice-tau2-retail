@@ -1,0 +1,327 @@
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 1.0, "type": "meta", "config": {"domain": "retail", "split": "test", "agent_llm_impl": "minimax", "user_llm_impl": "minimax", "agent_model": "MiniMax-M2.7", "user_model": "MiniMax-M2.7", "stt_impl": "parakeet", "tts_impl": "chatterbox", "sample_rate": 16000, "max_conversation_seconds": 480, "seed": 42, "minimax_api_base": "https://api.minimax.io/anthropic", "run_id": "sim_a7f41d66", "prompt": "v4", "prompt_sha256": "92abbc3f1e9bb8102d2525ee1405b02225c2e8866237dec563fa2766fb0ea99e", "vad_enabled": true, "tool_execution_policy": "single_serialized_exact_signature"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 0.0, "type": "run_start"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 509.62, "type": "llm_run", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 510.59, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 5244.7, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 5245.2, "type": "tts_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13073.17, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13073.17, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13096.23, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13221.78, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13231.31, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13268.48, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13320.17, "type": "stt_result", "side": "agent", "text": "Um, hi, yeah, I need to return some stuff I bought recently. I just got into gaming and I don't know, I realized I should have been focusing more on studying anyway, so I wanna cancel most of my order, I guess?", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13320.17, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13320.17, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13372.79, "type": "stt_result", "side": "agent", "text": "Or return things? I don't know exactly how this works.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13373.29, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 13373.29, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 14395.81, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 14400.75, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 14401.76, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 14446.85, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 17827.52, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 17828.52, "type": "tts_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21863.73, "type": "tts_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21864.23, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21866.73, "type": "tts_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21866.73, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21880.78, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21887.78, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21903.4, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21997.22, "type": "stt_result", "side": "user", "text": "I can help you with that.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21997.22, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 21997.22, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 22154.14, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 22216.84, "type": "stt_result", "side": "user", "text": "First, I need to locate your account. Could you provide your email or your first name, last name, and zip code?", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 22216.84, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 23211.69, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 23213.19, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 28518.93, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 28518.93, "type": "tts_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 31125.99, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 31125.99, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 31136.07, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 31336.37, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 31387.93, "type": "stt_result", "side": "agent", "text": "Yeah, sure. It's Mia.garcia2723 at example.com", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 31387.93, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 31388.93, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 32408.69, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 32410.75, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 32411.75, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 32411.75, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 35347.92, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 35348.93, "type": "tool_call", "side": "agent", "name": "find_user_id_by_email", "tool_call_id": "call_function_9dzpu13ont15_1", "arguments": {"email": "Mia.garcia2723@example.com"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 35349.94, "type": "tool_call", "side": "agent", "name": "find_user_id_by_email", "tool_call_id": "call_function_9dzpu13ont15_1", "arguments": {"email": "Mia.garcia2723@example.com"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 35349.94, "type": "tool_result", "side": "agent", "name": "find_user_id_by_email", "tool_call_id": "call_function_9dzpu13ont15_1", "result": {"result": "mia_garcia_4516"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 35349.94, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36674.19, "type": "tool_call", "side": "agent", "name": "find_user_id_by_email", "tool_call_id": "call_function_9dzpu13ont15_1", "arguments": {"email": "Mia.garcia2723@example.com"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36674.69, "type": "tool_result", "side": "agent", "name": "find_user_id_by_email", "tool_call_id": "call_function_9dzpu13ont15_1", "result": {"result": "mia_garcia_4516"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36677.69, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36677.69, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36684.22, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36689.73, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36700.77, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36745.91, "type": "stt_result", "side": "user", "text": "Checking", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36746.41, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36746.41, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36902.46, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36946.57, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 36946.57, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 37960.32, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 37960.82, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 38618.9, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 38619.91, "type": "tool_call", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_b1n8wm9o1f6u_1", "arguments": {"user_id": "mia_garcia_4516"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 38621.42, "type": "tool_result", "side": "agent", "name": "get_user_details", "tool_call_id": "call_function_b1n8wm9o1f6u_1", "result": {"user_id": "mia_garcia_4516", "name": {"first_name": "Mia", "last_name": "Garcia"}, "address": {"address1": "537 Main Street", "address2": "Suite 572", "city": "Indianapolis", "country": "USA", "state": "IN", "zip": "46229"}, "email": "mia.garcia2723@example.com", "payment_methods": {"paypal_9497703": {"source": "paypal", "id": "paypal_9497703"}, "credit_card_3124723": {"source": "credit_card", "id": "credit_card_3124723", "brand": "visa", "last_four": "7285"}}, "orders": ["#W5490111", "#W7387996"]}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 38623.42, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 39562.4, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 39562.9, "type": "tts_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 40964.32, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 40964.32, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 40972.84, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 40977.84, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 40987.93, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 41030.53, "type": "stt_result", "side": "agent", "text": "Okay.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 41030.53, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 41030.53, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 41032.03, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 41120.13, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 41167.26, "type": "stt_result", "side": "agent", "text": "Take your time.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 41167.26, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 42161.89, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 42163.95, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 44888.06, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 44889.07, "type": "tool_call", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_v6pua5yi8vyu_1", "arguments": {"order_id": "#W5490111"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 44890.07, "type": "tool_result", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_v6pua5yi8vyu_1", "result": {"order_id": "#W5490111", "user_id": "mia_garcia_4516", "address": {"address1": "537 Main Street", "address2": "Suite 572", "city": "Indianapolis", "country": "USA", "state": "IN", "zip": "46229"}, "items": [{"name": "Water Bottle", "product_id": "8310926033", "item_id": "4579334072", "price": 54.85, "options": {"capacity": "750ml", "material": "glass", "color": "black"}}, {"name": "Mechanical Keyboard", "product_id": "1656367028", "item_id": "1421289881", "price": 268.77, "options": {"switch type": "linear", "backlight": "none", "size": "80%"}}, {"name": "Action Camera", "product_id": "3377618313", "item_id": "6117189161", "price": 481.5, "options": {"resolution": "4K", "waterproof": "yes", "color": "silver"}}, {"name": "Backpack", "product_id": "2524789262", "item_id": "4947717507", "price": 218.04, "options": {"color": "green", "size": "medium", "material": "leather", "compartment": "camera"}}], "status": "delivered", "fulfillments": [{"tracking_id": ["574297338433"], "item_ids": ["4579334072", "1421289881", "6117189161", "4947717507"]}], "payment_history": [{"transaction_type": "payment", "amount": 1023.16, "payment_method_id": "credit_card_3124723"}], "cancel_reason": null, "exchange_items": null, "exchange_new_items": null, "exchange_payment_method_id": null, "exchange_price_difference": null, "return_items": null, "return_payment_method_id": null}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 44893.07, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 46524.96, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 46525.46, "type": "tool_call", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_0rcwi05bzjue_1", "arguments": {"order_id": "#W7387996"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 46526.46, "type": "tool_result", "side": "agent", "name": "get_order_details", "tool_call_id": "call_function_0rcwi05bzjue_1", "result": {"order_id": "#W7387996", "user_id": "mia_garcia_4516", "address": {"address1": "537 Main Street", "address2": "Suite 572", "city": "Indianapolis", "country": "USA", "state": "IN", "zip": "46229"}, "items": [{"name": "Gaming Mouse", "product_id": "5713490933", "item_id": "5796612084", "price": 158.89, "options": {"color": "RGB", "sensor type": "optical", "connectivity": "wired"}}], "status": "delivered", "fulfillments": [{"tracking_id": ["200246490130"], "item_ids": ["5796612084"]}], "payment_history": [{"transaction_type": "payment", "amount": 158.89, "payment_method_id": "paypal_9497703"}], "cancel_reason": null, "exchange_items": null, "exchange_new_items": null, "exchange_payment_method_id": null, "exchange_price_difference": null, "return_items": null, "return_payment_method_id": null}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 46528.97, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 51580.11, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 51580.48, "type": "tts_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64428.05, "type": "tts_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64429.05, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64451.84, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64490.84, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64501.0, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64627.22, "type": "stt_result", "side": "user", "text": "Both your orders are delivered, so they can't be cancelled, only returned.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64627.22, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64627.22, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64635.75, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64648.78, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64793.09, "type": "stt_result", "side": "user", "text": "You have first sturdy WW490111. Which items would you like dollars? Water bottle $524, mechanical keyboard $26827.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64793.09, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64793.09, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64815.59, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64886.82, "type": "stt_result", "side": "user", "text": "Action Camera four eighty one point fifty, backpack 21824, Sorty one W seven twenty seven nine nine six Gaming Mouse one hundred eight twenty nine.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64886.82, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64886.82, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64936.02, "type": "stt_result", "side": "user", "text": "Which items would you like to return?", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 64936.02, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 65935.97, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 65936.47, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 71162.06, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 71162.56, "type": "tts_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75520.66, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75520.66, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75523.67, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75523.67, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75532.19, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75587.76, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75596.78, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75613.36, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75617.87, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75672.07, "type": "stt_result", "side": "agent", "text": "Um, I'd like to return the water bottle, the action camera, the backpack, and the", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75672.07, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75676.08, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75677.58, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75677.58, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75725.26, "type": "stt_result", "side": "agent", "text": "What was it, sorty?", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75725.26, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75725.26, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75785.48, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75831.56, "type": "stt_result", "side": "agent", "text": "Yeah, those four items.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 75831.56, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 76825.14, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 76827.14, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 84905.41, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 84905.41, "type": "tts_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95024.64, "type": "tts_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95024.64, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95042.99, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95106.8, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95116.83, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95167.66, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95176.72, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95221.89, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95226.39, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95237.92, "type": "stt_result", "side": "user", "text": "Just to confirm, you'd like to return all four items from order Wii W fifty nine O one one with", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95237.92, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95241.44, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95242.46, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95329.61, "type": "stt_result", "side": "user", "text": "water bottle, mechanical keyboard, action camera, and that pack.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95329.61, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95329.61, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95334.11, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95334.61, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95377.48, "type": "stt_result", "side": "user", "text": "Total Refund 1020 3.16", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95377.48, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95377.48, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95432.53, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95490.51, "type": "stt_result", "side": "user", "text": "Which payment method should I refund to, your visa ending in seven twenty five or your PayPal?", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 95490.51, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 96501.8, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 96502.8, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 98902.34, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 98902.34, "type": "tts_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 100015.55, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 100015.55, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 100024.57, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 100251.17, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 100297.8, "type": "stt_result", "side": "agent", "text": "Pig out please.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 100297.8, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 100298.81, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 101293.4, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 101295.41, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 105801.41, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 105801.41, "type": "tts_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110606.43, "type": "tts_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110606.43, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110617.95, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110698.02, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110711.54, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110770.18, "type": "stt_result", "side": "user", "text": "Returning all four items from order AW 590111 to your PayPal account for $1,023.16.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110770.18, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110770.18, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110771.69, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110771.69, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110820.7, "type": "stt_result", "side": "user", "text": "Reply yes to confirm.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 110820.7, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 111842.8, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 111844.3, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 113678.04, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 113679.04, "type": "tts_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 114667.59, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 114667.59, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 114674.11, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 114862.74, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 114905.35, "type": "stt_result", "side": "agent", "text": "Yes?", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 114905.35, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 114905.85, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 115904.4, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 115906.42, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 119343.78, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 119344.28, "type": "tool_call", "side": "agent", "name": "return_delivered_order_items", "tool_call_id": "call_function_c50eq64d9fsc_1", "arguments": {"order_id": "#W5490111", "item_ids": ["4579334072", "1421289881", "6117189161", "4947717507"], "payment_method_id": "paypal_9497703"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 119345.28, "type": "tool_result", "side": "agent", "name": "return_delivered_order_items", "tool_call_id": "call_function_c50eq64d9fsc_1", "result": {"error": "Payment method should be the original payment method"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 120927.75, "type": "tool_call", "side": "agent", "name": "return_delivered_order_items", "tool_call_id": "call_function_c50eq64d9fsc_1", "arguments": {"order_id": "#W5490111", "item_ids": ["4579334072", "1421289881", "6117189161", "4947717507"], "payment_method_id": "paypal_9497703"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 120927.75, "type": "tool_result", "side": "agent", "name": "return_delivered_order_items", "tool_call_id": "call_function_c50eq64d9fsc_1", "result": {"error": "Payment method should be the original payment method"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 120932.32, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 120938.83, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 120943.76, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 120952.61, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 120997.21, "type": "stt_result", "side": "user", "text": "Checking.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 120997.21, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 120997.21, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 121177.75, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 121231.0, "type": "stt_result", "side": "user", "text": "In just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 121231.0, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 122220.51, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 122222.12, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 123945.88, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 123945.88, "type": "tts_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 124224.61, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 124225.11, "type": "tts_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 127868.02, "type": "tts_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 127869.02, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 127885.57, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 127958.02, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 127972.07, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 128076.05, "type": "stt_result", "side": "user", "text": "The refund must go to the original payment method, Visa Ending 7285.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 128076.05, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 128076.55, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 128078.05, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 128165.82, "type": "stt_result", "side": "user", "text": "Should I proceed with that?", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 128165.82, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 129173.67, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 129175.67, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 132772.47, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 132772.47, "type": "tts_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137355.31, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137355.31, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137368.83, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137373.89, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137383.42, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137416.53, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137420.54, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137436.14, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137438.14, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137462.6, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137466.1, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137491.65, "type": "stt_result", "side": "agent", "text": "What?", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137491.65, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137491.65, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137549.79, "type": "stt_result", "side": "agent", "text": "No, I specifically asked for PayPal.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137549.79, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137550.29, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137600.44, "type": "stt_result", "side": "agent", "text": "This is ridiculous.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137600.84, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137600.84, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137654.58, "type": "stt_result", "side": "agent", "text": "Can I speak to a human agent?", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137654.58, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137654.58, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137708.16, "type": "stt_result", "side": "agent", "text": "I'm not happy with this.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137708.16, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 137708.66, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 138737.38, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 138738.89, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 138739.9, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 138740.41, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 142598.67, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 142599.68, "type": "tool_call", "side": "agent", "name": "transfer_to_human_agents", "tool_call_id": "call_function_68bh6oye1jyt_1", "arguments": {"summary": "Customer Mia Garcia wants to return all four items from order #W5490111 (Water Bottle, Mechanical Keyboard, Action Camera, Backpack) for a total refund of $1,023.16. She wants the refund to go to her PayPal account, but our policy requires the refund to go to the original payment method (Visa ending 7285). She is unhappy with this restriction and requested to speak to a human agent."}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 142600.19, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 142600.19, "type": "tool_call", "side": "agent", "name": "transfer_to_human_agents", "tool_call_id": "call_function_68bh6oye1jyt_1", "arguments": {"summary": "Customer Mia Garcia wants to return all four items from order #W5490111 (Water Bottle, Mechanical Keyboard, Action Camera, Backpack) for a total refund of $1,023.16. She wants the refund to go to her PayPal account, but our policy requires the refund to go to the original payment method (Visa ending 7285). She is unhappy with this restriction and requested to speak to a human agent."}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 142600.19, "type": "tool_result", "side": "agent", "name": "transfer_to_human_agents", "tool_call_id": "call_function_68bh6oye1jyt_1", "result": {"result": "Transfer successful"}}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 142603.69, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 144928.74, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 144929.75, "type": "tts_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147105.09, "type": "tts_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147105.09, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147113.59, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147136.1, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147143.61, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147188.67, "type": "stt_result", "side": "user", "text": "You are being transferred to a human agent.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147188.67, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147188.67, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147313.66, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147359.07, "type": "stt_result", "side": "user", "text": "Please hold on.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 147359.07, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 148357.91, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 148359.92, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 150420.65, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 150420.65, "type": "tts_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 151810.46, "type": "tts_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 151810.46, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 151818.97, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 151949.41, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 152004.02, "type": "stt_result", "side": "agent", "text": "Okay, fine. Thank you.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 152004.02, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 152005.02, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 152005.52, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 152005.52, "type": "vad_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 153007.67, "type": "vad_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 153010.19, "type": "llm_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 154741.89, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 154741.89, "type": "tts_start", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 156028.96, "type": "tts_stop", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 156028.96, "type": "llm_end", "side": "agent"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 156037.54, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 156262.71, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 156324.08, "type": "stt_result", "side": "user", "text": "You're welcome. Goodbye.", "user_id": "", "timestamp": ""}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 156324.08, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 156324.58, "type": "vad_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 157320.45, "type": "vad_stop", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 157321.95, "type": "llm_start", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 160012.56, "type": "stop_signal", "reason": "user_stop"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 160015.06, "type": "llm_end", "side": "user"}
+{"task_id": "12", "simulation_id": "76d0cc37-baae-4dff-b9be-96fdc83231e9", "t_offset_ms": 160261.17, "type": "run_end", "duration_seconds": 160.1366732120514, "termination": "user_stop", "checks": [{"name": "auth_loop", "passed": true, "message": "no repeated authentication call; auth prompts=1"}, {"name": "tool_argument_integrity", "passed": false, "message": "call_function_c50eq64d9fsc_1: {\"error\": \"Payment method should be the original payment method\"}"}, {"name": "write_protocol", "passed": false, "message": "return_delivered_order_items failed: {\"error\": \"Payment method should be the original payment method\"}"}]}

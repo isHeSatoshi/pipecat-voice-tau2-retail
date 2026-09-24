@@ -1,0 +1,478 @@
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 1.51, "type": "meta", "config": {"domain": "retail", "split": "train", "agent_llm_impl": "minimax", "user_llm_impl": "minimax", "agent_model": "MiniMax-M2.7", "user_model": "MiniMax-M2.7", "stt_impl": "parakeet", "tts_impl": "chatterbox", "sample_rate": 16000, "max_conversation_seconds": 360, "seed": 42, "minimax_api_base": "https://api.minimax.io/anthropic", "run_id": "sim_1f8b9b01", "prompt": "v4", "prompt_sha256": "2a47e0a9332eebb99b6f7846bdb779f91d760d047d0a99552474780de943f570", "vad_enabled": true, "tool_execution_policy": "single_serialized_exact_signature"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 0.0, "type": "run_start"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 786.12, "type": "llm_run", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 789.12, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 866.5, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 4537.5, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 4540.51, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16527.09, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16527.09, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16530.09, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16530.09, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16552.13, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16559.14, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16571.65, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16580.67, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16583.68, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16635.33, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 16639.84, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17086.11, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17219.29, "type": "stt_result", "side": "agent", "text": "Hey, um", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17219.29, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17223.79, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17276.47, "type": "stt_result", "side": "agent", "text": "Hi there.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17276.47, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17276.47, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17284.03, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17284.03, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17348.7, "type": "stt_result", "side": "agent", "text": "I'm calling because I need to exchange a couple of items I bought recently.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17349.2, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17349.2, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17406.94, "type": "stt_result", "side": "agent", "text": "A water bottle and a desk lamp, to be specific.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17406.94, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 17406.94, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 18408.99, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 18410.49, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 22662.92, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 22662.92, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 27196.84, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 27196.84, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 27202.84, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 27219.89, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 27309.67, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 27379.01, "type": "stt_result", "side": "user", "text": "Hi, I'd be happy to help you exchange those items. Could you provide your email address or your first name, last name, and zip code to locate your account?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 27379.01, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 27379.51, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 28399.97, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 28401.47, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 39195.67, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 39195.67, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43392.84, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43392.84, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43408.89, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43412.9, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43422.43, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43514.72, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43530.77, "type": "stt_result", "side": "agent", "text": "Um", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43530.77, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43530.77, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43530.77, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43600.5, "type": "stt_result", "side": "agent", "text": "I'm not sure about my email, honestly, but my name is Mikovox and my zip code is 28236.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43600.5, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 43600.5, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 44593.14, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 44595.15, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 48750.17, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 48750.67, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 51911.31, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 51911.31, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 51921.85, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 51932.43, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 51945.66, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 52024.04, "type": "stt_result", "side": "user", "text": "I can help with that.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 52024.04, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 52024.04, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 52080.63, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 52139.78, "type": "stt_result", "side": "user", "text": "Could you provide your first name and last name separately so I can locate your account?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 52140.28, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 53124.08, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 53126.11, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 56113.16, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 56114.16, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 59689.02, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 59689.02, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 59701.05, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 59777.99, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 59840.42, "type": "stt_result", "side": "agent", "text": "Sure, it's May, M E I, and then Kovax, K-O-V-A-C-S.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 59840.91, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 59841.41, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 59842.41, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 59842.41, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 60830.17, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 60832.17, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 64566.67, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 64567.18, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_tvzzllbf4jb0_1", "arguments": {"first_name": "May", "last_name": "Kovax", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 64568.68, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_tvzzllbf4jb0_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66297.05, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_tvzzllbf4jb0_1", "arguments": {"first_name": "May", "last_name": "Kovax", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66297.05, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_tvzzllbf4jb0_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66300.55, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66306.41, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66311.42, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66320.44, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66368.6, "type": "stt_result", "side": "user", "text": "Checking.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66368.6, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66368.6, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66547.5, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66597.13, "type": "stt_result", "side": "user", "text": "Uh just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 66597.63, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 67586.2, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 67587.2, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 68649.53, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 68649.53, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 70324.58, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 70325.08, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 71818.14, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 71818.14, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 71834.16, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 71871.18, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 71882.73, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 71971.65, "type": "stt_result", "side": "user", "text": "I wasn't able to find an account with that name and zip code.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 71972.15, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 71972.15, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 71974.66, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 72103.91, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 72179.16, "type": "stt_result", "side": "user", "text": "Could you try providing your email address instead?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 72179.66, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 73178.56, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 73180.56, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 76857.72, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 76858.22, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 80751.27, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 80751.27, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 80761.29, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 80779.84, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 80789.35, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 80894.8, "type": "stt_result", "side": "agent", "text": "Ah, okay. Um", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 80894.8, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 80894.8, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 81043.81, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 81103.5, "type": "stt_result", "side": "agent", "text": "Yeah, I don't really remember my email address either. Is there anything else I can give you to help look it up?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 81103.5, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 82104.09, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 82106.09, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 92331.89, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 92332.39, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_kbdebvsr5ne9_1", "arguments": {"first_name": "Mikovox", "last_name": "Kovax", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 92332.89, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_kbdebvsr5ne9_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93751.02, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_kbdebvsr5ne9_1", "arguments": {"first_name": "Mikovox", "last_name": "Kovax", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93751.52, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_kbdebvsr5ne9_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93754.04, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93762.06, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93765.56, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93777.11, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93820.33, "type": "stt_result", "side": "user", "text": "Checking.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93820.33, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93820.33, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93948.85, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93993.07, "type": "stt_result", "side": "user", "text": "Just a sack.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 93993.07, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 94991.26, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 94992.76, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 97472.75, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 97472.75, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 97903.96, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 97904.97, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_5alzrxku8rn9_1", "arguments": {"first_name": "Mikovox", "last_name": "", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 97905.48, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 97906.47, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_5alzrxku8rn9_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 98747.1, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 98747.1, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 98749.1, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 98759.6, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 98993.73, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 99073.18, "type": "stt_result", "side": "agent", "text": "Hello? Are you still there?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 99073.18, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 99074.18, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 99075.66, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_5alzrxku8rn9_1", "arguments": {"first_name": "Mikovox", "last_name": "", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 99075.66, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_5alzrxku8rn9_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 100052.84, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 100055.86, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 103648.69, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 103648.69, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109150.29, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109150.29, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109155.82, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109163.83, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109180.59, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109191.1, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109268.33, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109275.82, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109315.03, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109322.53, "type": "stt_result", "side": "user", "text": "Yes, I'm still here.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109322.53, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109391.73, "type": "stt_result", "side": "user", "text": "I wasn't able to find an account with the name Micavox and zip code 28226.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109391.73, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109391.73, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109449.32, "type": "stt_result", "side": "user", "text": "Could you double check your name spelling or zip code?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109449.32, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 109449.32, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 110440.85, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 110442.85, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 115893.06, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 115894.07, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123253.95, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123253.95, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123270.61, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123302.65, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123312.19, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123330.24, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123332.75, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123416.04, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123419.05, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123434.07, "type": "stt_result", "side": "agent", "text": "Oh, sorry, I think there might have been a miscommunication.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123438.58, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123438.58, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123438.58, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123439.08, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123504.25, "type": "stt_result", "side": "agent", "text": "My name is May.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123504.25, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123504.25, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123533.82, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123558.45, "type": "stt_result", "side": "agent", "text": "M E I and the last name is Kovax K O V A C S and the name", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123558.45, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123558.45, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123610.46, "type": "stt_result", "side": "agent", "text": "And the zip code is two eight two three six.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 123610.46, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 124639.79, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 124641.8, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 128858.56, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 128859.06, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_d2haw9cyj3qv_1", "arguments": {"first_name": "May", "last_name": "Kovax", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 128860.06, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_d2haw9cyj3qv_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130276.62, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_d2haw9cyj3qv_1", "arguments": {"first_name": "May", "last_name": "Kovax", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130276.62, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_d2haw9cyj3qv_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130280.62, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130281.62, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130286.63, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130293.14, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130303.16, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130348.32, "type": "stt_result", "side": "user", "text": "Checking.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130348.32, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130348.32, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130529.28, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130572.93, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 130573.94, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 131569.08, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 131571.08, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 134445.58, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 134446.08, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135176.15, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135176.15, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135636.99, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135636.99, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135647.52, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135840.66, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135906.82, "type": "stt_result", "side": "agent", "text": "Sure, take your time.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135907.32, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135908.32, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 135909.33, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 136931.11, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 136934.12, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 139762.94, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 139762.94, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143115.38, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143115.38, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143128.44, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143163.06, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143177.11, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143242.76, "type": "stt_result", "side": "user", "text": "I wasn't able to find an account with that name and zip code.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143242.76, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143242.76, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143341.08, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143400.72, "type": "stt_result", "side": "user", "text": "Could you try providing your email address instead?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 143400.72, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 144397.64, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 144399.64, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 148299.03, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 148299.53, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152450.24, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152450.24, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152452.74, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152452.74, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152467.01, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152467.51, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152517.79, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152527.65, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152602.83, "type": "stt_result", "side": "agent", "text": "Like I said, I don't really remember my email address off the top of my head.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152602.83, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152602.83, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152756.16, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152810.68, "type": "stt_result", "side": "agent", "text": "Is there anything else I can provide? Maybe my phone number or something?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152811.18, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 152811.18, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 153797.74, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 153799.74, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 158891.96, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 158891.96, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 165943.99, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 165943.99, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 165960.56, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166015.65, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166028.29, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166063.1, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166070.24, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166151.6, "type": "stt_result", "side": "user", "text": "I'm sorry, but I can only authenticate using an email address or your name and zip code.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166151.6, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166151.6, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166156.11, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166156.61, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166213.7, "type": "stt_result", "side": "user", "text": "I don't have a way to look up accounts by phone number.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166213.7, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166213.7, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166272.84, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166333.06, "type": "stt_result", "side": "user", "text": "Could you try to recall your email address or double check the spelling of your name and zip code?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 166334.07, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 167332.77, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 167333.77, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 173832.84, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 173832.84, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182619.69, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182620.19, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182625.2, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182625.2, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182638.26, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182642.76, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182651.82, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182662.36, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182664.89, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182693.09, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182698.6, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182732.67, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182738.69, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182761.31, "type": "stt_result", "side": "agent", "text": "Mm.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182761.31, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182761.31, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182853.17, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182861.2, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182872.24, "type": "stt_result", "side": "agent", "text": "Okay.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182872.24, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182935.02, "type": "stt_result", "side": "agent", "text": "Let me try spelling it out again more carefully.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182935.02, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182935.02, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182939.53, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182939.53, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182985.68, "type": "stt_result", "side": "agent", "text": "My first name is May, that's M E I.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182985.68, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 182985.68, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 183016.82, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 183045.86, "type": "stt_result", "side": "agent", "text": "Last name is Covacks, K O V A C S, and zip code is two eight two three six.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 183045.86, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 183050.42, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 183050.42, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 183050.42, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 183097.29, "type": "stt_result", "side": "agent", "text": "Maybe there was a typo somewhere on your end?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 183097.29, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 184093.03, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 184095.55, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 187561.59, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 187562.09, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_uc4vygn7zcvk_1", "arguments": {"first_name": "May", "last_name": "Covacks", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 187563.09, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_uc4vygn7zcvk_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189121.28, "type": "tool_call", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_uc4vygn7zcvk_1", "arguments": {"first_name": "May", "last_name": "Covacks", "zip": "28236"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189121.28, "type": "tool_result", "side": "agent", "name": "find_user_id_by_name_zip", "tool_call_id": "call_function_uc4vygn7zcvk_1", "result": {"error": "User not found"}}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189125.31, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189126.32, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189132.32, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189139.34, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189150.37, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189198.51, "type": "stt_result", "side": "user", "text": "Checking?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189198.51, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189198.51, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189322.73, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189366.37, "type": "stt_result", "side": "user", "text": "Just a sec.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 189366.37, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 190366.78, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 190368.27, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 192439.73, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 192440.24, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 192722.7, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 192723.7, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 198766.15, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 198766.15, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 198787.16, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 198818.26, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 198829.34, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 198980.33, "type": "stt_result", "side": "user", "text": "I'm still unable to locate your account.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 198980.33, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 198980.33, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 198982.33, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 199042.2, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 199126.5, "type": "stt_result", "side": "user", "text": "Unfortunately, I need either your email address or your correct name and zip code to proceed. Would you like to try remembering your email address, or is there anything else you can double check?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 199126.5, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 200150.14, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 200152.14, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 210473.05, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 210473.05, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216802.66, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216802.66, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216818.22, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216872.77, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216884.81, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216960.53, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216964.03, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216992.97, "type": "stt_result", "side": "agent", "text": "Um, okay, this is frustrating. Is there maybe a user ID or something that could help?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216992.97, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216992.97, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216998.98, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 216998.98, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 217051.57, "type": "stt_result", "side": "agent", "text": "My username online is May underscore Kovax underscore eight zero two zero.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 217051.57, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 217051.57, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 217120.51, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 217164.6, "type": "stt_result", "side": "agent", "text": "Would that help at all?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 217165.11, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 218162.68, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 218165.68, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 223727.18, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 223727.18, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229298.46, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229298.96, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229311.51, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229407.31, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229418.36, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229482.53, "type": "stt_result", "side": "user", "text": "I'm sorry, but I can't look up accounts using usernames. However, based on the pattern you provided, your email might be something like maycovax8020example.com.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229482.53, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229482.53, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229483.03, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229483.03, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229532.71, "type": "stt_result", "side": "user", "text": "Can you try that?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 229532.71, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 230558.74, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 230560.24, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 238623.06, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 238623.06, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243528.79, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243528.79, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243531.8, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243531.8, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243547.89, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243622.64, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243631.65, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243658.4, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243701.53, "type": "stt_result", "side": "agent", "text": "Uh I'm not sure if that's actually my email. I mean you just guessed that, right? I can't really confirm it since I don't remember.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243701.53, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243702.03, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243702.03, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243706.54, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243756.11, "type": "stt_result", "side": "agent", "text": "Is there any other way we can figure this out?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243756.11, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 243756.11, "type": "vad_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 244752.71, "type": "vad_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 244755.74, "type": "llm_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 249089.69, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 249090.19, "type": "tts_start", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 257761.36, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 257761.36, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 257772.88, "type": "tts_stop", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 257772.88, "type": "llm_end", "side": "agent"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 257799.84, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258004.56, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258032.64, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258133.16, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258166.84, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258575.75, "type": "stt_result", "side": "user", "text": "I'm sorry, but I'm only able to authenticate using an email address or your name and zip code.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258576.25, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258576.25, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258577.25, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258599.97, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258599.97, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258616.51, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258757.85, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258800.48, "type": "stt_result", "side": "user", "text": "I don't have access to other identification methods.", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258800.48, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258800.48, "type": "vad_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258973.14, "type": "stt_result", "side": "user", "text": "Could you try to recall your email address or verify your name and zip code?", "user_id": "", "timestamp": ""}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 258973.14, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 259973.95, "type": "vad_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 259978.47, "type": "llm_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 269740.77, "type": "llm_end", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 269741.27, "type": "tts_start", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 269772.85, "type": "stop_signal", "reason": "user_stop"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 269777.93, "type": "tts_stop", "side": "user"}
+{"task_id": "6", "simulation_id": "1e5347ee-14c6-4d01-838f-14d8145c9236", "t_offset_ms": 270358.76, "type": "run_end", "duration_seconds": 270.095543384552, "termination": "user_stop", "checks": [{"name": "auth_loop", "passed": false, "message": "authentication tool `('find_user_id_by_name_zip', \"[('first_name', 'May'), ('last_name', 'Kovax'), ('zip', '28236')]\")` repeated the same call 2 times"}, {"name": "tool_argument_integrity", "passed": false, "message": "call_function_tvzzllbf4jb0_1: {\"error\": \"User not found\"}; call_function_kbdebvsr5ne9_1: {\"error\": \"User not found\"}; call_function_5alzrxku8rn9_1: {\"error\": \"User not found\"}; call_function_d2haw9cyj3qv_1: {\"error\": \"User not found\"}; call_function_uc4vygn7zcvk_1: {\"error\": \"User not found\"}"}, {"name": "write_protocol", "passed": false, "message": "no expected write action was attempted"}]}

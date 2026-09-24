@@ -1,0 +1,181 @@
+{
+  "conversation": "conversation.wav",
+  "segments": [
+    {
+      "side": "agent",
+      "index": 1,
+      "path": "audio\\agent_turn_01.wav",
+      "start_ms": 32690.82,
+      "duration_ms": 14440.88,
+      "message_index": 2
+    },
+    {
+      "side": "agent",
+      "index": 2,
+      "path": "audio\\agent_turn_02.wav",
+      "start_ms": 77638.43,
+      "duration_ms": 15408.62,
+      "message_index": 6
+    },
+    {
+      "side": "agent",
+      "index": 3,
+      "path": "audio\\agent_turn_03.wav",
+      "start_ms": 130482.58,
+      "duration_ms": 9965.75,
+      "message_index": 12
+    },
+    {
+      "side": "agent",
+      "index": 4,
+      "path": "audio\\agent_turn_04.wav",
+      "start_ms": 155584.43,
+      "duration_ms": 3368.56,
+      "message_index": 14
+    },
+    {
+      "side": "agent",
+      "index": 5,
+      "path": "audio\\agent_turn_05.wav",
+      "start_ms": 177423.28,
+      "duration_ms": 3063.06,
+      "message_index": 18
+    },
+    {
+      "side": "agent",
+      "index": 6,
+      "path": "audio\\agent_turn_06.wav",
+      "start_ms": 192235.21,
+      "duration_ms": 3670.38,
+      "message_index": 20
+    },
+    {
+      "side": "agent",
+      "index": 7,
+      "path": "audio\\agent_turn_07.wav",
+      "start_ms": 248835.7,
+      "duration_ms": 5162.75,
+      "message_index": 36
+    },
+    {
+      "side": "user",
+      "index": 1,
+      "path": "audio\\user_turn_01.wav",
+      "start_ms": 9955.25,
+      "duration_ms": 8617.88,
+      "message_index": 1
+    },
+    {
+      "side": "user",
+      "index": 2,
+      "path": "audio\\user_turn_02.wav",
+      "start_ms": 52066.85,
+      "duration_ms": 7187.69,
+      "message_index": 3
+    },
+    {
+      "side": "user",
+      "index": 3,
+      "path": "audio\\user_turn_03.wav",
+      "start_ms": 77691.51,
+      "duration_ms": 8585.56,
+      "message_index": 7
+    },
+    {
+      "side": "user",
+      "index": 4,
+      "path": "audio\\user_turn_04.wav",
+      "start_ms": 98398.1,
+      "duration_ms": 6720.5,
+      "message_index": 13
+    },
+    {
+      "side": "user",
+      "index": 5,
+      "path": "audio\\user_turn_05.wav",
+      "start_ms": 123746.42,
+      "duration_ms": 2396.31,
+      "message_index": 15
+    },
+    {
+      "side": "user",
+      "index": 6,
+      "path": "audio\\user_turn_06.wav",
+      "start_ms": 131019.03,
+      "duration_ms": 5296.5,
+      "message_index": 19
+    },
+    {
+      "side": "user",
+      "index": 7,
+      "path": "audio\\user_turn_07.wav",
+      "start_ms": 144514.26,
+      "duration_ms": 2472.44,
+      "message_index": 21
+    },
+    {
+      "side": "user",
+      "index": 8,
+      "path": "audio\\user_turn_08.wav",
+      "start_ms": 162540.86,
+      "duration_ms": 1507.56,
+      "message_index": 28
+    },
+    {
+      "side": "user",
+      "index": 9,
+      "path": "audio\\user_turn_09.wav",
+      "start_ms": 177691.64,
+      "duration_ms": 1599.5,
+      "message_index": 35
+    },
+    {
+      "side": "user",
+      "index": 10,
+      "path": "audio\\user_turn_10.wav",
+      "start_ms": 183926.76,
+      "duration_ms": 1921.88,
+      "message_index": 37
+    },
+    {
+      "side": "user",
+      "index": 11,
+      "path": "audio\\user_turn_11.wav",
+      "start_ms": 200150.27,
+      "duration_ms": 1924.5,
+      "message_index": null
+    },
+    {
+      "side": "user",
+      "index": 12,
+      "path": "audio\\user_turn_12.wav",
+      "start_ms": 218109.84,
+      "duration_ms": 692.38,
+      "message_index": null
+    },
+    {
+      "side": "user",
+      "index": 13,
+      "path": "audio\\user_turn_13.wav",
+      "start_ms": 230217.59,
+      "duration_ms": 834.12,
+      "message_index": null
+    },
+    {
+      "side": "user",
+      "index": 14,
+      "path": "audio\\user_turn_14.wav",
+      "start_ms": 238544.38,
+      "duration_ms": 856.44,
+      "message_index": null
+    },
+    {
+      "side": "user",
+      "index": 15,
+      "path": "audio\\user_turn_15.wav",
+      "start_ms": 262280.23,
+      "duration_ms": 2626.69,
+      "message_index": null
+    }
+  ]
+}

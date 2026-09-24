@@ -1,0 +1,232 @@
+{
+  "conversation": "conversation.wav",
+  "segments": [
+    {
+      "side": "agent",
+      "index": 1,
+      "path": "audio\\agent_turn_01.wav",
+      "start_ms": 16285.57,
+      "duration_ms": 8946.56,
+      "message_index": null,
+      "legacy_message_index": 2
+    },
+    {
+      "side": "agent",
+      "index": 2,
+      "path": "audio\\agent_turn_02.wav",
+      "start_ms": 41355.57,
+      "duration_ms": 8502.12,
+      "message_index": null,
+      "legacy_message_index": 6
+    },
+    {
+      "side": "agent",
+      "index": 3,
+      "path": "audio\\agent_turn_03.wav",
+      "start_ms": 81622.01,
+      "duration_ms": 26122.75,
+      "message_index": null,
+      "legacy_message_index": 19
+    },
+    {
+      "side": "agent",
+      "index": 4,
+      "path": "audio\\agent_turn_04.wav",
+      "start_ms": 113367.6,
+      "duration_ms": 10078.38,
+      "message_index": null,
+      "legacy_message_index": 21
+    },
+    {
+      "side": "agent",
+      "index": 5,
+      "path": "audio\\agent_turn_05.wav",
+      "start_ms": 131600.96,
+      "duration_ms": 12887.81,
+      "message_index": null,
+      "legacy_message_index": 23
+    },
+    {
+      "side": "agent",
+      "index": 6,
+      "path": "audio\\agent_turn_06.wav",
+      "start_ms": 154916.76,
+      "duration_ms": 11469.5,
+      "message_index": null,
+      "legacy_message_index": 25
+    },
+    {
+      "side": "agent",
+      "index": 7,
+      "path": "audio\\agent_turn_07.wav",
+      "start_ms": 175638.15,
+      "duration_ms": 25015.88,
+      "message_index": null,
+      "legacy_message_index": 27
+    },
+    {
+      "side": "agent",
+      "index": 8,
+      "path": "audio\\agent_turn_08.wav",
+      "start_ms": 204343.24,
+      "duration_ms": 15175.5,
+      "message_index": null,
+      "legacy_message_index": 29
+    },
+    {
+      "side": "agent",
+      "index": 9,
+      "path": "audio\\agent_turn_09.wav",
+      "start_ms": 226762.83,
+      "duration_ms": 11557.19,
+      "message_index": null,
+      "legacy_message_index": 33
+    },
+    {
+      "side": "agent",
+      "index": 10,
+      "path": "audio\\agent_turn_10.wav",
+      "start_ms": 245214.05,
+      "duration_ms": 3215.31,
+      "message_index": null,
+      "legacy_message_index": 35
+    },
+    {
+      "side": "agent",
+      "index": 11,
+      "path": "audio\\agent_turn_11.wav",
+      "start_ms": 257422.89,
+      "duration_ms": 3429.0,
+      "message_index": null,
+      "legacy_message_index": 37
+    },
+    {
+      "side": "user",
+      "index": 1,
+      "path": "audio\\user_turn_01.wav",
+      "start_ms": 4193.95,
+      "duration_ms": 8822.25,
+      "message_index": null,
+      "legacy_message_index": 1
+    },
+    {
+      "side": "user",
+      "index": 2,
+      "path": "audio\\user_turn_02.wav",
+      "start_ms": 27657.79,
+      "duration_ms": 4869.88,
+      "message_index": null,
+      "legacy_message_index": 3
+    },
+    {
+      "side": "user",
+      "index": 3,
+      "path": "audio\\user_turn_03.wav",
+      "start_ms": 42903.19,
+      "duration_ms": 4280.31,
+      "message_index": null,
+      "legacy_message_index": 7
+    },
+    {
+      "side": "user",
+      "index": 4,
+      "path": "audio\\user_turn_04.wav",
+      "start_ms": 51098.01,
+      "duration_ms": 6007.81,
+      "message_index": null,
+      "legacy_message_index": 14
+    },
+    {
+      "side": "user",
+      "index": 5,
+      "path": "audio\\user_turn_05.wav",
+      "start_ms": 65283.8,
+      "duration_ms": 1841.44,
+      "message_index": null,
+      "legacy_message_index": 20
+    },
+    {
+      "side": "user",
+      "index": 6,
+      "path": "audio\\user_turn_06.wav",
+      "start_ms": 102446.69,
+      "duration_ms": 4065.69,
+      "message_index": null,
+      "legacy_message_index": 22
+    },
+    {
+      "side": "user",
+      "index": 7,
+      "path": "audio\\user_turn_07.wav",
+      "start_ms": 124115.48,
+      "duration_ms": 2865.25,
+      "message_index": null,
+      "legacy_message_index": 24
+    },
+    {
+      "side": "user",
+      "index": 8,
+      "path": "audio\\user_turn_08.wav",
+      "start_ms": 143547.12,
+      "duration_ms": 3334.31,
+      "message_index": null,
+      "legacy_message_index": 26
+    },
+    {
+      "side": "user",
+      "index": 9,
+      "path": "audio\\user_turn_09.wav",
+      "start_ms": 165629.92,
+      "duration_ms": 2637.5,
+      "message_index": null,
+      "legacy_message_index": 28
+    },
+    {
+      "side": "user",
+      "index": 10,
+      "path": "audio\\user_turn_10.wav",
+      "start_ms": 194437.73,
+      "duration_ms": 5009.69,
+      "message_index": null,
+      "legacy_message_index": 30
+    },
+    {
+      "side": "user",
+      "index": 11,
+      "path": "audio\\user_turn_11.wav",
+      "start_ms": 216799.1,
+      "duration_ms": 1708.12,
+      "message_index": null,
+      "legacy_message_index": 34
+    },
+    {
+      "side": "user",
+      "index": 12,
+      "path": "audio\\user_turn_12.wav",
+      "start_ms": 227424.09,
+      "duration_ms": 7444.06,
+      "message_index": null,
+      "legacy_message_index": 36
+    },
+    {
+      "side": "user",
+      "index": 13,
+      "path": "audio\\user_turn_13.wav",
+      "start_ms": 239087.85,
+      "duration_ms": 3071.75,
+      "message_index": null,
+      "legacy_message_index": null
+    },
+    {
+      "side": "user",
+      "index": 14,
+      "path": "audio\\user_turn_14.wav",
+      "start_ms": 251300.18,
+      "duration_ms": 2561.94,
+      "message_index": null,
+      "legacy_message_index": null
+    }
+  ],
+  "pairing_status": "legacy_unverified",
+  "source_manifest": "audio_segments.json"
+}
