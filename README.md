@@ -237,4 +237,4 @@ The batch also contains retries, a recovered transcript without audio, incomplet
 python -m ruff check src viewer
 ```
 
-The project also contains focused tests under `tests/` and a longer technical account in [TECHNICAL_WRITEUP.md](TECHNICAL_WRITEUP.md). The presentation outline is in [DEMO_SCRIPT.md](DEMO_SCRIPT.md).
+The project also contains focused tests under `tests/` and a longer technical account in [TECHNICAL_WRITEUP.md](TECHNICAL_WRITEUP.md).

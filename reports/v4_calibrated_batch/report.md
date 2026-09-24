@@ -27,7 +27,7 @@ The local reward is a useful deterministic local score, not a substitute for ful
 
 ## Task-level view
 
-A representative is selected for display by highest local reward, then DB match, then action fraction, then non-timeout termination. This is a presentation choice, not a replacement for the full attempt table.
+A representative is selected for display by highest local reward, then DB match, then action fraction, then non-timeout termination. This is a display choice, not a replacement for the full attempt table.
 
 | Task | Split | Attempts | Local 1.0 attempts | DB match attempts | Representative | Local | DB | Actions | Termination | Auth | Args | Write |
 |---:|:---:|---:|---:|---:|:---|---:|:---:|:---:|:---:|:---:|:---:|:---:|

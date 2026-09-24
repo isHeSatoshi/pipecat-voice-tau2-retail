@@ -4,7 +4,7 @@
 
 This repository contains a cascaded, real-time voice agent connected to the Tau-bench retail environment. The goal is not only to produce a plausible customer-service conversation. The goal is to make the conversation reproducible, grounded in real tools, observable at the audio/trace level, and honest about where the agent fails.
 
-The current report is based on the retained `v4_calibrated_batch` bundle: 19 recorded attempts across 10 unique task ids, including retries, failures, a recovered transcript, and selected test tasks. The raw artifacts remain available under `data/runs/`; the compact interviewer-facing report is under [`docs/report/`](docs/report/).
+The current report is based on the retained `v4_calibrated_batch` bundle: 19 recorded attempts across 10 unique task ids, including retries, failures, a recovered transcript, and selected test tasks. The raw artifacts remain available under `data/runs/`; the compact report is under [`docs/report/`](docs/report/).
 
 ## 1. System under test
 
@@ -241,13 +241,13 @@ The dashboard provides the transcript, tool calls, reward breakdown, trace timel
 
 ## 9. Public artifact map
 
-- [`README.md`](README.md): human-facing project overview, setup, results, and demo path.
-- [`DEMO_SCRIPT.md`](DEMO_SCRIPT.md): short presentation walkthrough.
+- [`README.md`](README.md): project overview, setup, results, and run instructions.
 - [`docs/report/analysis.md`](docs/report/analysis.md): calibrated batch interpretation.
 - [`docs/report/`](docs/report/): charts, tables, provenance, and portable conversation examples.
 - [`data/runs/`](data/runs/): retained trajectories, traces, audio, and run summaries.
 - [`viewer/app.py`](viewer/app.py): Streamlit dashboard.
 - [`src/pipecat_voice/`](src/pipecat_voice/): pipeline, transport, Tau-bench bridge, policies, and evaluation code.
 - [`tests/`](tests/): focused behavioral and smoke tests.
+- [`probes/`](probes/): diagnostic probes, analysis utilities, and retained logs kept out of the product source tree.
 
-The project is intentionally evidence-heavy. An interviewer should be able to start with the README, open the charts, inspect the trace timeline, listen to the separate voices, and then follow the code path from audio frame to tool result to database check.
+The project is intentionally evidence-heavy. A reader should be able to start with the README, open the charts, inspect the trace timeline, listen to the separate voices, and then follow the code path from audio frame to tool result to database check.
