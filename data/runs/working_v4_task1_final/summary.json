@@ -1,0 +1,55 @@
+{
+  "config": {
+    "domain": "retail",
+    "split": "base",
+    "stt": "parakeet",
+    "tts": "chatterbox",
+    "agent_llm": "minimax",
+    "user_llm": "minimax",
+    "minimax_api_base": "https://api.minimax.io/anthropic",
+    "agent_model": "MiniMax-M2.7",
+    "user_model": "MiniMax-M2.7",
+    "prompt_variant": "v4",
+    "seed": 42,
+    "max_conversation_seconds": 360,
+    "vad_enabled": true,
+    "tool_execution_policy": "single_serialized_exact_signature"
+  },
+  "results": [
+    {
+      "task_id": "1",
+      "reward": 0.0,
+      "local_reward": 1.0,
+      "strict_reward_available": false,
+      "db_match": true,
+      "actions_matched": 5,
+      "actions_total": 5,
+      "termination_reason": "user_stop",
+      "duration_seconds": 176.33841,
+      "trajectory_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\working_v4_task1_final\\task_1\\sim_4f30dc28\\trajectory.json",
+      "trace_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\working_v4_task1_final\\task_1\\sim_4f30dc28\\voice_trace.jsonl",
+      "agent_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\working_v4_task1_final\\task_1\\sim_4f30dc28\\agent_audio.wav",
+      "user_audio_path": "D:\\Project\\infer_task\\pipecat_voice\\data\\runs\\working_v4_task1_final\\task_1\\sim_4f30dc28\\user_audio.wav",
+      "checks": [
+        {
+          "name": "auth_loop",
+          "passed": true,
+          "message": "no repeated authentication call; auth prompts=1"
+        },
+        {
+          "name": "tool_argument_integrity",
+          "passed": true,
+          "message": "6 calls passed recorded argument/error checks"
+        },
+        {
+          "name": "write_protocol",
+          "passed": true,
+          "message": "write calls=1, expected write categories=1"
+        }
+      ],
+      "infrastructure_error": null,
+      "trial": 1,
+      "seed": 42
+    }
+  ]
+}

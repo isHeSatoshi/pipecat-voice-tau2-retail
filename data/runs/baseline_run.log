@@ -1,0 +1,57 @@
+[NeMo I 2026-09-23 17:17:27 mixins:194] Tokenizer SentencePieceTokenizer initialized with 8192 tokens
+[NeMo I 2026-09-23 17:17:41 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:17:41 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:17:41 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:17:45 save_restore_connector:287] Model EncDecRNNTBPEModel was successfully restored from C:\Users\Aditya\.cache\huggingface\hub\models--nvidia--parakeet-tdt-0.6b-v3\snapshots\541d1f99c6b0c3cd0b11a95167540bb8edefd82b\parakeet-tdt-0.6b-v3.nemo.
+[NeMo I 2026-09-23 17:18:00 mixins:194] Tokenizer SentencePieceTokenizer initialized with 8192 tokens
+[NeMo I 2026-09-23 17:18:11 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:18:11 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:18:11 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:18:14 save_restore_connector:287] Model EncDecRNNTBPEModel was successfully restored from C:\Users\Aditya\.cache\huggingface\hub\models--nvidia--parakeet-tdt-0.6b-v3\snapshots\541d1f99c6b0c3cd0b11a95167540bb8edefd82b\parakeet-tdt-0.6b-v3.nemo.
+loaded PerthNet (Implicit) at step 250,000
+loaded PerthNet (Implicit) at step 250,000
+{"task_id": "0", "reward": 0.0, "termination_reason": "agent_stop", "duration_seconds": 300.3213212490082, "trajectory_path": "data\\runs\\baseline\\task_0\\sim_fb1d6e72\\trajectory.json", "trace_path": "data\\runs\\baseline\\task_0\\sim_fb1d6e72\\voice_trace.jsonl", "trial": 1}
+[NeMo I 2026-09-23 17:24:31 mixins:194] Tokenizer SentencePieceTokenizer initialized with 8192 tokens
+[NeMo I 2026-09-23 17:24:45 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:24:45 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:24:45 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:24:51 save_restore_connector:287] Model EncDecRNNTBPEModel was successfully restored from C:\Users\Aditya\.cache\huggingface\hub\models--nvidia--parakeet-tdt-0.6b-v3\snapshots\541d1f99c6b0c3cd0b11a95167540bb8edefd82b\parakeet-tdt-0.6b-v3.nemo.
+[NeMo I 2026-09-23 17:25:08 mixins:194] Tokenizer SentencePieceTokenizer initialized with 8192 tokens
+[NeMo I 2026-09-23 17:25:18 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:25:18 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:25:18 rnnt_models:226] Using RNNT Loss : tdt
+    Loss tdt_kwargs: {'fastemit_lambda': 0.0, 'clamp': -1.0, 'durations': [0, 1, 2, 3, 4], 'sigma': 0.02, 'omega': 0.1}
+[NeMo I 2026-09-23 17:25:24 save_restore_connector:287] Model EncDecRNNTBPEModel was successfully restored from C:\Users\Aditya\.cache\huggingface\hub\models--nvidia--parakeet-tdt-0.6b-v3\snapshots\541d1f99c6b0c3cd0b11a95167540bb8edefd82b\parakeet-tdt-0.6b-v3.nemo.
+loaded PerthNet (Implicit) at step 250,000
+loaded PerthNet (Implicit) at step 250,000
+{"task_id": "1", "reward": 0.0, "termination_reason": "agent_stop", "duration_seconds": 300.6199381351471, "trajectory_path": "data\\runs\\baseline\\task_1\\sim_1867d648\\trajectory.json", "trace_path": "data\\runs\\baseline\\task_1\\sim_1867d648\\voice_trace.jsonl", "trial": 1}
+loaded PerthNet (Implicit) at step 250,000
+loaded PerthNet (Implicit) at step 250,000
+
+Give Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+Give Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+Give Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+
+Give Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new
+LiteLLM.Info: If you need to debug this error, use `litellm._turn_on_debug()'.
+
+{"task_id": "2", "reward": null, "termination_reason": "user_stop", "duration_seconds": 300.2402641773224, "trajectory_path": "data\\runs\\baseline\\task_2\\sim_37ce1ac8\\trajectory.json", "trace_path": "data\\runs\\baseline\\task_2\\sim_37ce1ac8\\voice_trace.jsonl", "trial": 1}
