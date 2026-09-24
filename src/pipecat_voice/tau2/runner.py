@@ -366,25 +366,41 @@ class Tau2EvalRunner:
                 logger.warning(f"Failed to kick user pipeline: {e}")
 
         stop_kind: dict[str, str] = {"reason": "agent_stop"}
+        deadline = time.monotonic() + self.cfg.max_conversation_seconds
+        last_message_count = len(agent_parts.context.messages)
+        last_context_change = time.monotonic()
 
         async def _stopper():
+            nonlocal last_message_count, last_context_change
+            while True:
+                if stop_event.is_set():
+                    stop_kind["reason"] = "user_stop"
+                    break
+                now = time.monotonic()
+                message_count = len(agent_parts.context.messages)
+                if message_count != last_message_count:
+                    last_message_count = message_count
+                    last_context_change = now
+                if (
+                    agent_parts.tool_policy is not None
+                    and agent_parts.tool_policy.has_successful_write
+                    and now - last_context_change >= 12.0
+                ):
+                    stop_kind["reason"] = "agent_stop"
+                    stop_kind["basis"] = "post_write_inactivity"
+                    break
+                if now >= deadline:
+                    stop_kind["reason"] = "timeout"
+                    logger.warning(
+                        f"Conversation timed out after {self.cfg.max_conversation_seconds}s"
+                    )
+                    break
+                await asyncio.sleep(0.5)
+            trace.emit({"type": "stop_signal", **stop_kind})
             try:
-                await asyncio.wait_for(
-                    stop_event.wait(),
-                    timeout=self.cfg.max_conversation_seconds,
-                )
-                stop_kind["reason"] = "user_stop"
-            except asyncio.TimeoutError:
-                stop_kind["reason"] = "timeout"
-                logger.warning(
-                    f"Conversation timed out after {self.cfg.max_conversation_seconds}s"
-                )
-            finally:
-                trace.emit({"type": "stop_signal", "reason": stop_kind["reason"]})
-                try:
-                    await runner.cancel()
-                except Exception:
-                    pass
+                await runner.cancel()
+            except Exception:
+                pass
 
         # Only the user side is kicked: its greeting bootstraps the loop
         # (agent greeting is already first in the agent context; kicking the
@@ -491,12 +507,18 @@ class Tau2EvalRunner:
         )
         trace.close()
 
-        try:
-            from pipecat_voice.observability.audio_artifacts import build_artifacts
+        # Dummy services intentionally emit no persisted WAVs. Keep the
+        # offline smoke path successful while still surfacing missing audio
+        # for the real voice stack.
+        if self.cfg.stt_impl == "dummy" and self.cfg.tts_impl == "dummy":
+            logger.info("Skipping audio artifacts for dummy STT/TTS services")
+        else:
+            try:
+                from pipecat_voice.observability.audio_artifacts import build_artifacts
 
-            build_artifacts(sim_dir)
-        except Exception as e:
-            run_error = "; ".join(filter(None, [run_error, f"audio artifacts: {e}"]))
+                build_artifacts(sim_dir)
+            except Exception as e:
+                run_error = "; ".join(filter(None, [run_error, f"audio artifacts: {e}"]))
 
         reward_info_dict = (
             reward_info.model_dump(mode="json") if reward_info is not None else {}

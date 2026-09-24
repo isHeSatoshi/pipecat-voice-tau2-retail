@@ -61,6 +61,7 @@ class SimView:
     task_id: str
     sim_id: str
     path: Path
+    seed: Optional[int] = None
     trajectory: Optional[dict[str, Any]] = None
     trace_events: list[dict[str, Any]] = field(default_factory=list)
     audio_manifest: dict[str, Any] = field(default_factory=dict)
@@ -123,6 +124,34 @@ def load_summary(run_dir: Path) -> RunSummary:
     )
 
 
+def _seed_from_artifacts(sim_dir: Path) -> Optional[int]:
+    """Read the seed from a completed trajectory or trace metadata."""
+    trajectory_path = sim_dir / "trajectory.json"
+    if trajectory_path.exists():
+        try:
+            value = json.loads(trajectory_path.read_text(encoding="utf-8")).get(
+                "seed"
+            )
+            if value is not None:
+                return int(value)
+        except (OSError, TypeError, ValueError, json.JSONDecodeError):
+            pass
+
+    trace_path = sim_dir / "voice_trace.jsonl"
+    if trace_path.exists():
+        try:
+            for line in trace_path.read_text(encoding="utf-8").splitlines():
+                event = json.loads(line)
+                value = event.get("seed")
+                if value is None:
+                    value = (event.get("config") or {}).get("seed")
+                if value is not None:
+                    return int(value)
+        except (OSError, TypeError, ValueError, json.JSONDecodeError):
+            pass
+    return None
+
+
 def discover_sims(run_dir: Path) -> list[SimView]:
     """Walk the ``task_<id>/sim_<uuid>/`` tree under a run directory."""
     out: list[SimView] = []
@@ -134,14 +163,16 @@ def discover_sims(run_dir: Path) -> list[SimView]:
         for sim_dir in sorted(task_dir.iterdir(), key=lambda x: x.name.lower()):
             if not sim_dir.is_dir() or not sim_dir.name.startswith("sim_"):
                 continue
-            out.append(
-                SimView(
-                    run_name=run_dir.name,
-                    task_id=task_dir.name.replace("task_", "", 1),
-                    sim_id=sim_dir.name.replace("sim_", "", 1),
-                    path=sim_dir,
-                )
+            # Keep construction compatible with a hot-reloaded older
+            # SimView class that does not have the newer seed field yet.
+            sim = SimView(
+                run_name=run_dir.name,
+                task_id=task_dir.name.replace("task_", "", 1),
+                sim_id=sim_dir.name.replace("sim_", "", 1),
+                path=sim_dir,
             )
+            sim.seed = _seed_from_artifacts(sim_dir)
+            out.append(sim)
     return out
 
 
@@ -153,6 +184,8 @@ def load_sim(sim: SimView) -> SimView:
             sim.trajectory = json.loads(traj_path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             sim.trajectory = None
+    if getattr(sim, "seed", None) is None:
+        sim.seed = _seed_from_artifacts(sim.path)
     trace_path = sim.path / "voice_trace.jsonl"
     if trace_path.exists():
         events: list[dict[str, Any]] = []
@@ -165,12 +198,18 @@ def load_sim(sim: SimView) -> SimView:
             except json.JSONDecodeError:
                 continue
         sim.trace_events = events
-    manifest_path = sim.path / "audio_segments.json"
-    if manifest_path.exists():
+    manifest_paths = [
+        sim.path / "audio_segments_fixed.json",
+        sim.path / "audio_segments.json",
+    ]
+    for manifest_path in manifest_paths:
+        if not manifest_path.exists():
+            continue
         try:
             sim.audio_manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         except json.JSONDecodeError:
             sim.audio_manifest = {}
+        break
     conversation_name = sim.audio_manifest.get("conversation")
     if conversation_name:
         conversation_path = sim.path / conversation_name
@@ -253,6 +292,7 @@ def reward_table_row(sim: SimView, run_name: str) -> dict[str, Any]:
         "run": run_name,
         "task_id": sim.task_id,
         "sim_id": sim.sim_id,
+        "seed": traj.get("seed", getattr(sim, "seed", None)),
         "reward": r["reward"],
         "local_reward": r["partial_reward"]
         if not r["strict_reward_available"]

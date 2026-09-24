@@ -62,10 +62,19 @@ def _build_parser() -> argparse.ArgumentParser:
         "--split",
         type=str,
         default=None,
-        help="Task split name (e.g. base, train, test).",
+        help="Task split name(s), comma-separated (e.g. base, train, test).",
     )
     run.add_argument(
-        "--num-trials", type=int, default=1, help="Number of trials per task."
+        "--append",
+        action="store_true",
+        help="Append results to an existing run summary instead of replacing it.",
+    )
+    run.add_argument(
+        "--num-trials",
+        type=int,
+        choices=(1,),
+        default=1,
+        help="Number of trials per task; exactly one is supported.",
     )
     run.add_argument(
         "--max-tasks", type=int, default=None, help="Cap on number of tasks to run."
@@ -243,10 +252,25 @@ def _cmd_run(args) -> int:
         task_ids = []
 
     split = args.split if args.split is not None else cfg.task_split
-    cfg.task_split = split
-    tasks = load_tasks_filtered(
-        cfg.domain, split, task_ids=task_ids, max_tasks=args.max_tasks
-    )
+    split_names = [part.strip() for part in split.split(",") if part.strip()]
+    if not split_names:
+        logger.error("At least one task split is required")
+        return 1
+    cfg.task_split = ",".join(split_names)
+    tasks = []
+    remaining = args.max_tasks
+    for split_name in split_names:
+        loaded = load_tasks_filtered(
+            cfg.domain,
+            split_name,
+            task_ids=task_ids,
+            max_tasks=remaining,
+        )
+        tasks.extend(loaded)
+        if remaining is not None:
+            remaining = max(0, remaining - len(loaded))
+            if remaining == 0:
+                break
     if not tasks:
         logger.error(f"No tasks matched task_ids={task_ids!r} split={split!r}")
         return 1
@@ -269,29 +293,37 @@ def _cmd_run(args) -> int:
     runner = Tau2EvalRunner(cfg=cfg, trace_dir=cfg.out_dir, enable_vad=not args.no_vad)
 
     results = []
-    for trial in range(args.num_trials):
-        cfg.seed = base_seed + trial
-        for task in tasks:
-            logger.info(f"[trial {trial + 1}/{args.num_trials}] task={task.id}")
-            try:
-                res = runner.run(task)
-            except Exception as e:
-                logger.exception(f"Task {task.id} failed: {e}")
-                res = {"task_id": task.id, "error": str(e)}
-            res["trial"] = trial + 1
-            res["seed"] = cfg.seed
-            results.append(res)
-            print(json.dumps(res, ensure_ascii=False))
+    for task in tasks:
+        logger.info(f"[trial 1/1] task={task.id}")
+        try:
+            res = runner.run(task)
+        except Exception as e:
+            logger.exception(f"Task {task.id} failed: {e}")
+            res = {"task_id": task.id, "error": str(e)}
+        res["trial"] = 1
+        res["seed"] = base_seed
+        results.append(res)
+        print(json.dumps(res, ensure_ascii=False))
 
     # Write a summary (best-effort: if a previous run's summary file is
     # still locked on Windows, we still return the results).
     cfg.out_dir.mkdir(parents=True, exist_ok=True)
     summary_path = cfg.out_dir / "summary.json"
-    try:
-        if summary_path.exists():
-            summary_path.unlink()
-    except OSError:
-        pass
+    existing_results = []
+    if args.append and summary_path.exists():
+        try:
+            with summary_path.open("r", encoding="utf-8") as f:
+                existing = json.load(f)
+            existing_results = list(existing.get("results") or [])
+        except (OSError, TypeError, ValueError, json.JSONDecodeError) as e:
+            logger.warning(f"Could not read existing summary for append: {e}")
+    else:
+        try:
+            if summary_path.exists():
+                summary_path.unlink()
+        except OSError:
+            pass
+    summary_results = [*existing_results, *results]
     try:
         with summary_path.open("w", encoding="utf-8") as f:
             json.dump(
@@ -312,7 +344,7 @@ def _cmd_run(args) -> int:
                         "vad_enabled": not args.no_vad,
                         "tool_execution_policy": "single_serialized_exact_signature",
                     },
-                    "results": results,
+                    "results": summary_results,
                 },
                 f,
                 indent=2,
@@ -326,7 +358,11 @@ def _cmd_run(args) -> int:
         try:
             check_names = _resolve_check_names(args.check)
             _write_run_summary_md(
-                cfg.out_dir, cfg, split, results, check_names=check_names
+                cfg.out_dir,
+                cfg,
+                split,
+                summary_results,
+                check_names=check_names,
             )
         except Exception as e:  # pragma: no cover
             logger.warning(f"Could not write SUMMARY.md: {e}")

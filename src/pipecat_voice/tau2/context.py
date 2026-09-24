@@ -89,7 +89,14 @@ def build_user_system_prompt(persona_text: str, scenario_text: str) -> str:
         "VOICE EFFICIENCY: Keep every response under 40 spoken words. "
         "Reveal only the detail the agent just requested. Do not recap the "
         "scenario, repeat the agent's wording, or ask multiple confirmation "
-        "questions in one turn."
+        "questions in one turn. Do not acknowledge the agent's checking or hold "
+        "phrase; wait silently for the next substantive turn. When stating a name, say the first and last name "
+        "separately, spell each letter clearly, and do not combine the spelling. "
+        "When stating a ZIP code, order id, item id, or other identifier, speak each "
+        "character or digit separately with clear pauses and do not repeat a character "
+        "unless it occurs twice in the value. "
+        "Speak money as whole dollars and cents with a pause, such as sixteen "
+        "dollars and sixty-three cents, rather than running the digits together."
     ).strip()
 
 

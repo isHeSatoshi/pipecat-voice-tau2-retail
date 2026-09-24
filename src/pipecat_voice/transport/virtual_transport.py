@@ -59,6 +59,8 @@ from pipecat.frames.frames import (
     OutputAudioRawFrame,
     StartFrame,
     TTSAudioRawFrame,
+    TTSStartedFrame,
+    TTSStoppedFrame,
     UserStartedSpeakingFrame,
     UserStoppedSpeakingFrame,
 )
@@ -319,6 +321,29 @@ class VirtualOutputProcessor(FrameProcessor):
         self._wave = None
         self._audio_sample_rate = sample_rate
         self._audio_channels = 1
+        self._turn_buffer = bytearray()
+        self._turn_index = 0
+        self._turn_sample_rate = sample_rate
+        self._turn_channels = 1
+        self._turn_active = False
+
+    def _finish_turn_audio(self) -> None:
+        if not self._turn_active or not self._turn_buffer or self._audio_path is None:
+            self._turn_buffer.clear()
+            self._turn_active = False
+            return
+        side = self._audio_path.stem.removesuffix("_audio")
+        turn_dir = self._audio_path.parent / "audio"
+        turn_dir.mkdir(parents=True, exist_ok=True)
+        turn_path = turn_dir / f"{side}_turn_{self._turn_index + 1:02d}.wav"
+        with wave.open(str(turn_path), "wb") as wav:
+            wav.setnchannels(self._turn_channels)
+            wav.setsampwidth(2)
+            wav.setframerate(self._turn_sample_rate)
+            wav.writeframes(bytes(self._turn_buffer))
+        self._turn_index += 1
+        self._turn_buffer.clear()
+        self._turn_active = False
 
     def _write_audio(self, frame: OutputAudioRawFrame) -> None:
         if self._audio_path is None:
@@ -332,6 +357,7 @@ class VirtualOutputProcessor(FrameProcessor):
         self._wave.writeframes(frame.audio)
 
     async def cleanup(self) -> None:
+        self._finish_turn_audio()
         if self._wave is not None:
             self._wave.close()
             self._wave = None
@@ -339,11 +365,19 @@ class VirtualOutputProcessor(FrameProcessor):
 
     async def process_frame(self, frame: Frame, direction: FrameDirection):
         await super().process_frame(frame, direction)
+        if isinstance(frame, TTSStartedFrame):
+            self._finish_turn_audio()
+            self._turn_active = True
         if (
             isinstance(frame, (OutputAudioRawFrame, TTSAudioRawFrame))
             and not isinstance(frame, InputAudioRawFrame)
             and direction == FrameDirection.DOWNSTREAM
         ):
+            if not self._turn_active:
+                self._turn_active = True
+            self._turn_sample_rate = frame.sample_rate or self._audio_sample_rate
+            self._turn_channels = frame.num_channels or 1
+            self._turn_buffer.extend(frame.audio)
             self._write_audio(frame)
             self._buffer.extend(frame.audio)
             # Flush in ~20 ms slices so the bus does not see megabyte chunks.
@@ -352,6 +386,8 @@ class VirtualOutputProcessor(FrameProcessor):
                 chunk = bytes(self._buffer[:slice_bytes])
                 del self._buffer[:slice_bytes]
                 await self._bus.push(self._direction, chunk)
+        elif isinstance(frame, TTSStoppedFrame) and direction == FrameDirection.DOWNSTREAM:
+            self._finish_turn_audio()
         await self.push_frame(frame, direction)
 
 

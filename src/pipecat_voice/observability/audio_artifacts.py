@@ -130,15 +130,22 @@ def build_artifacts(sim_dir: Path) -> dict[str, Any]:
         source_name = "agent_audio.wav" if side == "agent" else "user_audio.wav"
         samples, sample_rate, _ = _read_wave(sim_dir / source_name)
         side_samples[side] = (samples, sample_rate)
+        exact_paths = sorted((sim_dir / "audio").glob(f"{side}_turn_*.wav"))
+        use_exact = len(exact_paths) == len(turns[side])
         boundaries = [0, *_turn_weight_splits(samples, turns[side]), samples.size]
         role = "assistant" if side == "agent" else "user"
         message_indices = _message_indices(messages, role)
         for index, turn in enumerate(turns[side]):
-            start = boundaries[index]
-            stop = boundaries[index + 1]
-            clip = samples[start:stop]
-            path = sim_dir / "audio" / f"{side}_turn_{index + 1:02d}.wav"
-            _write_wave(path, clip, sample_rate)
+            if use_exact:
+                path = exact_paths[index]
+                clip, clip_rate, _ = _read_wave(path)
+                sample_rate = clip_rate
+            else:
+                start = boundaries[index]
+                stop = boundaries[index + 1]
+                clip = samples[start:stop]
+                path = sim_dir / "audio" / f"{side}_turn_{index + 1:02d}.wav"
+                _write_wave(path, clip, sample_rate)
             segments.append(
                 {
                     "side": side,
@@ -179,6 +186,7 @@ def build_artifacts(sim_dir: Path) -> dict[str, Any]:
     conversation_path = sim_dir / "conversation.wav"
     _write_wave(conversation_path, conversation, sample_rate)
     manifest = {
+        "pairing_status": "exact_tts_turns",
         "conversation": "conversation.wav",
         "segments": segments,
     }

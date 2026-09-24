@@ -31,10 +31,12 @@ the ``TraceObserver`` that records events to JSONL.
 
 from __future__ import annotations
 
+import time
 from dataclasses import dataclass
 from typing import Any
 
 from loguru import logger
+from pipecat.frames.frames import FunctionCallInProgressFrame, TTSSpeakFrame
 from pipecat.pipeline.base_pipeline import BasePipeline
 from pipecat.pipeline.pipeline import Pipeline
 from pipecat.processors.aggregators.llm_context import LLMContext
@@ -42,8 +44,10 @@ from pipecat.processors.aggregators.llm_response_universal import (
     LLMAssistantAggregator,
     LLMUserAggregator,
 )
+from pipecat.processors.frame_processor import FrameDirection, FrameProcessor
 from pipecat.services.stt_service import STTService
 from pipecat.services.tts_service import TTSService
+from tau2.environment.toolkit import ToolType
 
 from pipecat_voice.config import VoiceConfig
 from pipecat_voice.observability.trace_writer import TraceWriter
@@ -66,6 +70,38 @@ class AgentPipelineParts:
     pipeline: BasePipeline
     context: LLMContext
     transport: VirtualTransport
+    tool_policy: Any = None
+
+
+class _ToolCallPrefillProcessor(FrameProcessor):
+    """Speak a short hold message before grounded tau2 tool calls."""
+
+    def __init__(self, tool_names: set[str]):
+        super().__init__(name="AgentToolCallPrefill")
+        self._tool_names = tool_names
+        self._spoken_groups: set[str] = set()
+        self._last_spoken_at: float | None = None
+
+    async def process_frame(self, frame, direction: FrameDirection):
+        await super().process_frame(frame, direction)
+        if (
+            isinstance(frame, FunctionCallInProgressFrame)
+            and frame.function_name in self._tool_names
+        ):
+            group_id = frame.group_id or frame.tool_call_id
+            now = time.monotonic()
+            if group_id not in self._spoken_groups and (
+                self._last_spoken_at is None or now - self._last_spoken_at >= 20.0
+            ):
+                self._spoken_groups.add(group_id)
+                self._last_spoken_at = now
+                await self.push_frame(
+                    TTSSpeakFrame(
+                        text="checking..just a sec",
+                        append_to_context=False,
+                    )
+                )
+        await self.push_frame(frame, direction)
 
 
 def _wrap_stt(stt_service, name: str) -> STTService:
@@ -120,6 +156,13 @@ def build_agent_pipeline(
     context = LLMContext(messages=messages, tools=tools)
     ctx_dict["tool_policy"].attach_context(context)
 
+    prefill_tool_names = {
+        tool.name
+        for tool in env.get_tools()
+        if env.tools is not None
+        and env.tools.tool_type(tool.name) in {ToolType.READ, ToolType.WRITE}
+    }
+
     # User aggregator: collects user transcript frames, appends to context,
     # triggers the LLM. Assistant aggregator: streams LLM output into TTS
     # and appends assistant messages back to context.
@@ -149,6 +192,7 @@ def build_agent_pipeline(
             _wrap_stt(stt_service, "agent-stt"),
             user_agg,
             llm_service,
+            _ToolCallPrefillProcessor(prefill_tool_names),
             _wrap_tts(tts_service, "agent-tts"),
             transport.output(),
             assistant_agg,
@@ -156,4 +200,9 @@ def build_agent_pipeline(
     )
     logger.info("Built agent pipeline for task=%s domain=%s", task.id, cfg.domain)
 
-    return AgentPipelineParts(pipeline=pipeline, context=context, transport=transport)
+    return AgentPipelineParts(
+        pipeline=pipeline,
+        context=context,
+        transport=transport,
+        tool_policy=ctx_dict["tool_policy"],
+    )

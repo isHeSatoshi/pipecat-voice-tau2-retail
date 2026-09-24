@@ -59,9 +59,15 @@ class ToolExecutionPolicy:
         self._async_lock = asyncio.Lock()
         self._context = None
         self._consumed_confirmation = None
+        self._successful_writes: set[str] = set()
 
     def attach_context(self, context: Any) -> None:
         self._context = context
+
+    @property
+    def has_successful_write(self) -> bool:
+        with self._lock:
+            return bool(self._successful_writes)
 
     @staticmethod
     def _role(message: Any) -> str:
@@ -131,6 +137,14 @@ class ToolExecutionPolicy:
         return confirmation
 
     @staticmethod
+    def _normalize_retail_zip(value: Any) -> Any:
+        text = str(value).strip()
+        digits = re.sub(r"\D", "", text)
+        if len(digits) == 6 and digits[-1] == digits[-2]:
+            return digits[:-1]
+        return value
+
+    @staticmethod
     def _signature(name: str, arguments: dict[str, Any]) -> tuple[str, str]:
         return name, json.dumps(
             arguments, sort_keys=True, separators=(",", ":"), default=str
@@ -144,6 +158,8 @@ class ToolExecutionPolicy:
         allowed: list[str],
         execute: Callable[[], str],
     ) -> dict[str, Any]:
+        if name == "find_user_id_by_name_zip" and "zip" in arguments:
+            arguments["zip"] = self._normalize_retail_zip(arguments["zip"])
         missing = [
             key for key in required if key not in arguments or arguments[key] is None
         ]
@@ -189,6 +205,9 @@ class ToolExecutionPolicy:
                 result = {"result": result}
             if confirmation is not None and not result.get("error"):
                 self._consumed_confirmation = confirmation
+            if name in WRITE_TOOL_NAMES and not result.get("error"):
+                with self._lock:
+                    self._successful_writes.add(name)
             with self._lock:
                 self._cache[signature] = result
             return result

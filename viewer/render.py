@@ -43,7 +43,7 @@ def _bool_icon(b: Any) -> str:
 def render_run_header(sim: SimView) -> None:
     traj = sim.trajectory or {}
     rs = reward_summary(sim)
-    cols = st.columns(5)
+    cols = st.columns(6)
     cols[0].metric("Task", sim.task_id)
     if rs["strict_reward_available"]:
         cols[1].metric(
@@ -61,6 +61,8 @@ def render_run_header(sim: SimView) -> None:
         f"{rs['actions_matched']}/{rs['actions_total']}",
     )
     cols[4].metric("Termination", traj.get("termination_reason", "—") or "—")
+    seed = traj.get("seed", getattr(sim, "seed", None))
+    cols[5].metric("Seed", "—" if seed is None else str(seed))
     sub_cols = st.columns(3)
     sub_cols[0].metric("Duration (s)", f"{traj.get('duration', 0):.1f}")
     sub_cols[1].metric(
@@ -106,10 +108,15 @@ def render_transcript(sim: SimView) -> None:
         st.info("No messages in trajectory.")
         return
 
+    if sim.audio_manifest.get("pairing_status") == "legacy_unverified":
+        st.warning(
+            "This saved run predates exact per-turn audio markers. Per-message audio is disabled to avoid attaching the wrong speaker audio; the original files are preserved."
+        )
+
     if sim.conversation_audio is not None:
-        st.subheader("Full conversation")
-        st.caption("Mixed agent and user audio in conversation order")
-        st.audio(str(sim.conversation_audio))
+        with st.expander("optional mixed conversation reference"):
+            st.caption("This track intentionally mixes both voices; use each message audio below for exact speaker-specific playback.")
+            st.audio(str(sim.conversation_audio))
 
     # Group consecutive tool + tool-result pairs so the reader sees the
     # call and its response side by side.
