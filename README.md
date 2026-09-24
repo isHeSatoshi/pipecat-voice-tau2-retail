@@ -46,13 +46,7 @@ Strict Tau2 reward was not scored because the harness used the local ENV, ACTION
 
 ![Task outcomes](reports/v4_calibrated_batch/charts/task_outcomes.png)
 
-![Attempt outcomes](reports/v4_calibrated_batch/charts/attempt_outcomes.png)
-
 ![Behavior-check pass rates](reports/v4_calibrated_batch/charts/check_pass_rates.png)
-
-![Attempt durations](reports/v4_calibrated_batch/charts/attempt_durations.png)
-
-![Representative check matrix](reports/v4_calibrated_batch/charts/representative_check_matrix.png)
 
 See [`reports/v4_calibrated_batch/report.md`](reports/v4_calibrated_batch/report.md) for the full analysis, tables, charts, and caveats.
 
