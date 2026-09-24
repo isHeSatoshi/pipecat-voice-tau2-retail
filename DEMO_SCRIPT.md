@@ -1,53 +1,81 @@
-# Under-5-Minute Demo Script
+# Interviewer Demo Script
 
-## 0:00–0:30 — Problem and baseline
+## 0:00–0:35 — Start with the system
 
-- Show Tau-bench retail task 1 and the Pipecat/Tau2 architecture.
-- Open `data/runs/baseline_m27/behavior_report.json`.
-- State: 0/5 strict success, 100% auth-loop failure, 100% write-protocol failure, 80% tool-argument failure.
+“i’m going to show a cascaded retail voice agent built with pipecat and tau-bench. the customer is simulated with an llm, its speech is generated with chatterbox, transcribed with parakeet, segmented with silero vad, and passed to a customer-service agent that can call grounded retail tools. the final database state is evaluated, not just the words in the transcript.”
 
-## 0:30–1:20 — Root causes
+Show the README architecture and the list of models.
 
-Show these three artifacts:
+## 0:35–1:15 — Show the research and design choices
 
-1. `baseline_run.err`: Silero VAD initialization exception.
-2. `baseline_m27/task_2/.../trajectory.json`: empty and incorrect tool arguments.
-3. Old `voice_trace.jsonl`: lifecycle events only, no STT/LLM/tool/audio evidence.
+“i explored the pipecat and tau-bench repositories first, read the pipeline and runner code, and chose a cascaded design because it makes the audio, reasoning, tool arguments, tool result, and database state visible. tau-bench owns the retail environment and policy; pipecat owns the live voice loop.”
 
-Explain that prompt tuning alone was measuring broken infrastructure and an empty tool schema.
+Point to:
 
-## 1:20–2:20 — Three evals and interventions
+- the two-direction virtual PCM bus;
+- separate agent and user audio;
+- grounded Tau-bench tool schemas;
+- prompt v4 as a state machine;
+- the runtime write guard.
 
-- `src/pipecat_voice/eval/checks.py`: `auth_loop`, `tool_argument_integrity`, `write_protocol`.
-- `src/pipecat_voice/prompts/v4.py`: explicit voice-agent state machine.
-- `src/pipecat_voice/tau2/tool_bridge.py`: actual Tau2 schemas, argument validation, serialized exact-call guard.
-- `src/pipecat_voice/transport/virtual_transport.py`: initialized Silero and audio capture.
-- `src/pipecat_voice/pipelines/pipecat_adapters.py`: one complete LLM response becomes one TTS waveform.
+## 1:15–2:15 — Show the failure that drove the work
 
-## 2:20–3:40 — Before and after
+Open the baseline report and one baseline trace.
 
-- Open baseline task 1 in the viewer.
-- Open `working_v4_task1_final` in the viewer.
-- Show transcript, trace timeline, and both audio players.
-- State the measured result: auth loop PASS, argument integrity PASS, write protocol PASS; the thermostat exchange tool returned `exchange requested`.
-
-## 3:40–4:30 — Trade-offs and next experiment
-
-- Local Tau2 scoring excludes NL assertions.
-- One focused run is evidence, not significance.
-- Next experiment: three paired seeds on tasks 0, 1, and held-out task 5, plus a text-only control.
-- Natural completion detection now ends “That’s all I needed” as `user_stop`; strict Tau2 reward still requires NL judging.
-
-## 4:30–4:50 — Reproduce
+“the baseline was not just a weak prompt. silero vad was not initialized correctly, tool schemas exposed empty arguments, repeated calls reached the environment, tts gaps looked like completed customer turns, and the traces did not contain enough evidence to debug the failure.”
 
 Show:
 
-```powershell
-python -m pipecat_voice.cli analyze --run data/runs/baseline_m27
-python -m pipecat_voice.cli run --domain retail --task 1 --prompt-variant v4 --out data/runs/v4_guard --write-summary --check all
-streamlit run viewer/app.py
-```
+- baseline authentication loops;
+- empty or incorrect tool arguments;
+- missing STT, LLM, TTS, and tool events;
+- timeout behavior.
 
-## 4:50–5:00 — Close
+## 2:15–3:25 — Show the fixes
 
-State the main result: the focused v4 + guard conversation authenticates, grounds all IDs, enforces confirmation, successfully writes the retail exchange, passes all three behavior evals, and now has natural termination detection.
+Explain the fixes in this order:
+
+1. initialize and clean up the VAD correctly;
+2. buffer speech until end of speech;
+3. build tools from the real Tau-bench parameter schema;
+4. serialize tool calls and reject malformed arguments;
+5. ask for first name and last name letter by letter;
+6. ask for zip code digit by digit after a failed lookup;
+7. treat preferences like `battery → USB → AC` as strict priority;
+8. discard an old proposal when the customer changes the request;
+9. state exact write details and wait for an immediate yes;
+10. ignore non-substantive “checking” phrases.
+
+Open `viewer/app.py` and show the transcript, tool call, trace timeline, and separate audio tabs.
+
+## 3:25–4:00 — Show results honestly
+
+Open the report charts and explain:
+
+“there are 19 recorded attempts across 10 unique task ids. nine reached local reward 1.0, six timed out, and only three passed all three behavior checks. strict Tau2 NL assertions were unavailable, so these are labeled local results.”
+
+Point out:
+
+- task 7: successful exchange with separate agent/customer audio;
+- task 5: authentication failure and no successful write;
+- task 12: local reward 1.0 but wrong payment method, caught by write protocol;
+- retries and failed artifacts are intentionally retained.
+
+## 4:00–4:30 — Show a real conversation
+
+Open:
+
+- [`docs/report/conversation_agent_task7.txt`](docs/report/conversation_agent_task7.txt);
+- [`docs/report/conversation_user_task7.txt`](docs/report/conversation_user_task7.txt);
+- [`docs/report/audio/conversation_agent_task7.wav`](docs/report/audio/conversation_agent_task7.wav);
+- [`docs/report/audio/conversation_user_task7.wav`](docs/report/audio/conversation_user_task7.wav).
+
+“the first name, last name, and zip code are spoken in recoverable form. the agent then resolves the low-brightness AC-adapter preference, proposes the exchange, waits for confirmation, executes the write, and reports the result.”
+
+## 4:30–5:00 — Close with next steps
+
+“the next work is multiple seeds, a text-only control, strict Tau2 judging, more payment and return tasks, regression tests for authentication and confirmation, latency/cost metrics, and a real acoustic transport. the repository keeps the raw traces and audio so every claim can be checked.”
+
+Final line:
+
+“the point of the project is not to hide the failures; it is to make the failures measurable and the improvements reproducible.”
