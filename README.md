@@ -8,7 +8,7 @@ This repository is a clean, reproducible release package. It contains the implem
 
 ## Read this first
 
-The [technical write-up](TECHNICAL_WRITEUP.md) explains how I approached the project, what I built first, how I debugged the voice system, which approaches I rejected, and what I would improve next. It is the clearest place to understand the thinking behind the code and results.
+[Technical write-up](TECHNICAL_WRITEUP.md)
 
 ## What is included
 
