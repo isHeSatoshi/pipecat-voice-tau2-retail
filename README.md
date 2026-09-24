@@ -1,12 +1,14 @@
 # Pipecat Voice + Tau-bench Retail
 
-A cascaded, closed-loop Pipecat voice-agent evaluation harness for Tau-bench retail tasks. The system streams PCM between an agent and a simulated caller through an in-memory audio bus, uses Parakeet and Chatterbox for speech, and routes grounded tool calls into a Tau-bench environment.
+My goal was to build a small evaluation framework for 10 retail tasks in the Tau-bench retail domain. The system under test is a voice agent: a simulated customer and the retail agent speak to each other through Pipecat, while Tau-bench supplies the tasks, tools, policy, database state, and evaluation.
+
+Tau-bench 2 also includes its own voice framework, but I intentionally used Pipecat for the voice front end and back end because the project specifically asks for a Pipecat voice agent. Pipecat handles the two-way conversation; Tau-bench handles the retail world.
 
 This repository is a clean, reproducible release package. It contains the implementation, formal tests, a read-only Streamlit viewer, and the final `v4_calibrated_batch` evaluation bundle. Other local experiment runs, credentials, environments, caches, logs, and exploratory probe scripts are intentionally excluded.
 
 ## What is included
 
-- **Agent and user-simulator pipelines** built on Pipecat 1.11.
+- **Two-way Pipecat voice agent:** separate customer and retail-agent pipelines, with speech moving in both directions.
 - **Real-stack configuration:** MiniMax M2.7, NVIDIA Parakeet TDT 0.6B v3, Chatterbox, and Silero VAD.
 - **Tau-bench retail integration:** environment state, tools, policy, task loading, local evaluation, and action checks.
 - **Runtime guardrails:** grounded identifiers, serialized writes, duplicate-call protection, and immediate write confirmation checks.
@@ -53,31 +55,32 @@ See [`reports/v4_calibrated_batch/report.md`](reports/v4_calibrated_batch/report
 ## Architecture
 
 ```text
-user LLM -> user TTS -> virtual PCM bus -> agent STT
-                                             |
-                                             v
-                                      agent LLM/context
-                                             |
-                                      Tau-bench tools
-                                             |
-                                      agent TTS -> PCM bus
+Tau-bench retail task and user scenario
+                    ↓
+customer LLM → customer TTS → Pipecat voice pipeline → agent STT
+     ↑                                                        ↓
+customer STT ← agent TTS ← Pipecat voice pipeline ← retail agent LLM
+                                                              ↓
+                                                   grounded Tau-bench tools
+                                                              ↓
+                                                   retail database state
 ```
 
-The virtual transport is an in-memory closed-loop transport, not a deployment-grade acoustic full-duplex system. It provides repeatable audio timing, VAD boundaries, recordings, and trace events without exposing a microphone or network transport.
+Pipecat is the voice front end and back end for the customer and retail-agent sides. The in-memory audio transport makes the experiment repeatable and keeps the two voices separate for recording and inspection. It is not a real microphone or network deployment.
+
+Tau-bench 2 provides its own voice runtime, but this project deliberately uses Pipecat because the assignment asks for a Pipecat implementation. Tau-bench remains the source of the retail tasks, policy, tools, and state.
 
 ## Voice-system details
 
-A voice agent is more than an LLM with a microphone attached. This harness treats the audio path as a first-class system:
+- **Two-way conversation:** the customer and agent run concurrently, with audio moving in both directions and interruption support.
+- **VAD turn detection:** Silero is initialized at the pipeline sample rate and emits speech-start and speech-stop events, so small audio frames do not become separate customer turns.
+- **Utterance-aware STT:** Parakeet receives accumulated audio and transcribes at end-of-speech or after a safe silence gap. This reduces broken names, zip codes, and tool arguments.
+- **Continuous TTS:** Chatterbox synthesizes the complete agent response before it is forwarded to the customer side, reducing false turn boundaries caused by sentence pauses.
+- **Hold and interruption behavior:** short checking phrases are treated as non-substantive, and the pipeline supports interruptions without adding the hold phrase to the scored context.
+- **Audio evidence:** runs retain separate agent and customer audio, a mixed reference conversation, and per-turn metadata when exact capture is available.
+- **Traceability:** VAD, STT, LLM, tool, TTS, lifecycle, and error events share a conversation-relative clock.
 
-- **Logical full-duplex loop:** the agent and simulated customer run concurrently, with two PCM directions, interruption support, and separate input/output processors. This is full-duplex at the pipeline level, not acoustic full duplex in a real room.
-- **VAD turn detection:** Silero is initialized at the pipeline sample rate and emits speech-start and speech-stop events. Those boundaries prevent every 20 ms audio frame from becoming a new customer turn.
-- **Utterance-buffered STT:** Parakeet receives accumulated audio and transcribes at end-of-speech or a safe silence gap. This reduces fragmented names, zip codes, and tool arguments caused by frame-by-frame recognition.
-- **Continuous TTS responses:** Chatterbox synthesizes the complete assistant response before it is forwarded through the output transport. That keeps sentence pauses from looking like completed caller turns.
-- **Interruption and hold behavior:** the pipeline allows interruptions, treats short hold phrases as non-substantive, and keeps them out of the scored conversation context.
-- **Audio evidence:** each run retains agent audio, customer audio, the mixed reference conversation, and per-turn segment metadata when exact capture is available.
-- **Traceability:** VAD, STT, LLM, tool, TTS, lifecycle, and error events share a conversation-relative clock, so a voice failure can be traced to a specific stage.
-
-The main limitation is intentional: this is a repeatable virtual acoustic environment, not a claim about microphone quality, echo cancellation, packet loss, or real-world barge-in.
+The main limitation is intentional: this is a repeatable in-memory voice environment, not a claim about microphone quality, echo cancellation, packet loss, or real-world barge-in.
 
 ## Requirements
 
