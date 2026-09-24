@@ -1,4 +1,0 @@
-{"task_id": "1", "simulation_id": "b49d4e84-fee8-43c2-8479-7fd8931c33d2", "t_offset_ms": 1.0, "type": "meta", "config": {"domain": "retail", "agent_llm_impl": "minimax", "user_llm_impl": "minimax", "agent_model": "MiniMax-M2.7-High-Speed", "user_model": "MiniMax-M2.7-High-Speed", "stt_impl": "parakeet", "tts_impl": "chatterbox", "sample_rate": 16000, "max_conversation_seconds": 300, "seed": 42, "minimax_api_base": "https://api.minimax.io/anthropic", "run_id": "sim_1867d648"}}
-{"task_id": "1", "simulation_id": "b49d4e84-fee8-43c2-8479-7fd8931c33d2", "t_offset_ms": 116759.78, "type": "run_start"}
-{"task_id": "1", "simulation_id": "b49d4e84-fee8-43c2-8479-7fd8931c33d2", "t_offset_ms": 416756.52, "type": "stop_signal"}
-{"task_id": "1", "simulation_id": "b49d4e84-fee8-43c2-8479-7fd8931c33d2", "t_offset_ms": 417091.71, "type": "run_end", "duration_seconds": 300.6199381351471, "termination": "agent_stop"}

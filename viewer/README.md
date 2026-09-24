@@ -1,49 +1,43 @@
-# pipecat_voice viewer
+# Pipecat voice viewer
 
-Read-only Streamlit viewer for the pipecat_voice eval harness.
+A read-only Streamlit viewer for trajectories saved by the `pipecat_voice` harness.
 
-It walks `data/runs/` (the folder the runner writes to) and renders
-transcripts, reward breakdowns, and trace timelines for each simulation.
-It never writes anything to disk.
+The viewer scans `data/runs/`, lets you select a run and simulation, and renders:
 
-## Install
+- task, seed, local reward, DB match, action count, termination, and duration;
+- transcript and tool-call history;
+- local reward and action-check breakdowns;
+- conversation-relative trace timeline;
+- agent, user, and mixed conversation audio;
+- cross-run comparison;
+- timed live refresh for in-progress artifacts.
 
-```powershell
-uv pip install streamlit
-```
+It never starts an evaluation and never writes to the runs directory.
 
-## Run
+## Install and run
 
-From `D:\Project\infer_task\pipecat_voice\`:
+From the repository root:
 
-```powershell
+```bash
+uv pip install -e ".[viewer]"
 streamlit run viewer/app.py
 ```
 
-Streamlit opens a browser tab at `http://localhost:8501`. The sidebar has:
+Streamlit opens at `http://localhost:8501`. The sidebar contains the runs root, run and simulation selectors, live-stream toggle and interval, and comparison selector.
 
-- **Runs root** — folder to scan (defaults to `data/runs` next to the viewer).
-- **Select run** — which run folder to open.
-- **Select sim** — which task/sim under that run.
-- **Compare runs** — multi-select; enables the side-by-side reward view.
+## Data layout
 
-## What you see
-
-- **Run detail** view: per-sim header (reward, db match, action matched, termination, duration), tabs for transcript, reward breakdown, and a matplotlib trace timeline.
-- **Compare runs** view: table of `(run, task, reward, …)` rows and a horizontal bar chart of reward per task across runs.
-
-## Layout assumption
-
-The viewer reads the artefacts written by `pipecat_voice.tau2.runner.Tau2EvalRunner`:
-
-```
+```text
 data/runs/<run_name>/
     summary.json
-    task_<id>/sim_<uuid>/
+    task_<id>/sim_<id>/
         trajectory.json
         voice_trace.jsonl
+        audio_segments.json
+        agent_audio.wav
+        user_audio.wav
+        conversation.wav
+        audio/
 ```
 
-Missing files are tolerated: a sim with no `trajectory.json` shows
-"no messages"; a run with no `summary.json` is shown as `(partial)` with
-whatever task/sim output exists on disk.
+Missing files are tolerated. A simulation without `trajectory.json` is shown as partial, and a run without `summary.json` is still available for artifact inspection.

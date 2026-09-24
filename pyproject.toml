@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "pipecat-voice"
 version = "0.1.0"
-description = "Pipecat full-duplex voice-agent eval harness for tau2-bench retail."
+description = "Cascaded Pipecat closed-loop voice-agent evaluation harness for tau2-bench retail."
 readme = "README.md"
 requires-python = ">=3.12,<3.14"
 license = "MIT"
@@ -16,13 +16,9 @@ dependencies = [
     # tau2-bench is the eval side: environment, tasks, tools, policies, evaluator.
     # Installed separately via `uv pip install -e ../tau2-bench` (see README).
     # Listed here as a normal dependency to avoid hatch direct-reference issues.
-    "tau2>=1.0.1",
+    "tau2==1.0.1",
     # Pipecat: streaming pipeline, transports, VAD, interruption primitives.
     "pipecat-ai==1.11.0",
-    # Parakeet STT (nemo_toolkit). Optional at runtime -- dummy impl works without it.
-    "nemo_toolkit[asr]>=2.0.0; python_version >= '3.12'",
-    # Chatterbox TTS. Optional at runtime.
-    "chatterbox-tts>=0.1.1",
     # LiteLLM is already a tau2 dep, but we list it explicitly for the MiniMax adapter.
     "litellm>=1.80.15,<1.82.7",
     "anthropic>=0.40.0",
@@ -35,6 +31,11 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+voice = [
+    # Parakeet STT and Chatterbox TTS are heavy local dependencies.
+    "nemo_toolkit[asr]>=2.0.0; python_version >= '3.12'",
+    "chatterbox-tts>=0.1.1",
+]
 dummy = [
     # No extra deps; the dummy STT/TTS use stdlib only.
 ]

@@ -1,253 +1,157 @@
-# Pipecat + Tau-bench Retail Voice Evals
+# Technical write-up: cascaded Pipecat + Tau-bench retail voice evaluation
 
-## Technical write-up
+## 1. Objective and evaluation boundary
 
-This repository contains a cascaded, real-time voice agent connected to the Tau-bench retail environment. The goal is not only to produce a plausible customer-service conversation. The goal is to make the conversation reproducible, grounded in real tools, observable at the audio/trace level, and honest about where the agent fails.
+This project evaluates a customer-service voice agent against Tau-bench retail tasks using a cascaded architecture:
 
-The current report is based on the retained `v4_calibrated_batch` bundle: 19 recorded attempts across 10 unique task ids, including retries, failures, a recovered transcript, and selected test tasks. The raw artifacts remain available under `data/runs/`; the compact report is under [`docs/report/`](docs/report/).
+- agent and user simulator: MiniMax M2.7 through an Anthropic-compatible endpoint;
+- speech-to-text: NVIDIA Parakeet TDT 0.6B v3;
+- text-to-speech: Chatterbox;
+- orchestration and frame flow: Pipecat 1.11;
+- policy, tools, environment state, and task evaluation: Tau-bench 1.0.1.
 
-## 1. System under test
+The harness is a closed-loop virtual-audio experiment. User TTS output is written to an in-memory PCM bus, read by the agent STT pipeline, and the agent TTS output is returned to the user pipeline. Silero VAD supplies speech boundaries. This is useful for repeatable behavioral testing, but it is not an acoustic-echo-cancellation or microphone/network deployment.
 
-The tested stack is:
+The retained final evidence is `data/runs/v4_calibrated_batch/`. The derived report in `reports/v4_calibrated_batch/` is generated from that raw bundle and does not edit it.
 
-- MiniMax M2.7 for the customer-service agent and the simulated customer;
-- NVIDIA Parakeet TDT 0.6B v3 for streaming speech-to-text;
-- Chatterbox for text-to-speech;
-- Silero VAD for speech boundaries and turn detection;
-- Pipecat 1.11 for the real-time voice pipeline;
-- Tau-bench retail for tasks, environment state, tools, policy, and local evaluation.
+## 2. Design and implementation
 
-The architecture is intentionally cascaded:
+### 2.1 Pipeline topology
+
+The agent pipeline is:
 
 ```text
-customer LLM
-    ↓
-customer TTS
-    ↓
-virtual PCM bus
-    ↓
-Parakeet STT + Silero VAD
-    ↓
-customer-service agent LLM
-    ↓
-grounded Tau-bench tools
-    ↓
-Tau-bench database state
-    ↓
-agent TTS
-    ↓
-next customer turn
+virtual input
+  -> Parakeet STT
+  -> user context aggregator
+  -> MiniMax agent LLM
+  -> grounded tool-call frame processor
+  -> Chatterbox TTS
+  -> virtual output
+  -> assistant context aggregator
 ```
 
-The two Pipecat pipelines run in one process. The virtual transport has a direction for each side, captures separate agent and user audio, and records lifecycle, STT, VAD, LLM, tool, TTS, and error events in `voice_trace.jsonl`.
+The user pipeline mirrors the loop with the user simulator LLM, user TTS, and user STT. Both workers run concurrently. The runner starts the user side after a short bootstrap delay, lets the user simulator or a natural completion signal stop the conversation, and enforces a wall-clock conversation deadline.
 
-## 2. What the agent is allowed to do
+### 2.2 Grounded tool execution
 
-The agent must not invent retail state. It authenticates the customer, reads the order, reads product variants, follows the customer’s ordered preferences, states the exact proposed write, waits for an immediate confirmation, executes one write, and reports the actual result.
+Tau-bench tools are adapted into Pipecat function schemas using the actual Tau-bench parameter models. The runtime validates required and unknown fields before dispatch. Tool execution is serialized and exact normalized `(tool, arguments)` signatures are cached so a duplicate call cannot mutate the environment twice.
 
-The `v4` prompt is organized as a conversation state machine:
+Retail writes receive an additional live-context guard: an immediate affirmative user response must follow an assistant proposal containing the exact write. A successful write consumes that confirmation. This guard is intentionally runtime-enforced rather than prompt-only.
 
-1. authenticate until a user id is returned;
-2. locate the correct order;
-3. read current items, product variants, and payment methods;
-4. resolve preferences such as low brightness and `battery → USB → AC`;
-5. discard stale proposals when the customer changes the request;
-6. state the exact item ids, price difference, and payment method;
-7. ask for an explicit yes;
-8. execute exactly one write;
-9. claim completion only after the tool succeeds.
+### 2.3 Voice-turn control
 
-The runtime adds checks that a prompt cannot provide safely. Tool execution is serialized, exact repeated calls are blocked, malformed arguments are rejected before mutation, and a retail write requires an immediately preceding affirmative response in the live conversation.
+The agent uses a state-oriented v4 prompt with rules for authentication, grounded IDs, one tool call per assistant turn, exact write proposals, confirmation, and completion. The runtime also uses VAD and buffered audio transport behavior to avoid treating short TTS gaps as completed caller turns. A short `checking..just a sec` acknowledgement is inserted before grounded read/write calls when the configured prefill cooldown permits it. It is sent as a TTS frame and is not added to the scored context.
 
-## 3. The debugging path
+### 2.4 Evidence and observability
 
-The baseline failure was a systems failure, not only a prompt failure.
+Each simulation records:
 
-The first real-stack runs exposed several independent problems:
+- `trajectory.json`: Tau-bench-compatible messages, tool calls, local reward metadata, seed, and termination;
+- `voice_trace.jsonl`: meta, run lifecycle, VAD, STT, LLM, tool, TTS, and error events with a conversation-relative clock;
+- `agent_audio.wav` and `user_audio.wav`;
+- `conversation.wav` and per-turn audio segments when the complete audio is available;
+- `audio_segments.json` and, where applicable, pairing/provenance metadata.
 
-- Silero VAD was not initialized consistently with the selected sample rate, so speech boundaries were unreliable.
-- Tool schema generation read the wrong Tau-bench metadata and exposed empty argument definitions to the model.
-- Repeated calls, including writes, were allowed to reach the environment.
-- Sentence-level TTS gaps were interpreted as completed customer turns.
-- The user simulator did not initially follow Tau-bench’s progressive-disclosure voice guidelines.
-- Timeouts were mislabeled, tool errors lost their error state, and traces did not contain enough frame-level evidence.
-- Audio was not initially available for transcript review.
+The viewer reloads these files from disk and supports run comparison, transcript inspection, reward breakdown, trace timelines, audio playback, seed display, and timed live refresh.
 
-The fixes were layered in the same order as the failures:
+## 3. Evaluation methodology
 
-### Runtime and transport
+The harness computes two distinct quantities:
 
-- Initialize Silero at the pipeline sample rate and release analyzer resources during cleanup.
-- Buffer user speech until a VAD stop or a safe silence gap.
-- Serialize the virtual transport and prevent input audio from recirculating through the output bus.
-- Save exact per-turn audio for new runs instead of estimating clip boundaries from wall-clock timing.
-- Preserve legacy audio artifacts and disable unverifiable legacy per-message links rather than guessing.
+1. **Local reward:** the product of the local Tau-bench evaluators that do not require an NL judge, principally DB/environment, ACTION, and COMMUNICATE terms.
+2. **Strict Tau2 reward:** the full reward basis, including `NL_ASSERTION` where requested.
 
-### Tool bridge
+For this final bundle, `NL_ASSERTION` was excluded because the configured MiniMax key is not a compatible OpenAI NL-judge route. Therefore every record has `strict_reward_available: false`. The stored strict reward field is zero by design when a required NL dimension is excluded. It must not be reported as a valid strict success rate.
 
-- Build schemas from Tau-bench’s actual `Tool.params` model.
-- Preserve required fields, enums, descriptions, and list item types.
-- Reject missing and unknown arguments before the environment can mutate.
-- Block exact `(tool, normalized arguments)` repeats.
-- Preserve structured tool errors in Tau-bench `ToolMessage.error`.
+The three behavior checks are diagnostic predicates layered on top of the simulation outcome. A local reward of 1.0 does not imply that all behavior checks passed. Conversely, a behavior check failure does not necessarily change the local DB/action product. The report keeps these dimensions separate.
 
-### Agent and user policies
+## 4. What the final bundle contains
 
-- Ask for a first name and last name one letter at a time after an unclear lookup.
-- Ask for the zip code digit by digit.
-- Treat ordered preferences as a strict priority list.
-- Ask for confirmation only after exact write details are grounded in tool results.
-- Ignore non-substantive hold phrases such as “checking, just a sec”.
-- Follow the customer’s latest request instead of executing an obsolete proposal.
+The raw `summary.json` contains 19 result records across task IDs 0, 1, 2, 3, 4, 5, 6, 7, 9, and 12. There are 22 simulation directories because three contain only metadata traces. The root config declares `split=test`, while the selected development slice is task IDs 0-7 and the selected test slice is 5, 9, and 12. Task 5 therefore appears in both the earlier 0-7 slice and the final selected test set. This is a provenance caveat, not a clean held-out split.
 
-No task-specific customer identity or product id is hardcoded into the agent.
+The root `SUMMARY.md` is stale and reports 14 rows. The raw `summary.json` is the authoritative record used by the derived report. Task 0 and task 1 point to byte-identical copies from earlier local run directories; those copies are retained in the package. Task 2 is a recovered transcript with no audio. The three metadata-only simulation directories are retained but excluded from the 19 summary records.
 
-## 4. Evaluation design
+No infrastructure error is recorded for the 19 summary records.
 
-The harness runs deterministic offline checks against saved trajectories. These checks are not a replacement for the full Tau-bench NL judge; they are fast behavioral signals that make debugging concrete.
+## 5. Results
 
-### `auth_loop`
-
-Fails when the same authentication call repeats with identical arguments, or when the agent asks for authentication details repeatedly after the customer has already supplied them.
-
-### `tool_argument_integrity`
-
-Fails on missing required arguments, unknown arguments, empty payloads, recorded tool errors, missing-argument errors, and not-found responses.
-
-### `write_protocol`
-
-Fails when the agent emits a multi-call tool batch, attempts a write without an immediately preceding explicit confirmation, or ends without attempting the required action.
-
-These checks are useful because a task can have a high local reward while still violating a policy. The calibrated report contains a clear example: task 12 reached local reward `1.0`, but attempted a PayPal refund where the original payment method was required. The write-protocol check correctly marked that run as a failure.
-
-## 5. Current calibrated results
-
-The authoritative report is [`docs/report/analysis.md`](docs/report/analysis.md). It is derived from `data/runs/v4_calibrated_batch/summary.json` and the retained simulation artifacts.
+From the raw summary and retained trajectories:
 
 | Metric | Result |
 |---|---:|
 | Recorded attempts | 19 |
-| Unique task ids | 10 |
-| Local reward `1.0` | 9/19, 47.4% |
-| Database match | 9/19, 47.4% |
-| Timeouts | 6/19, 31.6% |
+| Unique task IDs | 10 |
+| Local reward 1.0 | 9/19 (47.4%) |
+| DB match | 9/19 (47.4%) |
+| Timeouts | 6/19 (31.6%) |
 | All three behavior checks passed | 3/19 |
 | Strict Tau2 reward available | 0/19 |
 
-The bundle deliberately contains more than one kind of evidence:
+### 5.1 Selected test tasks
 
-- task 0 is a clean local success with all checks passing;
-- task 1 has a successful local state but authentication-check warnings;
-- task 2 is a recovered transcript with no audio;
-- task 3 and task 6 include both failed and successful attempts;
-- task 5 is a clear failure across four recorded attempts;
-- task 7 is a successful exchange example with separate agent and customer audio;
-- task 9 is a qualified local success with a recorded authentication error;
-- task 12 exposes a payment-policy failure despite a local score of `1.0`.
+- **Task 5: failure.** All four recorded attempts have local reward 0.0. Three timed out. The non-timeout attempt failed authentication and did not complete the expected write. The task is not a local success.
+- **Task 9: qualified local success.** The representative has local reward 1.0, DB match, and 6/6 actions. The `tool_argument_integrity` check still fails because a recorded authentication call returned `User not found`. This is a DB/action success with a diagnostic protocol failure, not a clean all-check pass.
+- **Task 12: DB success with write-protocol failure.** The representative has local reward 1.0 and DB match, but only 4/5 actions match. The write used PayPal instead of the original payment method, and `write_protocol` correctly fails.
 
-The report separates representative results from the full attempt table. It does not hide retries, incomplete metadata-only simulation directories, or the mixed train/test provenance of the bundle.
+### 5.2 Development slice
 
-Charts and tables:
+The bundle has at least one local-success representative for tasks 0, 1, 2, 3, 4, 6, and 7. This does not mean all attempts succeeded. Tasks 3 and 6 contain both successful and unsuccessful attempts, and several successful representatives still fail one or more behavior checks. The attempt table and charts are therefore more informative than a single selected trajectory.
 
-- [`docs/report/charts/task_outcomes.png`](docs/report/charts/task_outcomes.png)
-- [`docs/report/charts/attempt_outcomes.png`](docs/report/charts/attempt_outcomes.png)
-- [`docs/report/charts/check_pass_rates.png`](docs/report/charts/check_pass_rates.png)
-- [`docs/report/charts/attempt_durations.png`](docs/report/charts/attempt_durations.png)
-- [`docs/report/charts/representative_check_matrix.png`](docs/report/charts/representative_check_matrix.png)
-- [`docs/report/task_summary.csv`](docs/report/task_summary.csv)
-- [`docs/report/attempts.csv`](docs/report/attempts.csv)
-- [`docs/report/checks.csv`](docs/report/checks.csv)
-- [`docs/report/provenance.json`](docs/report/provenance.json)
+### 5.3 Diagnostic pass rates
 
-A portable task 7 example is included as separate files:
+Across the 19 recorded attempts:
 
-- [`conversation_agent_task7.txt`](docs/report/conversation_agent_task7.txt)
-- [`conversation_user_task7.txt`](docs/report/conversation_user_task7.txt)
-- [`conversation_agent_task7.wav`](docs/report/audio/conversation_agent_task7.wav)
-- [`conversation_user_task7.wav`](docs/report/audio/conversation_user_task7.wav)
+- `auth_loop`: 12/19 passed;
+- `tool_argument_integrity`: 3/19 passed;
+- `write_protocol`: 9/19 passed.
 
-## 6. Why these design choices
+The low tool-argument-integrity pass rate is a real limitation of this evidence, not merely a presentation choice. It reflects recorded authentication/product errors in several local-success trajectories.
 
-### Cascaded speech
+## 6. Trade-offs
 
-A native audio model may reduce latency, but a cascaded system exposes the exact transcript, tool call, tool result, and generated response. That visibility is more valuable for this project because the goal is to debug policy and pipeline behavior.
+### Cascaded versus audio-native
 
-### Virtual transport
+The cascade exposes STT, LLM, TTS, VAD, tool, and audio boundaries separately, making failure attribution and trace inspection straightforward. It adds speech-recognition and speech-synthesis latency and can corrupt IDs such as names, ZIP codes, and payment methods. An audio-native model could reduce some of those errors, but it would remove the ability to isolate cascade-specific behavior.
 
-The in-process transport makes the experiment repeatable and easy to inspect. It does not model acoustic echo cancellation or real network conditions, so its results should not be presented as production telephony measurements.
+### Virtual transport versus real deployment
 
-### One model for both sides
+The in-memory bus is deterministic and repeatable and avoids microphone, network, and echo-cancellation complexity. It does not model acoustic echo, device effects, packet loss, or real-world barge-in. Results should not be presented as field-call performance.
 
-Using MiniMax for the agent and user simulator keeps the setup controlled and affordable. It also means the two sides can share failure modes. A separate user model or scripted user would be a useful ablation.
+### Runtime guards versus prompt-only policy
 
-### Local evaluation
+The runtime guard is safer for duplicate writes and confirmation sequencing, but it cannot infer whether a user's intent is genuinely satisfied. The prompt still matters for grounding and conversational behavior. The combined approach is more reliable than either alone.
 
-Database, action, and communication checks are deterministic, inexpensive, and useful for iteration. The strict Tau2 NL assertion judge was not configured in this environment, so local reward is explicitly labeled as local reward rather than presented as strict Tau2 reward.
+### Same model for agent and user simulator
 
-## 7. Reproducing the work
+Using MiniMax M2.7 for both sides keeps the experiment reproducible and inexpensive, but shared failure modes and correlated latency reduce independence. A separately configured or scripted user simulator is a worthwhile control.
 
-The project expects Python 3.12 and configured model credentials.
+### Local-only reward during this run
 
-```powershell
-uv venv --python 3.12
-.venv\Scripts\Activate.ps1
-uv pip install -e ".[dev,viewer]"
-copy .env.example .env
+The local evaluators are deterministic and inspectable, but omitting NL assertions means communication-quality and task-specific natural-language criteria are not fully scored. The package deliberately labels the result as local and leaves strict reward unavailable rather than inventing a strict score.
+
+## 7. Limitations and future improvements
+
+1. Enable the Tau-bench NL judge through a supported provider and report the full strict reward basis.
+2. Rebuild the final evidence from one immutable source commit with consistent relative paths, task split metadata, and no recovered or imported trajectories.
+3. Add a clean held-out split that does not reuse task 5 after it has been observed during development.
+4. Run paired seeds and report variance rather than selecting representatives.
+5. Add text-only controls using identical tools and prompts to separate reasoning failures from STT/TTS failures.
+6. Add explicit ID-repair and confidence gates for ZIP codes, names, product IDs, and payment methods.
+7. Add a text-only scripted user simulator to reduce simulator-induced variance.
+8. Measure request IDs, token usage, STT latency, TTS latency, TTFT, and per-attempt cost in the trace writer.
+9. Validate with a real transport and acoustic playback before making production latency or barge-in claims.
+
+## 8. Reproduction and checks
+
+The package is intended to run from a clean checkout with Tau-bench installed separately. Set `TAU2_DATA_DIR` when using an editable Tau-bench checkout whose data directory is not automatically discovered.
+
+Offline sanity checks:
+
+```bash
+python -m ruff check src viewer tests reports
+python -m compileall -q src viewer reports
+python -m pytest -q
 ```
 
-Set `MINIMAX_API_KEY` in `.env`.
-
-Run the offline smoke test:
-
-```powershell
-python -m pipecat_voice.cli run --domain retail --task 0 `
-  --stt dummy --tts dummy --agent-llm dummy --user-llm dummy `
-  --max-seconds 8 --out data/runs/dummy_smoke
-```
-
-Run a real task:
-
-```powershell
-python -m pipecat_voice.cli run --domain retail --task 7 `
-  --num-trials 1 --max-seconds 480 --prompt-variant v4 `
-  --agent-llm minimax --user-llm minimax `
-  --stt parakeet --tts chatterbox --seed 42 `
-  --out data/runs/v4_new_task --check all
-```
-
-Analyze saved artifacts without loading models:
-
-```powershell
-python -m pipecat_voice.cli analyze --run data/runs/v4_calibrated_batch
-```
-
-Open the debugging dashboard:
-
-```powershell
-streamlit run viewer/app.py
-```
-
-The dashboard provides the transcript, tool calls, reward breakdown, trace timeline, separate agent/user audio, run comparison, and retained failed attempts.
-
-## 8. Next experiments
-
-1. Run paired seeds for every important task because both speech and LLM behavior are noisy.
-2. Add a text-only control with identical tools and policy to separate reasoning failures from speech failures.
-3. Enable the strict NL judge and report full Tau2 reward.
-4. Add more return, cancellation, payment, and human-escalation tasks.
-5. Add regression tests for spelling recovery, zip-code recovery, ordered variant selection, original-payment refunds, confirmation, termination, and audio alignment.
-6. Record provider request ids, token usage, time to first token, time to first audio, STT latency, and per-turn cost.
-7. Test a real acoustic transport and barge-in behavior.
-
-## 9. Public artifact map
-
-- [`README.md`](README.md): project overview, setup, results, and run instructions.
-- [`docs/report/analysis.md`](docs/report/analysis.md): calibrated batch interpretation.
-- [`docs/report/`](docs/report/): charts, tables, provenance, and portable conversation examples.
-- [`data/runs/`](data/runs/): retained trajectories, traces, audio, and run summaries.
-- [`viewer/app.py`](viewer/app.py): Streamlit dashboard.
-- [`src/pipecat_voice/`](src/pipecat_voice/): pipeline, transport, Tau-bench bridge, policies, and evaluation code.
-- [`tests/`](tests/): focused behavioral and smoke tests.
-- [`probes/`](probes/): diagnostic probes, analysis utilities, and retained logs kept out of the product source tree.
-
-The project is intentionally evidence-heavy. A reader should be able to start with the README, open the charts, inspect the trace timeline, listen to the separate voices, and then follow the code path from audio frame to tool result to database check.
+Real-stack runs require MiniMax credentials and the heavy `voice` optional dependencies. Do not commit generated `.env` files, local logs, virtual environments, or additional run directories.
