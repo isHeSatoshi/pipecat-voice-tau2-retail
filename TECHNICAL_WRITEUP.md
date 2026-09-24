@@ -1,4 +1,14 @@
-# Technical write-up: cascaded Pipecat + Tau-bench retail voice evaluation
+# Technical write-up: Pipecat + Tau-bench retail voice evaluation
+
+## How I approached this
+
+I wanted to answer a practical question: can a voice agent handle a real retail task without merely sounding convincing? That meant I could not stop at a transcript or a final answer. I needed to know what the customer actually said, what the agent heard, which tools it called, what the database changed, and whether the conversation ended because the task was complete or because the system ran out of time.
+
+I did not begin by tuning a prompt. I first read the Pipecat and Tau-bench repositories, mapped the runner and tool interfaces, and made a list of the boundaries where a failure could occur: audio entering the system, speech recognition, turn detection, llm reasoning, tool arguments, confirmation, database mutation, and speech leaving the system. That list became the framework for the rest of the work.
+
+I built the smallest useful path first, then made it observable. I added a real trace, separate audio channels, a viewer, and offline behavior checks before deciding what the agent prompt should say. This changed the way I worked. Instead of asking “why did the model fail?”, I could ask “which stage changed the meaning?” Sometimes the answer was a VAD boundary, sometimes a misspelled name, sometimes a tool schema, and sometimes the model trying to take a shortcut.
+
+The final approach is deliberately mixed: the prompt guides the conversation, but runtime checks protect actions and the evaluation measures behavior. I kept the raw failures because they are part of the result. A system that only shows its successful calls hides the decisions that made it reliable.
 
 ## 1. Objective and evaluation boundary
 

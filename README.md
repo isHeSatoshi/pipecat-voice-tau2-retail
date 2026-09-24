@@ -6,6 +6,10 @@ Tau-bench 2 also includes its own voice framework, but I intentionally used Pipe
 
 This repository is a clean, reproducible release package. It contains the implementation, formal tests, a read-only Streamlit viewer, and the final `v4_calibrated_batch` evaluation bundle. Other local experiment runs, credentials, environments, caches, logs, and exploratory probe scripts are intentionally excluded.
 
+## Read this first
+
+The [technical write-up](TECHNICAL_WRITEUP.md) explains how I approached the project, what I built first, how I debugged the voice system, which approaches I rejected, and what I would improve next. It is the clearest place to understand the thinking behind the code and results.
+
 ## What is included
 
 - **Two-way Pipecat voice agent:** separate customer and retail-agent pipelines, with speech moving in both directions.
